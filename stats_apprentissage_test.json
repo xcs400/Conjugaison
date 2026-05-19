@@ -1,0 +1,23 @@
+{
+    "comer__Indicatif__Present__yo": {
+        "success": 1,
+        "error": 0,
+        "streak": 1,
+        "lastDate": "2026-05-18T19:34:19Z",
+        "lastResult": "success"
+    },
+    "comer__Indicatif__Present__el": {
+        "success": 1,
+        "error": 0,
+        "streak": 1,
+        "lastDate": "2026-05-18T19:47:54Z",
+        "lastResult": "success"
+    },
+    "ser__Indicatif__Present__yo": {
+        "success": 3,
+        "error": 0,
+        "streak": 3,
+        "lastDate": "2026-05-18T20:05:36Z",
+        "lastResult": "success"
+    }
+}
