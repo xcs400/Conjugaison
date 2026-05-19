@@ -1,0 +1,4005 @@
+{
+  "hints": {
+    "Indicatif": {
+      "Présent": [
+        "o / o",
+        "as / es",
+        "a / e",
+        "amos / emos / imos",
+        "áis / éis / ís",
+        "an / en"
+      ],
+      "Imparfait": [
+        "aba / ía",
+        "abas / ías",
+        "aba / ía",
+        "ábamos / íamos",
+        "abais / íais",
+        "aban / ían"
+      ],
+      "Passé composé": [
+        "he + PP",
+        "has + PP",
+        "ha + PP",
+        "hemos + PP",
+        "habéis + PP",
+        "han + PP"
+      ],
+      "Prétérit": [
+        "é / í",
+        "aste / iste",
+        "ó / ió",
+        "amos / imos",
+        "asteis / isteis",
+        "aron / ieron"
+      ],
+      "Futur simple": [
+        "ré",
+        "rás",
+        "rá",
+        "remos",
+        "réis",
+        "rán"
+      ],
+      "Futur antérieur": [
+        "habré + PP",
+        "habrás + PP",
+        "habrá + PP",
+        "habremos + PP",
+        "habréis + PP",
+        "habrán + PP"
+      ],
+      "Plus-que-parfait": [
+        "había + PP",
+        "habías + PP",
+        "había + PP",
+        "habíamos + PP",
+        "habíais + PP",
+        "habían + PP"
+      ]
+    },
+    "Conditionnel": {
+      "Présent": [
+        "ría",
+        "rías",
+        "ría",
+        "ríamos",
+        "ríais",
+        "rían"
+      ]
+    },
+    "Subjonctif": {
+      "Présent": [
+        "e / a",
+        "es / as",
+        "e / a",
+        "emos / amos",
+        "éis / áis",
+        "en / an"
+      ],
+      "Imparfait": [
+        "ara / iera",
+        "aras / ieras",
+        "ara / iera",
+        "áramos / iéramos",
+        "arais / ierais",
+        "aran / ieran"
+      ]
+    },
+    "Impératif": {
+      "Affirmatif": [
+        "a / e",
+        "e / a",
+        "emos / amos",
+        "ad / ed·id",
+        "en / an"
+      ]
+    }
+  },
+  "verbs_db": {
+    "comer": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je mange",
+            "es": "como"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu manges",
+            "es": "comes"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mange",
+            "es": "come"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mangeons",
+            "es": "comemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mangez",
+            "es": "coméis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mangent",
+            "es": "comen"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "je mangeais",
+            "es": "comía"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mangeais",
+            "es": "comías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mangeait",
+            "es": "comía"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mangions",
+            "es": "comíamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mangiez",
+            "es": "comíais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mangeaient",
+            "es": "comían"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai mangé",
+            "es": "he comido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as mangé",
+            "es": "has comido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a mangé",
+            "es": "ha comido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons mangé",
+            "es": "hemos comido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez mangé",
+            "es": "habéis comido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont mangé",
+            "es": "han comido"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je mangeai",
+            "es": "comí"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mangeas",
+            "es": "comiste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mangea",
+            "es": "comió"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mangeâmes",
+            "es": "comimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mangeâtes",
+            "es": "comisteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mangèrent",
+            "es": "comieron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je mangerai",
+            "es": "comeré"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mangeras",
+            "es": "comerás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mangera",
+            "es": "comerá"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mangerons",
+            "es": "comeremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mangerez",
+            "es": "comeréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mangeront",
+            "es": "comerán"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais mangé",
+            "es": "había comido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais mangé",
+            "es": "habías comido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait mangé",
+            "es": "había comido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions mangé",
+            "es": "habíamos comido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez mangé",
+            "es": "habíais comido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient mangé",
+            "es": "habían comido"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je mangerais",
+            "es": "comería"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mangerais",
+            "es": "comerías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mangerait",
+            "es": "comería"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mangerions",
+            "es": "comeríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mangeriez",
+            "es": "comeríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mangeraient",
+            "es": "comerían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je mange",
+            "es": "coma"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu manges",
+            "es": "comas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il mange",
+            "es": "coma"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous mangions",
+            "es": "comamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous mangiez",
+            "es": "comáis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils mangent",
+            "es": "coman"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "je mangeais",
+            "es": "comiera"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mangeais",
+            "es": "comieras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mangeait",
+            "es": "comiera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mangions",
+            "es": "comiéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mangiez",
+            "es": "comierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mangeaient",
+            "es": "comieran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "mange !",
+            "es": "come"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "mangez (pol.) !",
+            "es": "coma"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "mangeons !",
+            "es": "comamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "mangez !",
+            "es": "comed"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "mangez (pol.pl.)!",
+            "es": "coman"
+          }
+        ]
+      }
+    },
+    "ser": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je suis",
+            "es": "soy",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu es",
+            "es": "eres",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "il est",
+            "es": "es",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous sommes",
+            "es": "somos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous êtes",
+            "es": "sois",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils sont",
+            "es": "son",
+            "hint1": "irrég."
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'étais",
+            "es": "era"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu étais",
+            "es": "eras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il était",
+            "es": "era"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous étions",
+            "es": "éramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous étiez",
+            "es": "erais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils étaient",
+            "es": "eran"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai été",
+            "es": "he sido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as été",
+            "es": "has sido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a été",
+            "es": "ha sido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons été",
+            "es": "hemos sido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez été",
+            "es": "habéis sido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont été",
+            "es": "han sido"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je fus",
+            "es": "fui",
+            "hint1": "irrégulier de é / í"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu fus",
+            "es": "fuiste",
+            "hint1": "irrégulier de aste / iste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il fut",
+            "es": "fue",
+            "hint1": "irrégulier de ó / ió"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous fûmes",
+            "es": "fuimos",
+            "hint1": "irrégulier de amos / imos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous fûtes",
+            "es": "fuisteis",
+            "hint1": "irrégulier de asteis / isteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils furent",
+            "es": "fueron",
+            "hint1": "irrégulier de aron / ieron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je serai",
+            "es": "seré"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu seras",
+            "es": "serás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il sera",
+            "es": "será"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous serons",
+            "es": "seremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous serez",
+            "es": "seréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils seront",
+            "es": "serán"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais été",
+            "es": "había sido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais été",
+            "es": "habías sido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait été",
+            "es": "había sido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions été",
+            "es": "habíamos sido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez été",
+            "es": "habíais sido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient été",
+            "es": "habían sido"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je serais",
+            "es": "sería"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu serais",
+            "es": "serías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il serait",
+            "es": "sería"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous serions",
+            "es": "seríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous seriez",
+            "es": "seríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils seraient",
+            "es": "serían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je sois",
+            "es": "sea",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu sois",
+            "es": "seas",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il soit",
+            "es": "sea",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous soyons",
+            "es": "seamos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous soyez",
+            "es": "seáis",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils soient",
+            "es": "sean",
+            "hint1": "irrég."
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que je fusse",
+            "es": "fuera",
+            "hint1": "irrégulier de ara / iera"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu fusses",
+            "es": "fueras",
+            "hint1": "irrégulier de aras / ieras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il fût",
+            "es": "fuera",
+            "hint1": "irrégulier de ara / iera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous fussions",
+            "es": "fuéramos",
+            "hint1": "irrégulier de áramos / iéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous fussiez",
+            "es": "fuerais",
+            "hint1": "irrégulier de arais / ierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils fussent",
+            "es": "fueran",
+            "hint1": "irrégulier de aran / ieran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "sois !",
+            "es": "sé",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "usted",
+            "fr": "soyez (pol.) !",
+            "es": "sea",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "soyons !",
+            "es": "seamos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "soyez !",
+            "es": "sed",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "soyez (pol.pl.)!",
+            "es": "sean",
+            "hint1": "irrég."
+          }
+        ]
+      }
+    },
+    "ir": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je vais",
+            "es": "voy",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu vas",
+            "es": "vas",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "il va",
+            "es": "va",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous allons",
+            "es": "vamos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous allez",
+            "es": "vais",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils vont",
+            "es": "van",
+            "hint1": "irrég."
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'allais",
+            "es": "iba",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu allais",
+            "es": "ibas",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "il allait",
+            "es": "iba",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous allions",
+            "es": "íbamos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous alliez",
+            "es": "ibais",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils allaient",
+            "es": "iban",
+            "hint1": "irrég."
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "je suis allé",
+            "es": "he ido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu es allé",
+            "es": "has ido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il est allé",
+            "es": "ha ido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous sommes allés",
+            "es": "hemos ido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous êtes allés",
+            "es": "habéis ido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils sont allés",
+            "es": "han ido"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "j'allai",
+            "es": "fui",
+            "hint1": "irrégulier de é / í"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu allas",
+            "es": "fuiste",
+            "hint1": "irrégulier de aste / iste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il alla",
+            "es": "fue",
+            "hint1": "irrégulier de ó / ió"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous allâmes",
+            "es": "fuimos",
+            "hint1": "irrégulier de amos / imos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous allâtes",
+            "es": "fuisteis",
+            "hint1": "irrégulier de asteis / isteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils allèrent",
+            "es": "fueron",
+            "hint1": "irrégulier de aron / ieron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "j'irai",
+            "es": "iré"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu iras",
+            "es": "irás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il ira",
+            "es": "irá"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous irons",
+            "es": "iremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous irez",
+            "es": "iréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils iront",
+            "es": "irán"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'étais allé",
+            "es": "había ido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu étais allé",
+            "es": "habías ido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il était allé",
+            "es": "había ido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous étions allés",
+            "es": "habíamos ido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous étiez allés",
+            "es": "habíais ido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils étaient allés",
+            "es": "habían ido"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "j'irais",
+            "es": "iría"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu irais",
+            "es": "irías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il irait",
+            "es": "iría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous irions",
+            "es": "iríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous iriez",
+            "es": "iríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils iraient",
+            "es": "irían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que j'aille",
+            "es": "vaya",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu ailles",
+            "es": "vayas",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il aille",
+            "es": "vaya",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous allions",
+            "es": "vayamos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous alliez",
+            "es": "vayáis",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils aillent",
+            "es": "vayan",
+            "hint1": "irrég."
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que j'allasse",
+            "es": "fuera",
+            "hint1": "irrégulier de ara / iera"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu allasses",
+            "es": "fueras",
+            "hint1": "irrégulier de aras / ieras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il allât",
+            "es": "fuera",
+            "hint1": "irrégulier de ara / iera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous allassions",
+            "es": "fuéramos",
+            "hint1": "irrégulier de áramos / iéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous allassiez",
+            "es": "fuerais",
+            "hint1": "irrégulier de arais / ierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils allassent",
+            "es": "fueran",
+            "hint1": "irrégulier de aran / ieran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "va !",
+            "es": "ve",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "usted",
+            "fr": "allez (pol.) !",
+            "es": "vaya",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "allons !",
+            "es": "vayamos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "allez !",
+            "es": "id",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "allez (pol.pl.)!",
+            "es": "vayan",
+            "hint1": "irrég."
+          }
+        ]
+      }
+    },
+    "tener": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai",
+            "es": "tengo",
+            "hint1": "-go irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as",
+            "es": "tienes",
+            "hint1": "e→ie irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a",
+            "es": "tiene",
+            "hint1": "e→ie irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons",
+            "es": "tenemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez",
+            "es": "tenéis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont",
+            "es": "tienen",
+            "hint1": "e→ie irrég."
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais",
+            "es": "tenía"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais",
+            "es": "tenías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait",
+            "es": "tenía"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions",
+            "es": "teníamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez",
+            "es": "teníais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient",
+            "es": "tenían"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai eu",
+            "es": "he tenido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as eu",
+            "es": "has tenido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a eu",
+            "es": "ha tenido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons eu",
+            "es": "hemos tenido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez eu",
+            "es": "habéis tenido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont eu",
+            "es": "han tenido"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "j'eus",
+            "es": "tuve",
+            "hint1": "tuv- irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu eus",
+            "es": "tuviste",
+            "hint1": "tuv- irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "il eut",
+            "es": "tuvo",
+            "hint1": "tuv- irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous eûmes",
+            "es": "tuvimos",
+            "hint1": "tuv- irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous eûtes",
+            "es": "tuvisteis",
+            "hint1": "tuv- irrég."
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils eurent",
+            "es": "tuvieron",
+            "hint1": "tuv- irrég."
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurai",
+            "es": "tendré",
+            "hint1": "tendr- + ré"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu auras",
+            "es": "tendrás",
+            "hint1": "tendr- + rás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aura",
+            "es": "tendrá",
+            "hint1": "tendr- + rá"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurons",
+            "es": "tendremos",
+            "hint1": "tendr- + remos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aurez",
+            "es": "tendréis",
+            "hint1": "tendr- + réis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auront",
+            "es": "tendrán",
+            "hint1": "tendr- + rán"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais eu",
+            "es": "había tenido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais eu",
+            "es": "habías tenido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait eu",
+            "es": "había tenido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions eu",
+            "es": "habíamos tenido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez eu",
+            "es": "habíais tenido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient eu",
+            "es": "habían tenido"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurais",
+            "es": "tendría",
+            "hint1": "tendr- + ría"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu aurais",
+            "es": "tendrías",
+            "hint1": "tendr- + rías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aurait",
+            "es": "tendría",
+            "hint1": "tendr- + ría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurions",
+            "es": "tendríamos",
+            "hint1": "tendr- + ríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous auriez",
+            "es": "tendríais",
+            "hint1": "tendr- + ríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auraient",
+            "es": "tendrían",
+            "hint1": "tendr- + rían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que j'aie",
+            "es": "tenga",
+            "hint1": "teng-a irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu aies",
+            "es": "tengas",
+            "hint1": "teng-as irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il ait",
+            "es": "tenga",
+            "hint1": "teng-a irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous ayons",
+            "es": "tengamos",
+            "hint1": "teng-amos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous ayez",
+            "es": "tengáis",
+            "hint1": "teng-áis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils aient",
+            "es": "tengan",
+            "hint1": "teng-an irrég."
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que j'eusse",
+            "es": "tuviera",
+            "hint1": "tuv-iera irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu eusses",
+            "es": "tuvieras",
+            "hint1": "tuv-ieras irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il eût",
+            "es": "tuviera",
+            "hint1": "tuv-iera irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous eussions",
+            "es": "tuviéramos",
+            "hint1": "tuv-iéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous eussiez",
+            "es": "tuvierais",
+            "hint1": "tuv-ierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils eussent",
+            "es": "tuvieran",
+            "hint1": "tuv-ieran irrég."
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "aie !",
+            "es": "ten",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "usted",
+            "fr": "ayez (pol.) !",
+            "es": "tenga",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "ayons !",
+            "es": "tengamos",
+            "hint1": "irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "ayez !",
+            "es": "tened",
+            "hint1": "régulier en -d"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "ayez (pol.pl.)!",
+            "es": "tengan"
+          }
+        ]
+      }
+    },
+    "hablar": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je parle",
+            "es": "hablo"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu parles",
+            "es": "hablas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il parle",
+            "es": "habla"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous parlons",
+            "es": "hablamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous parlez",
+            "es": "habláis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils parlent",
+            "es": "hablan"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "je parlais",
+            "es": "hablaba"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu parlais",
+            "es": "hablabas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il parlait",
+            "es": "hablaba"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous parlions",
+            "es": "hablábamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous parliez",
+            "es": "hablabais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils parlaient",
+            "es": "hablaban"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai parlé",
+            "es": "he hablado"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as parlé",
+            "es": "has hablado"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a parlé",
+            "es": "ha hablado"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons parlé",
+            "es": "hemos hablado"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez parlé",
+            "es": "habéis hablado"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont parlé",
+            "es": "han hablado"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je parlai",
+            "es": "hablé"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu parlas",
+            "es": "hablaste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il parla",
+            "es": "habló"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous parlâmes",
+            "es": "hablamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous parlâtes",
+            "es": "hablasteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils parlèrent",
+            "es": "hablaron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je parlerai",
+            "es": "hablaré"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu parleras",
+            "es": "hablarás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il parlera",
+            "es": "hablará"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous parlerons",
+            "es": "hablaremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous parlerez",
+            "es": "hablaréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils parleront",
+            "es": "hablarán"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais parlé",
+            "es": "había hablado"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais parlé",
+            "es": "habías hablado"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait parlé",
+            "es": "había hablado"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions parlé",
+            "es": "habíamos hablado"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez parlé",
+            "es": "habíais hablado"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient parlé",
+            "es": "habían hablado"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je parlerais",
+            "es": "hablaría"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu parlerais",
+            "es": "hablarías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il parlerait",
+            "es": "hablaría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous parlerions",
+            "es": "hablaríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous parleriez",
+            "es": "hablaríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils parleraient",
+            "es": "hablarían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je parle",
+            "es": "hable"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu parles",
+            "es": "hables"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il parle",
+            "es": "hable"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous parlions",
+            "es": "hablemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous parliez",
+            "es": "habléis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils parlent",
+            "es": "hablen"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que je parlasse",
+            "es": "hablara"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu parlasses",
+            "es": "hablaras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il parlât",
+            "es": "hablara"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous parlassions",
+            "es": "habláramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous parlassiez",
+            "es": "hablarais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils parlassent",
+            "es": "hablaran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "parle !",
+            "es": "habla"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "parlez (pol.) !",
+            "es": "hable"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "parlons !",
+            "es": "hablemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "parlez !",
+            "es": "hablad"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "parlez (pol.pl.)!",
+            "es": "hablen"
+          }
+        ]
+      }
+    },
+    "estar": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je suis",
+            "es": "estoy",
+            "hint1": "irrég. en -oy"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu es",
+            "es": "estás",
+            "hint1": "accent sur le á"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il est",
+            "es": "está",
+            "hint1": "accent sur le á"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous sommes",
+            "es": "estamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous êtes",
+            "es": "estáis",
+            "hint1": "accent sur le á"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils sont",
+            "es": "están",
+            "hint1": "accent sur le á"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'étais",
+            "es": "estaba"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu étais",
+            "es": "estabas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il était",
+            "es": "estaba"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous étions",
+            "es": "estábamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous étiez",
+            "es": "estabais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils étaient",
+            "es": "estaban"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai été",
+            "es": "he estado"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as été",
+            "es": "has estado"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a été",
+            "es": "ha estado"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons été",
+            "es": "hemos estado"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez été",
+            "es": "habéis estado"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont été",
+            "es": "han estado"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je fus",
+            "es": "estuve",
+            "hint1": "estuv- irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu fus",
+            "es": "estuviste",
+            "hint1": "estuv- irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "il fut",
+            "es": "estuvo",
+            "hint1": "estuv- irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous fûmes",
+            "es": "estuvimos",
+            "hint1": "estuv- irrég."
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous fûtes",
+            "es": "estuvisteis",
+            "hint1": "estuv- irrég."
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils furent",
+            "es": "estuvieron",
+            "hint1": "estuv- irrég."
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je serai",
+            "es": "estaré"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu seras",
+            "es": "estarás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il sera",
+            "es": "estará"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous serons",
+            "es": "estaremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous serez",
+            "es": "estaréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils seront",
+            "es": "estarán"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais été",
+            "es": "había estado"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais été",
+            "es": "habías estado"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait été",
+            "es": "había estado"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions été",
+            "es": "habíamos estado"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez été",
+            "es": "habíais estado"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient été",
+            "es": "habían estado"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je serais",
+            "es": "estaría"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu serais",
+            "es": "estarías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il serait",
+            "es": "estaría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous serions",
+            "es": "estaríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous seriez",
+            "es": "estaríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils seraient",
+            "es": "estarían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je sois",
+            "es": "esté",
+            "hint1": "accent sur le é"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu sois",
+            "es": "estés",
+            "hint1": "accent sur le é"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il soit",
+            "es": "esté",
+            "hint1": "accent sur le é"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous soyons",
+            "es": "estemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous soyez",
+            "es": "estéis",
+            "hint1": "accent sur le é"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils soient",
+            "es": "estén",
+            "hint1": "accent sur le é"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que je fusse",
+            "es": "estuviera",
+            "hint1": "estuv-iera irrég."
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu fusses",
+            "es": "estuvieras",
+            "hint1": "estuv-ieras irrég."
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il fût",
+            "es": "estuviera",
+            "hint1": "estuv-iera irrég."
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous fussions",
+            "es": "estuviéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous fussiez",
+            "es": "estuvierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils fussent",
+            "es": "estuvieran",
+            "hint1": "estuv-ieran irrég."
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "sois !",
+            "es": "está",
+            "hint1": "accent sur le á"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "soyez (pol.) !",
+            "es": "esté",
+            "hint1": "accent sur le é"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "soyons !",
+            "es": "estemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "soyez !",
+            "es": "estad",
+            "hint1": "régulier en -d"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "soyez (pol.pl.)!",
+            "es": "estén",
+            "hint1": "accent sur le é"
+          }
+        ]
+      }
+    },
+    "hacer": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je fais",
+            "es": "hago",
+            "hint1": "irrégulier en -go"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu fais",
+            "es": "haces"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il fait",
+            "es": "hace"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous faisons",
+            "es": "hacemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous faites",
+            "es": "hacéis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils font",
+            "es": "hacen"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "je faisais",
+            "es": "hacía"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu faisais",
+            "es": "hacías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il faisait",
+            "es": "hacía"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous faisions",
+            "es": "hacíamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous faisiez",
+            "es": "hacíais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils faisaient",
+            "es": "hacían"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai fait",
+            "es": "he hecho",
+            "hint1": "participe passé irrégulier : hecho"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as fait",
+            "es": "has hecho"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a fait",
+            "es": "ha hecho"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons fait",
+            "es": "hemos hecho"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez fait",
+            "es": "habéis hecho"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont fait",
+            "es": "han hecho"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je fis",
+            "es": "hice",
+            "hint1": "radical irrégulier hic- / hiz-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu fis",
+            "es": "hiciste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il fit",
+            "es": "hizo",
+            "hint1": "z devant o : hizo"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous fîmes",
+            "es": "hicimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous fîtes",
+            "es": "hicisteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils firent",
+            "es": "hicieron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je ferai",
+            "es": "haré",
+            "hint1": "radical irrégulier har-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu feras",
+            "es": "harás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il fera",
+            "es": "hará"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous ferons",
+            "es": "haremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous ferez",
+            "es": "haréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils feront",
+            "es": "harán"
+          }
+        ],
+        "Futur antérieur": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurai fait",
+            "es": "habré hecho"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu auras fait",
+            "es": "habrás hecho"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aura fait",
+            "es": "habrá hecho"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurons fait",
+            "es": "habremos hecho"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aurez fait",
+            "es": "habréis hecho"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auront fait",
+            "es": "habrán hecho"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais fait",
+            "es": "había hecho"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais fait",
+            "es": "habías hecho"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait fait",
+            "es": "había hecho"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions fait",
+            "es": "habíamos hecho"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez fait",
+            "es": "habíais hecho"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient fait",
+            "es": "habían hecho"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je ferais",
+            "es": "haría",
+            "hint1": "radical irrégulier har-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu ferais",
+            "es": "harías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il ferait",
+            "es": "haría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous ferions",
+            "es": "haríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous feriez",
+            "es": "haríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils feraient",
+            "es": "harían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je fasse",
+            "es": "haga",
+            "hint1": "radical hag-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu fasses",
+            "es": "hagas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il fasse",
+            "es": "haga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous fassions",
+            "es": "hagamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous fassiez",
+            "es": "hagáis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils fassent",
+            "es": "hagan"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que je fisse",
+            "es": "hiciera",
+            "hint1": "radical hicier-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu fisses",
+            "es": "hicieras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il fît",
+            "es": "hiciera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous fissions",
+            "es": "hiciéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous fissiez",
+            "es": "hicierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils fissent",
+            "es": "hicieran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "fais !",
+            "es": "haz",
+            "hint1": "très irrégulier : haz"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "faites (pol.) !",
+            "es": "haga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "faisons !",
+            "es": "hagamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "faites !",
+            "es": "haced"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "faites (pol.pl.) !",
+            "es": "hagan"
+          }
+        ]
+      }
+    },
+    "haber": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai (aux.)",
+            "es": "he",
+            "hint1": "très irrégulier : he"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as (aux.)",
+            "es": "has"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a (aux.)",
+            "es": "ha",
+            "hint1": "attention : ha (différent de hay)"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons (aux.)",
+            "es": "hemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez (aux.)",
+            "es": "habéis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont (aux.)",
+            "es": "han"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais",
+            "es": "había"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais",
+            "es": "habías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait",
+            "es": "había"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions",
+            "es": "habíamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez",
+            "es": "habíais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient",
+            "es": "habían"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai eu",
+            "es": "he habido",
+            "hint1": "participe passé : habido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as eu",
+            "es": "has habido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a eu",
+            "es": "ha habido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons eu",
+            "es": "hemos habido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez eu",
+            "es": "habéis habido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont eu",
+            "es": "han habido"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "j'eus",
+            "es": "hube",
+            "hint1": "radical irrégulier hub-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu eus",
+            "es": "hubiste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il eut",
+            "es": "hubo"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous eûmes",
+            "es": "hubimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous eûtes",
+            "es": "hubisteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils eurent",
+            "es": "hubieron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurai",
+            "es": "habré",
+            "hint1": "radical irrégulier habr-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu auras",
+            "es": "habrás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aura",
+            "es": "habrá"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurons",
+            "es": "habremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aurez",
+            "es": "habréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auront",
+            "es": "habrán"
+          }
+        ],
+        "Futur antérieur": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurai eu",
+            "es": "habré habido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu auras eu",
+            "es": "habrás habido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aura eu",
+            "es": "habrá habido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurons eu",
+            "es": "habremos habido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aurez eu",
+            "es": "habréis habido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auront eu",
+            "es": "habrán habido"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais eu",
+            "es": "había habido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais eu",
+            "es": "habías habido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait eu",
+            "es": "había habido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions eu",
+            "es": "habíamos habido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez eu",
+            "es": "habíais habido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient eu",
+            "es": "habían habido"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurais",
+            "es": "habría",
+            "hint1": "radical irrégulier habr-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu aurais",
+            "es": "habrías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aurait",
+            "es": "habría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurions",
+            "es": "habríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous auriez",
+            "es": "habríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auraient",
+            "es": "habrían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que j'aie",
+            "es": "haya",
+            "hint1": "radical hay-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu aies",
+            "es": "hayas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il ait",
+            "es": "haya"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous ayons",
+            "es": "hayamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous ayez",
+            "es": "hayáis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils aient",
+            "es": "hayan"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que j'eusse",
+            "es": "hubiera",
+            "hint1": "radical hubier-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu eusses",
+            "es": "hubieras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il eût",
+            "es": "hubiera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous eussions",
+            "es": "hubiéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous eussiez",
+            "es": "hubierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils eussent",
+            "es": "hubieran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "aie !",
+            "es": "he",
+            "hint1": "rare : he"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "ayez (pol.) !",
+            "es": "haya"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "ayons !",
+            "es": "hayamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "ayez !",
+            "es": "habed"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "ayez (pol.pl.) !",
+            "es": "hayan"
+          }
+        ]
+      }
+    },
+    "poner": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je mets",
+            "es": "pongo",
+            "hint1": "irrégulier en -go"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mets",
+            "es": "pones"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il met",
+            "es": "pone"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mettons",
+            "es": "ponemos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mettez",
+            "es": "ponéis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mettent",
+            "es": "ponen"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "je mettais",
+            "es": "ponía"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mettais",
+            "es": "ponías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mettait",
+            "es": "ponía"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mettions",
+            "es": "poníamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mettiez",
+            "es": "poníais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mettaient",
+            "es": "ponían"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai mis",
+            "es": "he puesto",
+            "hint1": "participe passé irrégulier : puesto"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as mis",
+            "es": "has puesto"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a mis",
+            "es": "ha puesto"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons mis",
+            "es": "hemos puesto"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez mis",
+            "es": "habéis puesto"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont mis",
+            "es": "han puesto"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je mis",
+            "es": "puse",
+            "hint1": "radical irrégulier pus-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mis",
+            "es": "pusiste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mit",
+            "es": "puso"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mîmes",
+            "es": "pusimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mîtes",
+            "es": "pusisteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mirent",
+            "es": "pusieron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je mettrai",
+            "es": "pondré",
+            "hint1": "radical irrégulier pondr-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mettras",
+            "es": "pondrás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mettra",
+            "es": "pondrá"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mettrons",
+            "es": "pondremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mettrez",
+            "es": "pondréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mettront",
+            "es": "pondrán"
+          }
+        ],
+        "Futur antérieur": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurai mis",
+            "es": "habré puesto"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu auras mis",
+            "es": "habrás puesto"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aura mis",
+            "es": "habrá puesto"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurons mis",
+            "es": "habremos puesto"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aurez mis",
+            "es": "habréis puesto"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auront mis",
+            "es": "habrán puesto"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais mis",
+            "es": "había puesto"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais mis",
+            "es": "habías puesto"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait mis",
+            "es": "había puesto"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions mis",
+            "es": "habíamos puesto"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez mis",
+            "es": "habíais puesto"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient mis",
+            "es": "habían puesto"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je mettrais",
+            "es": "pondría",
+            "hint1": "radical irrégulier pondr-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu mettrais",
+            "es": "pondrías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il mettrait",
+            "es": "pondría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous mettrions",
+            "es": "pondríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous mettriez",
+            "es": "pondríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils mettraient",
+            "es": "pondrían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je mette",
+            "es": "ponga",
+            "hint1": "radical pong-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu mettes",
+            "es": "pongas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il mette",
+            "es": "ponga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous mettions",
+            "es": "pongamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous mettiez",
+            "es": "pongáis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils mettent",
+            "es": "pongan"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que je misse",
+            "es": "pusiera",
+            "hint1": "radical pusier-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu misses",
+            "es": "pusieras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il mît",
+            "es": "pusiera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous missions",
+            "es": "pusiéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous missiez",
+            "es": "pusierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils missent",
+            "es": "pusieran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "mets !",
+            "es": "pon",
+            "hint1": "irrégulier court : pon"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "mettez (pol.) !",
+            "es": "ponga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "mettons !",
+            "es": "pongamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "mettez !",
+            "es": "poned"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "mettez (pol.pl.) !",
+            "es": "pongan"
+          }
+        ]
+      }
+    },
+    "decir": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je dis",
+            "es": "digo",
+            "hint1": "irrégulier en -go et e->i"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu dis",
+            "es": "dices"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il dit",
+            "es": "dice"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous disons",
+            "es": "decimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous dites",
+            "es": "decís"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils disent",
+            "es": "dicen"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "je disais",
+            "es": "decía"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu disais",
+            "es": "decías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il disait",
+            "es": "decía"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous disions",
+            "es": "decíamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous disiez",
+            "es": "decíais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils disaient",
+            "es": "decían"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "j'ai dit",
+            "es": "he dicho",
+            "hint1": "participe passé irrégulier : dicho"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu as dit",
+            "es": "has dicho"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il a dit",
+            "es": "ha dicho"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avons dit",
+            "es": "hemos dicho"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous avez dit",
+            "es": "habéis dicho"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils ont dit",
+            "es": "han dicho"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je dis",
+            "es": "dije",
+            "hint1": "radical irrégulier dij-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu dis",
+            "es": "dijiste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il dit",
+            "es": "dijo"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous dîmes",
+            "es": "dijimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous dîtes",
+            "es": "dijisteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils dirent",
+            "es": "dijeron",
+            "hint1": "pas de 'i' : dijeron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je dirai",
+            "es": "diré",
+            "hint1": "radical irrégulier dir-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu diras",
+            "es": "dirás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il dira",
+            "es": "dirá"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous dirons",
+            "es": "diremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous direz",
+            "es": "diréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils diront",
+            "es": "dirán"
+          }
+        ],
+        "Futur antérieur": [
+          {
+            "pronoun": "yo",
+            "fr": "j'aurai dit",
+            "es": "habré dicho"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu auras dit",
+            "es": "habrás dicho"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il aura dit",
+            "es": "habrá dicho"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous aurons dit",
+            "es": "habremos dicho"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aurez dit",
+            "es": "habréis dicho"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils auront dit",
+            "es": "habrán dicho"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'avais dit",
+            "es": "había dicho"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu avais dit",
+            "es": "habías dicho"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il avait dit",
+            "es": "había dicho"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous avions dit",
+            "es": "habíamos dicho"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous aviez dit",
+            "es": "habíais dicho"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils avaient dit",
+            "es": "habían dicho"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je dirais",
+            "es": "diría",
+            "hint1": "radical irrégulier dir-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu dirais",
+            "es": "dirías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il dirait",
+            "es": "diría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous dirions",
+            "es": "diríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous diriez",
+            "es": "diríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils diraient",
+            "es": "dirían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je dise",
+            "es": "diga",
+            "hint1": "radical dig-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu dises",
+            "es": "digas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il dise",
+            "es": "diga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous disions",
+            "es": "digamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous disiez",
+            "es": "digáis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils disent",
+            "es": "digan"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que je disse",
+            "es": "dijera",
+            "hint1": "radical dij- sans 'i' : dijera"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu disses",
+            "es": "dijeras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il dît",
+            "es": "dijera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous dissions",
+            "es": "dijéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous dissiez",
+            "es": "dijerais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils dissent",
+            "es": "dijeran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "dis !",
+            "es": "di",
+            "hint1": "très court : di"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "dites (pol.) !",
+            "es": "diga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "disons !",
+            "es": "digamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "dites !",
+            "es": "decid"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "dites (pol.pl.) !",
+            "es": "digan"
+          }
+        ]
+      }
+    },
+    "venir": {
+      "Indicatif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je viens",
+            "es": "vengo",
+            "hint1": "irrégulier en -go et e->ie"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu viens",
+            "es": "vienes"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il vient",
+            "es": "viene"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous venons",
+            "es": "venimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous venez",
+            "es": "venís"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils viennent",
+            "es": "vienen"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "je venais",
+            "es": "venía"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu venais",
+            "es": "venías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il venait",
+            "es": "venía"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous venions",
+            "es": "veníamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous veniez",
+            "es": "veníais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils venaient",
+            "es": "venían"
+          }
+        ],
+        "Passé composé": [
+          {
+            "pronoun": "yo",
+            "fr": "je suis venu",
+            "es": "he venido",
+            "hint1": "participe passé régulier : venido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu es venu",
+            "es": "has venido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il est venu",
+            "es": "ha venido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous sommes venus",
+            "es": "hemos venido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous êtes venus",
+            "es": "habéis venido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils sont venus",
+            "es": "han venido"
+          }
+        ],
+        "Prétérit": [
+          {
+            "pronoun": "yo",
+            "fr": "je vins",
+            "es": "vine",
+            "hint1": "radical irrégulier vin-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu vins",
+            "es": "viniste"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il vint",
+            "es": "vino"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous vînmes",
+            "es": "vinimos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous vîntes",
+            "es": "vinisteis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils vinrent",
+            "es": "vinieron"
+          }
+        ],
+        "Futur simple": [
+          {
+            "pronoun": "yo",
+            "fr": "je viendrai",
+            "es": "vendré",
+            "hint1": "radical irrégulier vendr-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu viendras",
+            "es": "vendrás"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il viendra",
+            "es": "vendrá"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous viendrons",
+            "es": "vendremos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous viendrez",
+            "es": "vendréis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils viendront",
+            "es": "vendrán"
+          }
+        ],
+        "Futur antérieur": [
+          {
+            "pronoun": "yo",
+            "fr": "je serai venu",
+            "es": "habré venido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu seras venu",
+            "es": "habrás venido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il sera venu",
+            "es": "habrá venido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous serons venus",
+            "es": "habremos venido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous serez venus",
+            "es": "habréis venido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils seront venus",
+            "es": "habrán venido"
+          }
+        ],
+        "Plus-que-parfait": [
+          {
+            "pronoun": "yo",
+            "fr": "j'étais venu",
+            "es": "había venido"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu étais venu",
+            "es": "habías venido"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il était venu",
+            "es": "había venido"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous étions venus",
+            "es": "habíamos venido"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous étiez venus",
+            "es": "habíais venido"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils étaient venus",
+            "es": "habían venido"
+          }
+        ]
+      },
+      "Conditionnel": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "je viendrais",
+            "es": "vendría",
+            "hint1": "radical irrégulier vendr-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "tu viendrais",
+            "es": "vendrías"
+          },
+          {
+            "pronoun": "él",
+            "fr": "il viendrait",
+            "es": "vendría"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "nous viendrions",
+            "es": "vendríamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "vous viendriez",
+            "es": "vendríais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "ils viendraient",
+            "es": "vendrían"
+          }
+        ]
+      },
+      "Subjonctif": {
+        "Présent": [
+          {
+            "pronoun": "yo",
+            "fr": "que je vienne",
+            "es": "venga",
+            "hint1": "radical veng-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu viennes",
+            "es": "vengas"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il vienne",
+            "es": "venga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous venions",
+            "es": "vengamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous veniez",
+            "es": "vengáis"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils viennent",
+            "es": "vengan"
+          }
+        ],
+        "Imparfait": [
+          {
+            "pronoun": "yo",
+            "fr": "que je vinsse",
+            "es": "viniera",
+            "hint1": "radical vinier-"
+          },
+          {
+            "pronoun": "tú",
+            "fr": "que tu vinsses",
+            "es": "vinieras"
+          },
+          {
+            "pronoun": "él",
+            "fr": "qu'il vînt",
+            "es": "viniera"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "que nous vinssions",
+            "es": "viniéramos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "que vous vinssiez",
+            "es": "vinierais"
+          },
+          {
+            "pronoun": "ellos",
+            "fr": "qu'ils vinssent",
+            "es": "vinieran"
+          }
+        ]
+      },
+      "Impératif": {
+        "Affirmatif": [
+          {
+            "pronoun": "tú",
+            "fr": "viens !",
+            "es": "ven",
+            "hint1": "très court : ven"
+          },
+          {
+            "pronoun": "usted",
+            "fr": "venez (pol.) !",
+            "es": "venga"
+          },
+          {
+            "pronoun": "nosotros",
+            "fr": "venons !",
+            "es": "vengamos"
+          },
+          {
+            "pronoun": "vosotros",
+            "fr": "venez !",
+            "es": "venid"
+          },
+          {
+            "pronoun": "ustedes",
+            "fr": "venez (pol.pl.) !",
+            "es": "vengan"
+          }
+        ]
+      }
+    }
+  }
+}

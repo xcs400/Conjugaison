@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🇪🇸 Conjugaison Espagnole</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="family">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surf: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --acc: #3b82f6;
+      --err: #ef4444;
+      --ok: #10b981;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 1.5rem; max-width: 900px; margin: 0 auto; min-height: 100vh; padding-bottom: 5rem; }
+    
+    .header { text-align: center; margin-bottom: 1.5rem; }
+    .header h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 0.8rem; background: linear-gradient(135deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    select { background: var(--surf); color: var(--text); border: 1px solid var(--acc); padding: .6rem 1rem; font-size: 1rem; border-radius: .5rem; width: 100%; max-width: 280px; outline: none; transition: box-shadow .2s; }
+    select:focus { box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4); }
+    
+    /* Grid system */
+    .mode-section { margin-bottom: 2.5rem; }
+    .mode-title { font-size: 1.4rem; font-weight: 800; border-bottom: 2px solid #334155; padding-bottom: .4rem; margin-bottom: 1.2rem; color: #cbd5e1; }
+    .tense-block { margin-bottom: 1.8rem; }
+    .tense-title { font-size: 1rem; font-weight: 800; color: var(--acc); margin-bottom: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+    
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    
+    /* 3D card flip */
+    .scene { perspective: 800px; height: 130px; }
+    .card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+    .card.flipped { transform: rotateY(180deg); }
+    
+    .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: .75rem; padding: .8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--surf); border: 1px solid rgba(255,255,255,.05); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+    .back { transform: rotateY(180deg); background: #1e293b; border-color: rgba(59,130,246,.2); }
+    
+    /* Card interior elements */
+    .pronoun { position: absolute; top: .35rem; left: .4rem; font-size: .8rem; font-weight: 800; background: rgba(59,130,246,.2); border: 1px solid rgba(59,130,246,.3); padding: .15rem .45rem; border-radius: 1rem; color: #93c5fd; }
+    .phrase-fr { font-size: .9rem; font-weight: 600; text-align: center; color: #e2e8f0; margin-bottom: .4rem; line-height: 1.2; }
+    .stats { display: flex; gap: .6rem; font-size: .78rem; font-weight: 800; }
+    .ok { color: var(--ok); }
+    .er { color: var(--err); }
+    
+    /* back */
+    .card-header { position: absolute; top: .35rem; left: .4rem; display: flex; align-items: center; gap: .35rem; }
+    .card-header .pronoun { position: static; }
+    .infinitive-badge { font-size: .72rem; font-weight: 800; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3); padding: .15rem .45rem; border-radius: 1rem; color: #fde68a; text-transform: uppercase; }
+    .tense-badge { font-size: .72rem; font-weight: 800; background: rgba(139,92,246,.15); border: 1px solid rgba(139,92,246,.3); padding: .15rem .45rem; border-radius: 1rem; color: #ddd6fe; text-transform: uppercase; }
+    .hint { font-size: .88rem; color: #cbd5e1; margin-bottom: .25rem; font-style: italic; text-align: center; font-weight: 600; }
+    .phrase-es { font-size: 1.1rem; font-weight: 800; color: #fff; text-align: center; margin-bottom: .6rem; }
+    .actions { display: flex; gap: .75rem; }
+    
+    /* Target vote buttons inside card back specifically to avoid global conflicts */
+    .actions button { border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 1rem; cursor: pointer; transition: .1s; }
+    .actions button:active { transform: scale(.88); }
+    .btn-err { background: rgba(239, 68, 68, .2); color: var(--err); }
+    .btn-ok { background: rgba(16, 185, 129, .2); color: var(--ok); }
+    
+    /* Spaced repetition borders */
+    .state-new .front { border: 2px solid #334155; }
+    .state-error .front { border: 2px solid var(--err); box-shadow: 0 0 12px rgba(239,68,68,.3); }
+    .state-ok .front { border: 2px solid var(--ok); box-shadow: 0 0 8px rgba(16,185,129,.2); }
+    .state-review .front { border: 2px solid #f59e0b; animation: glow 2s ease-in-out infinite; }
+    @keyframes glow { 0%,100% { box-shadow: 0 0 8px rgba(245,158,11,.3); } 50% { box-shadow: 0 0 20px rgba(245,158,11,.6); } }
+    
+    /* Floating Action Button (FAB) for Random Card */
+    .random-container { position: fixed; bottom: 1.5rem; right: 1.5rem; display: flex; flex-direction: column; align-items: flex-end; gap: .5rem; z-index: 1000; }
+    .random-fab { position: static; width: 54px; height: 54px; border-radius: 50% !important; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 8px 25px rgba(59,130,246,0.5); font-size: 1.5rem; color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s; outline: none; }
+    .random-fab:hover { transform: scale(1.1) rotate(12deg); box-shadow: 0 12px 30px rgba(59, 130, 246, 0.7); }
+    .random-fab:active { transform: scale(0.9) rotate(-12deg); }
+    
+    #random-mode-sel { background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.35); color: #93c5fd; font-weight: 700; border-radius: .5rem; padding: .35rem .6rem; outline: none; cursor: pointer; transition: .15s; font-size: .75rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    #random-mode-sel:hover { background: rgba(59, 130, 246, 0.25); border-color: rgba(59, 130, 246, 0.55); }
+    #random-mode-sel option { background: #1e293b; color: #fff; }
+    
+    /* Filter Bar Styling */
+    .filter-bar { margin: 0.8rem auto 1.2rem auto; text-align: center; width: 100%; max-width: 540px; }
+    .filter-options { display: flex; gap: .35rem; justify-content: center; flex-wrap: wrap; padding: 0 .5rem; }
+    .filter-btn { background: rgba(30,41,59,.8); border: 1px solid rgba(255,255,255,.08); color: #cbd5e1; padding: .4rem .7rem; font-size: .8rem; font-weight: 600; border-radius: 2rem; cursor: pointer; transition: .15s; outline: none; white-space: nowrap; display: inline-flex; align-items: center; justify-content: center; width: auto; height: auto; }
+    .filter-btn:hover { background: rgba(59,130,246,.15); border-color: var(--acc); color: #fff; }
+    .filter-btn.active { background: var(--acc); border-color: var(--acc); color: #fff; box-shadow: 0 0 10px rgba(59,130,246,.4); font-weight: 800; }
+    
+    /* Difficulty Badges on Card Front */
+    .card-footer { position: absolute; bottom: .35rem; right: .4rem; display: flex; align-items: center; gap: .35rem; }
+    .card-footer .diff-tag { position: static; }
+    .diff-tag { font-size: .68rem; font-weight: 800; padding: .15rem .45rem; border-radius: 1rem; }
+    .diff-easy { background: rgba(16,185,129,.15); border: 1px solid rgba(16,185,129,.3); color: #a7f3d0; }
+    .diff-medium { background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3); color: #fde68a; }
+    .diff-hard { background: rgba(239,68,68,.15); border: 1px solid rgba(239,68,68,.3); color: #fca5a5; }
+    .diff-new { background: rgba(148,163,184,.15); border: 1px solid rgba(148,163,184,.3); color: #cbd5e1; }
+    
+    .btn-reset-card { background: rgba(148, 163, 184, 0.12); border: 1px solid rgba(148, 163, 184, 0.25); width: 22px; height: 22px; border-radius: 50%; font-size: .65rem; color: #cbd5e1; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: .15s; outline: none; border-style: solid; }
+    .btn-reset-card:hover { background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.5); color: #fca5a5; }
+    .btn-reset-card:active { transform: scale(0.85); }
+    
+    .btn-reset-all { background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.25); color: #fca5a5; padding: .4rem .7rem; font-size: .8rem; font-weight: 700; border-radius: 2rem; cursor: pointer; transition: .15s; outline: none; display: inline-flex; align-items: center; gap: .25rem; border-style: solid; }
+    .btn-reset-all:hover { background: rgba(239, 68, 68, 0.22); border-color: rgba(239, 68, 68, 0.5); color: #fff; box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
+     .btn-reset-all:active { transform: scale(0.95); }
+    
+    #user-sel { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); color: #ddd6fe; font-weight: 700; border-radius: .5rem; padding: .4rem .6rem; outline: none; cursor: pointer; transition: .15s; font-size: .8rem; }
+    #user-sel:hover { background: rgba(139, 92, 246, 0.25); border-color: rgba(139, 92, 246, 0.5); }
+    #user-sel option { background: #1e293b; color: #fff; }
+    
+    /* Empty State & Glow Pulse */
+    .empty-state { text-align: center; color: var(--muted); padding: 3rem 1rem; font-size: 1rem; font-style: italic; }
+    @keyframes focus-glowing {
+      0% { transform: scale(1); box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.7); }
+      50% { transform: scale(1.06); box-shadow: 0 0 25px 8px rgba(59, 130, 246, 0.7); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0px rgba(59, 130, 246, 0); }
+    }
+    .focus-pulse { animation: focus-glowing 1.5s ease-in-out; z-index: 10; }
+    
+    /* Help & Spaced Repetition Explainer */
+    .help-section { background: rgba(30,41,59,.4); border-radius: 1rem; padding: 1.2rem; margin-top: 2.5rem; border: 1px solid rgba(255,255,255,.05); font-size: .85rem; line-height: 1.4; color: var(--muted); }
+    .help-section h3 { color: #e2e8f0; font-size: 1rem; margin-bottom: .6rem; display: flex; align-items: center; gap: .4rem; }
+    .help-legend { margin: .8rem 0; display: flex; flex-direction: column; gap: .5rem; }
+    .legend-item { display: flex; align-items: center; gap: .6rem; color: #cbd5e1; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    .dot-new { background: #334155; border: 1px solid rgba(255,255,255,.2); }
+    .dot-error { background: var(--err); box-shadow: 0 0 6px var(--err); }
+    .dot-review { background: #f59e0b; box-shadow: 0 0 6px #f59e0b; }
+    .dot-ok { background: var(--ok); box-shadow: 0 0 6px var(--ok); }
+    .help-note { margin-top: .8rem; padding-top: .8rem; border-top: 1px solid rgba(255,255,255,.05); font-style: italic; }
+    
+    /* Tabs & Navigation Layout */
+    .tabs-container { display: flex; gap: .5rem; margin: 0.5rem auto 1.2rem auto; background: rgba(30,41,59,.4); padding: .3rem; border-radius: .8rem; width: fit-content; border: 1px solid rgba(255,255,255,.05); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+    .tab-btn { background: transparent; border: none; padding: .55rem 1.4rem; font-weight: 700; color: #94a3b8; border-radius: .6rem; cursor: pointer; transition: .15s; font-size: .85rem; outline: none; display: flex; align-items: center; gap: .35rem; }
+    .tab-btn:hover { color: #fff; }
+    .tab-btn.active { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #fff; box-shadow: 0 4px 12px rgba(59,130,246,.3); }
+    
+    /* Stats Layout & Styling */
+    #stats-view-container { max-width: 1000px; margin: 0 auto; padding: 0 1rem 2rem 1rem; animation: fadeIn 0.3s ease-out; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .stats-kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+    .kpi-card { background: rgba(30,41,59,.4); border: 1px solid rgba(255,255,255,.05); border-radius: 1rem; padding: 1.2rem; display: flex; flex-direction: column; gap: .35rem; transition: .2s; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+    .kpi-card:hover { transform: translateY(-3px); border-color: rgba(59,130,246,.3); background: rgba(30,41,59,.6); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    .kpi-title { font-size: .75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: .05em; }
+    .kpi-value { font-size: 1.8rem; font-weight: 800; color: #fff; background: linear-gradient(to right, #fff, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .kpi-sub { font-size: .72rem; color: #64748b; font-weight: 600; }
+    
+    .stats-card { background: rgba(30,41,59,.4); border: 1px solid rgba(255,255,255,.05); border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+    .stats-card-title { font-size: 1rem; font-weight: 800; color: #e2e8f0; margin-bottom: 1.2rem; display: flex; align-items: center; gap: .5rem; border-bottom: 1px solid rgba(255,255,255,.04); padding-bottom: .6rem; }
+    
+    /* Distribution Bar */
+    .dist-bar-wrapper { display: flex; flex-direction: column; gap: .6rem; }
+    .dist-bar { display: flex; height: 18px; border-radius: 10px; overflow: hidden; background: #1e293b; border: 1px solid rgba(255,255,255,.05); }
+    .dist-segment { height: 100%; transition: width 0.5s ease-in-out; }
+    .dist-easy { background: var(--ok); box-shadow: inset 0 0 6px rgba(16,185,129,.5); }
+    .dist-medium { background: #f59e0b; box-shadow: inset 0 0 6px rgba(245,158,11,.5); }
+    .dist-hard { background: var(--err); box-shadow: inset 0 0 6px rgba(239,68,68,.5); }
+    .dist-new { background: #475569; }
+    .dist-legend { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .8rem; margin-top: .6rem; }
+    .dist-legend-item { display: flex; align-items: center; gap: .4rem; font-size: .75rem; color: #cbd5e1; }
+    
+    /* Columns and lists */
+    .stats-columns-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem; }
+    
+    .stats-list { display: flex; flex-direction: column; gap: .5rem; max-height: 280px; overflow-y: auto; padding-right: .3rem; }
+    .stats-list::-webkit-scrollbar { width: 4px; }
+    .stats-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 2px; }
+    
+    .stats-list-item { display: flex; justify-content: space-between; align-items: center; background: rgba(30,41,59,.2); border: 1px solid rgba(255,255,255,.03); padding: .6rem .8rem; border-radius: .6rem; font-size: .8rem; transition: .15s; }
+    .stats-list-item:hover { background: rgba(59,130,246,.08); border-color: rgba(59,130,246,.2); }
+    
+    .prioritary-card-item { cursor: pointer; }
+    
+    /* Tables */
+    .stats-table-wrapper { overflow-x: auto; width: 100%; }
+    .stats-table { width: 100%; border-collapse: collapse; text-align: left; font-size: .85rem; }
+    .stats-table th { color: #94a3b8; font-weight: 700; padding: .8rem; border-bottom: 1px solid rgba(255,255,255,.05); text-transform: uppercase; font-size: .75rem; letter-spacing: .05em; }
+    .stats-table td { padding: .9rem .8rem; border-bottom: 1px solid rgba(255,255,255,.03); color: #cbd5e1; vertical-align: middle; }
+    .stats-table tr:hover td { background: rgba(59,130,246,.03); }
+    
+    .mini-progress-wrapper { display: flex; align-items: center; gap: .6rem; width: 100%; max-width: 200px; }
+    .mini-progress-bar { flex: 1; height: 6px; background: #1e293b; border-radius: 3px; overflow: hidden; border: 1px solid rgba(255,255,255,.03); }
+    .mini-progress-fill { height: 100%; background: linear-gradient(to right, #3b82f6, #60a5fa); border-radius: 3px; }
+    .mini-progress-text { font-size: .75rem; font-weight: 700; color: #94a3b8; min-width: 35px; text-align: right; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🇪🇸 Conjugaison</h1>
+    <div style="display: flex; gap: .5rem; align-items: center;">
+      <select id="user-sel" onchange="changeUser()"></select>
+      <select id="sel" onchange="changeVerb()"></select>
+      <button class="btn-reset-all" title="Réinitialiser TOUTE la progression" onclick="resetAllProgress()">&#8634; RAZ</button>
+    </div>
+  </div>
+
+  <div class="tabs-container">
+    <button class="tab-btn active" id="tab-study" onclick="switchTab('study')">📖 Entraînement</button>
+    <button class="tab-btn" id="tab-stats" onclick="switchTab('stats')">📊 Statistiques</button>
+  </div>
+
+  <div id="study-view-container">
+    <div class="filter-bar">
+      <div class="filter-options">
+        <button class="filter-btn active" id="btn-all" onclick="setFilter('all')">Toutes</button>
+        <button class="filter-btn" id="btn-new" onclick="setFilter('new')">Neuves</button>
+        <button class="filter-btn" id="btn-easy" onclick="setFilter('easy')">Faciles</button>
+        <button class="filter-btn" id="btn-medium" onclick="setFilter('medium')">Moyennes</button>
+        <button class="filter-btn" id="btn-hard" onclick="setFilter('hard')">Difficiles</button>
+      </div>
+    </div>
+
+    <div id="app"></div>
+
+    <div class="help-section">
+      <h3>🎯 Répétition Espacée (Leitner) & Niveaux</h3>
+      <p>Apprenez plus vite avec la méthode scientifique de mémorisation active. L'état d'une carte est déterminé par sa bordure :</p>
+      <div class="help-legend">
+        <div class="legend-item"><span class="dot dot-new"></span><strong>Gris sombre (Nouveau)</strong> : Jamais révisé. À découvrir !</div>
+        <div class="legend-item"><span class="dot dot-error"></span><strong>Rouge + Lueur (Erreur)</strong> : Dernier essai échoué. <strong>Priorité absolue !</strong></div>
+        <div class="legend-item"><span class="dot dot-review"></span><strong>Orange pulsant (Périmé)</strong> : Réussi par le passé mais il est temps de le réviser !</div>
+        <div class="legend-item"><span class="dot dot-ok"></span><strong>Vert + Lueur (Maîtrisé)</strong> : Réussi récemment et encore frais en mémoire.</div>
+      </div>
+      <p class="help-note" style="margin-bottom: 0.8rem;">💡 <strong>Le principe du Streak :</strong> Chaque succès consécutif repousse la prochaine révision plus loin dans le temps (10 minutes, puis 1 heure, 1 jour, et enfin 3 jours). Une seule erreur réinitialise la carte à zéro.</p>
+      
+      <p>📊 <strong>Calcul de la difficulté (rapport échecs/succès) :</strong> Le niveau est indiqué par le badge en bas de chaque carte :</p>
+      <div class="help-legend">
+        <div class="legend-item">🟢 <strong>Facile</strong> : Taux d'échec inférieur à 30% (Ex: 3 succès et 0 erreur)</div>
+        <div class="legend-item">🟡 <strong>Moyen</strong> : Taux d'échec entre 30% et 60%</div>
+        <div class="legend-item">🔴 <strong>Difficile</strong> : Taux d'échec supérieur à 60%</div>
+        <div class="legend-item">❔ <strong>Nouveau</strong> : Jamais testé</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="stats-view-container" style="display:none;"></div>
+
+  <script>
+    let progress = {}, currentVerb = null, currentFilter = 'all', currentVerbData = null;
+
+    // Détection de l'environnement PHP pour support sans réécriture URL (Apache mutualisé, etc.)
+    var isPhp = window.location.pathname.indexOf('.php') !== -1 || 
+                (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1');
+    var api = {
+      data: isPhp ? 'apprentissage.php?action=data' : '/api/data',
+      verb: function(v) { return isPhp ? 'apprentissage.php?action=verb&name=' + v : '/api/verb/' + v; },
+      vote: isPhp ? 'apprentissage.php?action=vote' : '/api/vote'
+    };
+
+    // Sanitize ID: remove accents, replace spaces with dashes
+    function sid(raw){
+      return raw.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-').replace(/[^a-zA-Z0-9_\-]/g,'');
+    }
+
+    // Default progress entry
+    function prog(id){
+      const p=progress[id];
+      if(!p) return {success:0,error:0,streak:0,lastDate:null,lastResult:null};
+      return {success:p.success||0, error:p.error||0, streak:p.streak||0, lastDate:p.lastDate||null, lastResult:p.lastResult||null};
+    }
+
+    // Calculate difficulty level based on error ratio
+    function getCardDifficulty(p) {
+      var total = (p.success || 0) + (p.error || 0);
+      if (total === 0) return 'new';
+      var ratio = (p.error || 0) / total;
+      if (ratio < 0.3) return 'easy';
+      if (ratio <= 0.6) return 'medium';
+      return 'hard';
+    }
+
+    // Set display filter (all, easy, medium, hard, new)
+    function setFilter(filterName) {
+      currentFilter = filterName;
+      document.querySelectorAll('.filter-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      var activeBtn = document.getElementById('btn-' + filterName);
+      if (activeBtn) activeBtn.classList.add('active');
+      
+      if (currentVerbData) {
+        render(currentVerbData);
+      }
+    }
+
+    // Spaced repetition: delay before expiry based on streak
+    function cardState(p){
+      if(!p.lastDate) return 'state-new';
+      if(p.lastResult==='error') return 'state-error';
+      var ago=Date.now()-new Date(p.lastDate).getTime();
+      var streak=p.streak||0;
+      var delays=[10*60000,60*60000,24*3600000,3*24*3600000];
+      var ttl=delays[Math.min(streak-1,delays.length-1)]||delays[0];
+      return ago>ttl?'state-review':'state-ok';
+    }
+
+    async function init(){
+      initUsers();
+      
+      // Restore random mode
+      var randomModeSel = document.getElementById('random-mode-sel');
+      if (randomModeSel) {
+        var savedRandomMode = getCookie('random_mode') || 'current';
+        randomModeSel.value = savedRandomMode;
+      }
+      
+      var url = api.data + (api.data.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser) + '&_t=' + Date.now();
+      var d=await fetch(url).then(function(r){return r.json();});
+      progress=d.progress||{};
+      var sel=document.getElementById('sel');
+      d.verbs.sort().forEach(function(v){
+        var o=document.createElement('option');
+        o.value=v; o.textContent=v.toUpperCase(); sel.appendChild(o);
+      });
+      var saved=localStorage.getItem('verb');
+      currentVerb=(saved&&d.verbs.includes(saved))?saved:d.verbs[0];
+      sel.value=currentVerb;
+      loadVerb();
+    }
+
+    function changeRandomMode() {
+      var sel = document.getElementById('random-mode-sel');
+      if (sel) {
+        setCookie('random_mode', sel.value, 365);
+      }
+    }
+
+    async function changeVerb(){
+      currentVerb=document.getElementById('sel').value;
+      localStorage.setItem('verb',currentVerb);
+      loadVerb();
+    }
+
+    var allVerbsData = {}; // Cache of all verb data by name
+
+    async function loadVerb(){
+      if (allVerbsData[currentVerb]) {
+        render(allVerbsData[currentVerb]);
+        return;
+      }
+      document.getElementById('app').innerHTML='<p style="text-align:center;color:#64748b;padding:2rem">Chargement...</p>';
+      var data=await fetch(api.verb(currentVerb)).then(function(r){return r.json();});
+      allVerbsData[currentVerb] = data;
+      render(data);
+    }
+
+    function render(data){
+      currentVerbData = data;
+      var modeOrder=['Indicatif','Conditionnel','Subjonctif','Imperatif'];
+      var modes=Object.keys(data).sort(function(a,b){
+        var ia=modeOrder.indexOf(a), ib=modeOrder.indexOf(b);
+        if(ia<0) ia=99; if(ib<0) ib=99;
+        return ia-ib;
+      });
+      
+      var html='';
+      var totalRendered = 0;
+      
+      modes.forEach(function(mode){
+        var modeHtml='';
+        var modeHasCards = false;
+        
+        Object.keys(data[mode]).forEach(function(tense){
+          var tenseHtml='';
+          var tenseHasCards = false;
+          
+          data[mode][tense].forEach(function(card,i){
+            var rawId=currentVerb+'__'+mode+'__'+tense+'__'+card.pronoun;
+            var safeId=sid(rawId);
+            var p=prog(safeId);
+            var diff = getCardDifficulty(p);
+            
+            // Filter out cards that don't match
+            if (currentFilter !== 'all' && diff !== currentFilter) {
+              return;
+            }
+            
+            tenseHasCards = true;
+            totalRendered++;
+            
+            var diffLabels = {
+              'easy': 'Facile',
+              'medium': 'Moyen',
+              'hard': 'Difficile',
+              'new': 'Nouveau'
+            };
+            var diffLabel = diffLabels[diff];
+            
+            var hintText = card.hint1 || card.hint || '';
+            if (card.hint1 && card.hint && card.hint1 !== card.hint) {
+              if (card.hint1.indexOf(card.hint) === -1) {
+                hintText = card.hint1 + ' (' + card.hint + ')';
+              }
+            }
+            var hintHtml = hintText ? '<div class="hint">(' + hintText + ')</div>' : '';
+            var st=cardState(p);
+            
+            var tenseBadgeHtml = '';
+            if (tense === 'Imparfait' || tense === 'Prétérit') {
+              var displayTense = tense;
+              if (mode === 'Subjonctif' && tense === 'Imparfait') {
+                displayTense = 'Subj. Imparfait';
+              }
+              tenseBadgeHtml = '<span class="tense-badge">' + displayTense.toUpperCase() + '</span>';
+            }
+            
+            tenseHtml+='<div class="scene">'
+              +'<div class="card '+st+'" id="c-'+safeId+'" data-raw="'+rawId+'" onclick="flip(this)">'
+              +'<div class="face front">'
+              +'<div class="card-header">'
+              +'<span class="pronoun">'+card.pronoun+'</span>'
+              +'<span class="infinitive-badge">'+currentVerb.toUpperCase()+'</span>'
+              +tenseBadgeHtml
+              +'</div>'
+              +'<div class="card-footer">'
+              +'<span class="diff-tag diff-'+diff+'">'+diffLabel+'</span>'
+              +'<button class="btn-reset-card" title="Réinitialiser cette carte" onclick="resetCard(event,this,\''+rawId+'\',\''+safeId+'\')">&#8634;</button>'
+              +'</div>'
+              +'<div class="phrase-fr">'+card.fr+'</div>'
+              +'<div class="stats">'
+              +'<span class="ok" id="ok-'+safeId+'">&#10003; '+p.success+'</span>'
+              +'<span class="er" id="er-'+safeId+'">&#10007; '+p.error+'</span>'
+              +'</div></div>'
+              +'<div class="face back">'
+              +'<div class="card-header">'
+              +'<span class="pronoun">'+card.pronoun+'</span>'
+              +'<span class="infinitive-badge">'+currentVerb.toUpperCase()+'</span>'
+              +'</div>'
+              +hintHtml
+              +'<div class="phrase-es">'+card.es+'</div>'
+              +'<div class="actions">'
+              +'<button class="btn-err" onclick="vote(event,this)">&#10007;</button>'
+              +'<button class="btn-ok" onclick="vote(event,this)">&#10003;</button>'
+              +'</div></div></div></div>';
+          });
+          
+          if (tenseHasCards) {
+            modeHasCards = true;
+            var displayName = tense;
+            if (mode === 'Subjonctif') {
+              displayName = 'Subjonctif ' + tense;
+            }
+            modeHtml+='<div class="tense-block"><div class="tense-title">'+displayName+'</div><div class="cards-grid">'
+              +tenseHtml
+              +'</div></div>';
+          }
+        });
+        
+        if (modeHasCards) {
+          html+='<div class="mode-section"><h2 class="mode-title">'+mode+'</h2>'
+            +modeHtml
+            +'</div>';
+        }
+      });
+      
+      if (totalRendered === 0) {
+        html = '<div class="empty-state">Aucune carte ne correspond à ce filtre. ✨</div>';
+      }
+      
+      document.getElementById('app').innerHTML=html;
+    }
+
+    function flip(cardEl){
+      document.querySelectorAll('.card.flipped').forEach(function(c){if(c!==cardEl)c.classList.remove('flipped');});
+      cardEl.classList.toggle('flipped');
+    }
+
+    // Play random card from the active (currently filtered) visible cards
+    async function playRandomCard() {
+      var modeSel = document.getElementById('random-mode-sel');
+      var mode = modeSel ? modeSel.value : 'current';
+      
+      if (mode === 'all') {
+        var sel = document.getElementById('sel');
+        if (sel && sel.options.length > 0) {
+          var found = false;
+          var attempts = 0;
+          // Try up to 6 times to find a verb that has cards matching the active filter
+          while (!found && attempts < 6) {
+            attempts++;
+            var randomIndex = Math.floor(Math.random() * sel.options.length);
+            var chosenVerb = sel.options[randomIndex].value;
+            currentVerb = chosenVerb;
+            sel.value = chosenVerb;
+            localStorage.setItem('verb', chosenVerb);
+            await loadVerb();
+            
+            var cards = document.querySelectorAll('.card');
+            if (cards.length > 0) {
+              found = true;
+            }
+          }
+        }
+      }
+      
+      var cards = document.querySelectorAll('.card');
+      if (cards.length === 0) return;
+      var randomIndex = Math.floor(Math.random() * cards.length);
+      var chosenCard = cards[randomIndex];
+      
+      // Close any already flipped cards
+      document.querySelectorAll('.card.flipped').forEach(function(c){
+        c.classList.remove('flipped');
+      });
+      
+      // Clean focus pulse on all cards
+      document.querySelectorAll('.card').forEach(function(c){
+        c.classList.remove('focus-pulse');
+      });
+      
+      // Scroll to card smoothly
+      chosenCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Flash selected card
+      setTimeout(function(){
+        chosenCard.classList.add('focus-pulse');
+      }, 100);
+    }
+
+    async function vote(e,btnEl){
+      e.stopPropagation();
+      var cardEl=btnEl.closest('.card');
+      var safeId=cardEl.id.replace('c-','');
+      var type=btnEl.classList.contains('btn-ok')?'success':'error';
+      try{
+        var res=await fetch(api.vote,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:safeId,vote:type,user:currentUser})}).then(function(r){return r.json();});
+        
+        // Safety fallback: if backend returned old format or failed, compute locally
+        if(res && typeof res.success === 'number'){
+          progress[safeId]=res;
+        } else {
+          if(!progress[safeId]) {
+            progress[safeId] = {success:0, error:0, streak:0, lastDate:null, lastResult:null};
+          }
+          progress[safeId][type] = (progress[safeId][type] || 0) + 1;
+          progress[safeId].lastDate = new Date().toISOString();
+          progress[safeId].lastResult = type;
+          if(type === 'success') {
+            progress[safeId].streak = (progress[safeId].streak || 0) + 1;
+          } else {
+            progress[safeId].streak = 0;
+          }
+        }
+        
+        var updated = progress[safeId];
+        cardEl.classList.remove('flipped');
+        setTimeout(function(){
+          // Update stats
+          document.getElementById('ok-'+safeId).textContent='\u2713 '+(updated.success||0);
+          document.getElementById('er-'+safeId).textContent='\u2715 '+(updated.error||0);
+          
+          // Update Leitner border state
+          var oldClasses=cardEl.className.replace(/state-\w+/g,'').replace('focus-pulse','').trim();
+          cardEl.className=oldClasses+' '+cardState(updated);
+          
+          // Update difficulty tag
+          var newDiff = getCardDifficulty(updated);
+          var diffLabels = {
+            'easy': 'Facile',
+            'medium': 'Moyen',
+            'hard': 'Difficile',
+            'new': 'Nouveau'
+          };
+          var badgeEl = cardEl.querySelector('.diff-tag');
+          if (badgeEl) {
+            badgeEl.textContent = diffLabels[newDiff];
+            badgeEl.className = 'diff-tag diff-' + newDiff;
+          }
+        },320);
+      }catch(err){console.error('vote error',err);}
+    }
+
+    function resetCard(event, btn, rawId, safeId) {
+      if (event) event.stopPropagation();
+      if (!confirm("Réinitialiser le compteur de cette carte ?")) return;
+      
+      var url = isPhp ? 'apprentissage.php?action=vote' : '/api/vote';
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({ id: rawId, vote: 'reset', user: currentUser })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(entry) {
+        progress[safeId] = entry;
+        
+        var okSpan = document.getElementById('ok-' + safeId);
+        var erSpan = document.getElementById('er-' + safeId);
+        if (okSpan) okSpan.innerHTML = '&#10003; 0';
+        if (erSpan) erSpan.innerHTML = '&#10007; 0';
+        
+        var cardDiv = document.getElementById('c-' + safeId);
+        if (cardDiv) {
+          cardDiv.className = 'card state-new';
+        }
+        
+        var tag = btn.parentElement.querySelector('.diff-tag');
+        if (tag) {
+          tag.className = 'diff-tag diff-new';
+          tag.textContent = 'Nouveau';
+        }
+      })
+      .catch(function(err) {
+        console.error(err);
+        alert("Erreur lors de la réinitialisation.");
+      });
+    }
+
+    function resetAllProgress() {
+      if (!confirm("⚠️ ATTENTION : Voulez-vous vraiment réinitialiser TOUTE la progression d'apprentissage pour l'utilisateur " + currentUser.toUpperCase() + " ? Cette action est irréversible et n'impactera pas les autres profils.")) {
+        return;
+      }
+      
+      var url = isPhp ? 'apprentissage.php?action=reset_all' : '/api/reset';
+      url += (url.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser);
+      fetch(url, { method: 'POST' })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res.status === 'ok') {
+          progress = {};
+          var statsBtn = document.getElementById('tab-stats');
+          if (statsBtn && statsBtn.classList.contains('active')) {
+            loadAndRenderStats();
+          } else {
+            changeVerb();
+          }
+        }
+      })
+      .catch(function(err) {
+        console.error(err);
+        alert("Erreur lors de la réinitialisation générale.");
+      });
+    }
+
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+    }
+
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    var USERS = ["Aline", "Pascal", "Test"];
+    var currentUser = "";
+
+    function initUsers() {
+      var userSel = document.getElementById('user-sel');
+      if (userSel) {
+        userSel.innerHTML = "";
+        USERS.forEach(function(u) {
+          var opt = document.createElement('option');
+          opt.value = u;
+          opt.textContent = u;
+          userSel.appendChild(opt);
+        });
+        
+        currentUser = getCookie('active_user') || 'Aline';
+        if (USERS.indexOf(currentUser) === -1) {
+          currentUser = 'Aline';
+        }
+        userSel.value = currentUser;
+        setCookie('active_user', currentUser, 365);
+      }
+    }
+
+    function changeUser() {
+      var userSel = document.getElementById('user-sel');
+      if (userSel) {
+        currentUser = userSel.value;
+        setCookie('active_user', currentUser, 365);
+        
+        var url = isPhp ? 'apprentissage.php?action=data' : '/api/data';
+        url += (url.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser) + '&_t=' + Date.now();
+        fetch(url)
+        .then(function(r) { return r.json(); })
+        .then(function(res) {
+          progress = res.progress || {};
+          var statsBtn = document.getElementById('tab-stats');
+          if (statsBtn && statsBtn.classList.contains('active')) {
+            loadAndRenderStats();
+          } else {
+            changeVerb();
+          }
+        })
+        .catch(function(err) {
+          console.error(err);
+          alert("Erreur lors du chargement des données de l'utilisateur.");
+        });
+      }
+    }
+
+    // Load all verb conjugations from database to compute global stats
+    async function loadAllVerbsData() {
+      var verbNames = document.getElementById('sel') ? Array.from(document.getElementById('sel').options).map(o => o.value) : [];
+      if (verbNames.length === 0) return;
+      
+      var promises = verbNames.map(async function(name) {
+        if (allVerbsData[name]) return;
+        var data = await fetch(api.verb(name)).then(function(r){return r.json();});
+        allVerbsData[name] = data;
+      });
+      await Promise.all(promises);
+    }
+
+    // Switch between Study and Stats views
+    function switchTab(tabId) {
+      var studyBtn = document.getElementById('tab-study');
+      var statsBtn = document.getElementById('tab-stats');
+      var studyContainer = document.getElementById('study-view-container');
+      var statsContainer = document.getElementById('stats-view-container');
+      
+      if (tabId === 'stats') {
+        studyBtn.classList.remove('active');
+        statsBtn.classList.add('active');
+        studyContainer.style.display = 'none';
+        statsContainer.style.display = 'block';
+        
+        // Hide random floating button in stats view to avoid distraction
+        var randContainer = document.querySelector('.random-container');
+        if (randContainer) randContainer.style.display = 'none';
+        
+        loadAndRenderStats();
+      } else {
+        studyBtn.classList.add('active');
+        statsBtn.classList.remove('active');
+        studyContainer.style.display = 'block';
+        statsContainer.style.display = 'none';
+        
+        // Show random floating button in study view
+        var randContainer = document.querySelector('.random-container');
+        if (randContainer) randContainer.style.display = 'flex';
+      }
+    }
+
+    // Jump from a statistic link directly to training a specific card
+    async function jumpToCard(verb, type, pronoun) {
+      // 1. Switch select box to the target verb
+      var sel = document.getElementById('sel');
+      if (sel) {
+        sel.value = verb;
+        currentVerb = verb;
+        localStorage.setItem('verb', verb);
+      }
+      
+      // 2. Set filter to 'all' so that the card is guaranteed to be rendered
+      setFilter('all');
+      
+      // 3. Switch tab back to study
+      switchTab('study');
+      
+      // 4. Load the verb data (which renders the cards)
+      await loadVerb();
+      
+      // 5. Locate the card in the DOM.
+      var cards = document.querySelectorAll('.card');
+      var targetCard = null;
+      cards.forEach(function(c) {
+        if (c.id.endsWith('__' + pronoun)) {
+          targetCard = c;
+        }
+      });
+      
+      if (targetCard) {
+        // Scroll to card smoothly
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Remove flipped state
+        targetCard.classList.remove('flipped');
+        
+        // Flash selected card
+        setTimeout(function(){
+          targetCard.classList.add('focus-pulse');
+        }, 300);
+      }
+    }
+
+    // Calculate and render stats dashboard
+    async function loadAndRenderStats() {
+      var container = document.getElementById('stats-view-container');
+      container.innerHTML = '<p style="text-align:center;color:#64748b;padding:4rem">Calcul des statistiques...</p>';
+      
+      try {
+        var sel = document.getElementById('sel');
+        var verbNames = sel ? Array.from(sel.options).map(o => o.value) : [];
+        if (verbNames.length === 0) {
+          container.innerHTML = '<p style="text-align:center;color:#64748b;padding:4rem">Aucun verbe disponible.</p>';
+          return;
+        }
+        
+        // 1. Ensure all verb data is loaded into cache
+        await loadAllVerbsData();
+        
+        // 2. Compute metrics
+        var totalCardsCount = 0;
+        var studiedCardsCount = 0;
+        var totalSuccess = 0;
+        var totalError = 0;
+        var maxStreak = 0;
+        var cardsDueForReview = 0;
+        var virginCards = 0;
+        
+        var diffCounts = { easy: 0, medium: 0, hard: 0, new: 0 };
+        var verbStats = {}; 
+        var dailyHistory = {}; 
+        var prioritaryCards = []; 
+        
+        verbNames.forEach(function(v) {
+          verbStats[v] = { totalCards: 0, studied: 0, success: 0, error: 0, diffs: { easy: 0, medium: 0, hard: 0, new: 0 } };
+        });
+        
+        verbNames.forEach(function(verbName) {
+          var verbData = allVerbsData[verbName];
+          if (!verbData) return;
+          
+          Object.keys(verbData).forEach(function(mode) {
+            Object.keys(verbData[mode]).forEach(function(tense) {
+              verbData[mode][tense].forEach(function(card) {
+                totalCardsCount++;
+                verbStats[verbName].totalCards++;
+                
+                var rawId = verbName + '__' + mode + '__' + tense + '__' + card.pronoun;
+                var safeId = sid(rawId);
+                var p = progress[safeId];
+                
+                var diff = 'new';
+                if (p) {
+                  studiedCardsCount++;
+                  verbStats[verbName].studied++;
+                  totalSuccess += p.success || 0;
+                  totalError += p.error || 0;
+                  verbStats[verbName].success += p.success || 0;
+                  verbStats[verbName].error += p.error || 0;
+                  
+                  if ((p.streak || 0) > maxStreak) {
+                    maxStreak = p.streak;
+                  }
+                  
+                  var state = cardState(p);
+                  if (state === 'state-review') {
+                    cardsDueForReview++;
+                    prioritaryCards.push({
+                      verb: verbName,
+                      mode: mode,
+                      tense: tense,
+                      pronoun: card.pronoun,
+                      fr: card.fr,
+                      es: card.es,
+                      type: 'review',
+                      p: p
+                    });
+                  }
+                  
+                  diff = getCardDifficulty(p);
+                } else {
+                  virginCards++;
+                  diff = 'new';
+                  prioritaryCards.push({
+                    verb: verbName,
+                    mode: mode,
+                    tense: tense,
+                    pronoun: card.pronoun,
+                    fr: card.fr,
+                    es: card.es,
+                    type: 'new',
+                    p: null
+                  });
+                }
+                
+                diffCounts[diff]++;
+                verbStats[verbName].diffs[diff]++;
+                
+                if (p && p.lastDate) {
+                  var dateStr = p.lastDate.substring(0, 10);
+                  if (!dailyHistory[dateStr]) {
+                    dailyHistory[dateStr] = { success: 0, error: 0 };
+                  }
+                  dailyHistory[dateStr].success += p.success || 0;
+                  dailyHistory[dateStr].error += p.error || 0;
+                }
+              });
+            });
+          });
+        });
+        
+        var studiedPercent = totalCardsCount > 0 ? Math.round((studiedCardsCount / totalCardsCount) * 100) : 0;
+        var successRate = (totalSuccess + totalError) > 0 ? Math.round((totalSuccess / (totalSuccess + totalError)) * 100) : 0;
+        
+        var easyPct = totalCardsCount > 0 ? Math.round((diffCounts.easy / totalCardsCount) * 100) : 0;
+        var mediumPct = totalCardsCount > 0 ? Math.round((diffCounts.medium / totalCardsCount) * 100) : 0;
+        var hardPct = totalCardsCount > 0 ? Math.round((diffCounts.hard / totalCardsCount) * 100) : 0;
+        var newPct = 100 - easyPct - mediumPct - hardPct;
+        if (newPct < 0) newPct = 0;
+        
+        var html = '';
+        
+        // 1. KPI Grid
+        html += '<div class="stats-kpi-grid">';
+        
+        html += '<div class="kpi-card">';
+        html += '  <span class="kpi-title">Progression Globale</span>';
+        html += '  <span class="kpi-value">' + studiedPercent + '%</span>';
+        html += '  <span class="kpi-sub">' + studiedCardsCount + ' / ' + totalCardsCount + ' cartes étudiées</span>';
+        html += '</div>';
+        
+        html += '<div class="kpi-card">';
+        html += '  <span class="kpi-title">Taux de Réussite</span>';
+        html += '  <span class="kpi-value">' + successRate + '%</span>';
+        html += '  <span class="kpi-sub">' + totalSuccess + ' succès / ' + totalError + ' échecs</span>';
+        html += '</div>';
+        
+        html += '<div class="kpi-card">';
+        html += '  <span class="kpi-title">Série Maximale</span>';
+        html += '  <span class="kpi-value">' + maxStreak + ' 🔥</span>';
+        html += '  <span class="kpi-sub">Plus grand nombre de succès consécutifs</span>';
+        html += '</div>';
+        
+        html += '<div class="kpi-card">';
+        html += '  <span class="kpi-title">À réviser / Vierges</span>';
+        html += '  <span class="kpi-value">' + cardsDueForReview + ' / ' + virginCards + '</span>';
+        html += '  <span class="kpi-sub">Cartes périmées / non apprises</span>';
+        html += '</div>';
+        
+        html += '</div>'; 
+        
+        // 2. Distribution bar
+        html += '<div class="stats-card">';
+        html += '  <div class="stats-card-title">🎯 Statut de Mémorisation (Niveaux)</div>';
+        html += '  <div class="dist-bar-wrapper">';
+        html += '    <div class="dist-bar">';
+        if (easyPct > 0) html += '      <div class="dist-segment dist-easy" style="width:' + easyPct + '%" title="Facile : ' + diffCounts.easy + ' cartes"></div>';
+        if (mediumPct > 0) html += '      <div class="dist-segment dist-medium" style="width:' + mediumPct + '%" title="Moyen : ' + diffCounts.medium + ' cartes"></div>';
+        if (hardPct > 0) html += '      <div class="dist-segment dist-hard" style="width:' + hardPct + '%" title="Difficile : ' + diffCounts.hard + ' cartes"></div>';
+        if (newPct > 0) html += '      <div class="dist-segment dist-new" style="width:' + newPct + '%" title="Nouveau : ' + diffCounts.new + ' cartes"></div>';
+        html += '    </div>';
+        html += '    <div class="dist-legend">';
+        html += '      <span class="dist-legend-item"><span class="dot dot-ok"></span> Faciles : <strong>' + diffCounts.easy + '</strong> (' + easyPct + '%)</span>';
+        html += '      <span class="dist-legend-item"><span class="dot dot-review"></span> Moyennes : <strong>' + diffCounts.medium + '</strong> (' + mediumPct + '%)</span>';
+        html += '      <span class="dist-legend-item"><span class="dot dot-error"></span> Difficiles : <strong>' + diffCounts.hard + '</strong> (' + hardPct + '%)</span>';
+        html += '      <span class="dist-legend-item"><span class="dot dot-new"></span> Nouvelles : <strong>' + diffCounts.new + '</strong> (' + newPct + '%)</span>';
+        html += '    </div>';
+        html += '  </div>';
+        html += '</div>';
+        
+        // 3. Activity & Prioritary Column
+        html += '<div class="stats-columns-grid">';
+        
+        // Left Column: History of activity
+        html += '  <div class="stats-card">';
+        html += '    <div class="stats-card-title">📅 Activité Récente (Succès/Échecs)</div>';
+        html += '    <div class="stats-list">';
+        
+        var days = Object.keys(dailyHistory).sort(function(a,b){ return b.localeCompare(a); });
+        if (days.length === 0) {
+          html += '    <p style="color:#64748b; font-size:.8rem; font-style:italic; padding:1rem 0;">Aucune activité enregistrée sur ce profil pour le moment. 📈</p>';
+        } else {
+          days.slice(0, 7).forEach(function(day) {
+            var stats = dailyHistory[day];
+            var total = stats.success + stats.error;
+            var pct = total > 0 ? Math.round((stats.success / total) * 100) : 0;
+            
+            var niceDate = day;
+            var todayStr = new Date().toISOString().substring(0, 10);
+            var yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            var yesterdayStr = yesterday.toISOString().substring(0, 10);
+            
+            if (day === todayStr) niceDate = "Aujourd'hui";
+            else if (day === yesterdayStr) niceDate = "Hier";
+            else {
+              var parts = day.split('-');
+              niceDate = parts[2] + '/' + parts[1] + '/' + parts[0];
+            }
+            
+            html += '      <div class="stats-list-item">';
+            html += '        <span style="font-weight:700; color:#e2e8f0;">' + niceDate + '</span>';
+            html += '        <span style="color:#94a3b8;"><strong style="color:var(--ok);">' + stats.success + ' ✓</strong> &nbsp; <strong style="color:var(--err);">' + stats.error + ' ✗</strong> &nbsp; <span style="font-size:.7rem; background:rgba(255,255,255,.05); padding:.15rem .35rem; border-radius:.3rem;">' + pct + '%</span></span>';
+            html += '      </div>';
+          });
+        }
+        html += '    </div>';
+        html += '  </div>';
+        
+        // Right Column: Prioritary cards to study/review
+        html += '  <div class="stats-card">';
+        html += '    <div class="stats-card-title">⚠️ Cartes Prioritaires à Réviser</div>';
+        html += '    <div class="stats-list">';
+        
+        var priorityList = prioritaryCards.filter(c => c.type === 'review').concat(prioritaryCards.filter(c => c.type === 'new'));
+        if (priorityList.length === 0) {
+          html += '    <p style="color:var(--ok); font-size:.8rem; font-style:italic; padding:1rem 0;">Toutes les cartes sont maîtrisées ! Parfait ! 🎉</p>';
+        } else {
+          priorityList.slice(0, 15).forEach(function(item) {
+            var badgeColor = item.type === 'review' ? '#f59e0b' : '#64748b';
+            var badgeText = item.type === 'review' ? 'À réviser' : 'Nouveau';
+            
+            html += '      <div class="stats-list-item prioritary-card-item" onclick="jumpToCard(\'' + item.verb + '\', \'' + item.type + '\', \'' + item.pronoun + '\')" title="Cliquer pour conjuguer cette carte">';
+            html += '        <div>';
+            html += '          <span style="font-weight:800; color:#fff; font-size:.8rem;">' + item.verb.toUpperCase() + '</span>';
+            html += '          <span style="font-size:.7rem; color:#94a3b8; margin-left:.3rem;">' + item.pronoun + ' (' + item.tense + ')</span>';
+            html += '        </div>';
+            html += '        <span style="font-size:.7rem; background:rgba(255,255,255,.05); border:1px solid ' + badgeColor + '; color:' + badgeColor + '; padding:.15rem .45rem; border-radius:1rem; font-weight:800;">' + badgeText + '</span>';
+            html += '      </div>';
+          });
+        }
+        html += '    </div>';
+        html += '  </div>';
+        
+        html += '</div>'; 
+        
+        // 4. Verbs Progress Table
+        html += '<div class="stats-card">';
+        html += '  <div class="stats-card-title">📊 Synthèse de Progression par Verbe</div>';
+        html += '  <div class="stats-table-wrapper">';
+        html += '    <table class="stats-table">';
+        html += '      <thead>';
+        html += '        <tr>';
+        html += '          <th>Verbe</th>';
+        html += '          <th>Cartes Apprises</th>';
+        html += '          <th style="text-align:center;">Score global</th>';
+        html += '          <th style="text-align:right;">Difficultés</th>';
+        html += '        </tr>';
+        html += '      </thead>';
+        html += '      <tbody>';
+        
+        verbNames.forEach(function(verbName) {
+          var stats = verbStats[verbName];
+          var pct = stats.totalCards > 0 ? Math.round((stats.studied / stats.totalCards) * 100) : 0;
+          
+          html += '        <tr>';
+          html += '          <td style="font-weight:800; color:#fff; font-size:.9rem;">' + verbName.toUpperCase() + '</td>';
+          html += '          <td>';
+          html += '            <div class="mini-progress-wrapper">';
+          html += '              <div class="mini-progress-bar">';
+          html += '                <div class="mini-progress-fill" style="width:' + pct + '%"></div>';
+          html += '              </div>';
+          html += '              <span class="mini-progress-text">' + pct + '%</span>';
+          html += '            </div>';
+          html += '            <span style="font-size:.65rem; color:#64748b;">' + stats.studied + ' / ' + stats.totalCards + ' cartes</span>';
+          html += '          </td>';
+          html += '          <td style="text-align:center;">';
+          html += '            <strong style="color:var(--ok);">' + stats.success + ' ✓</strong> &nbsp; <strong style="color:var(--err);">' + stats.error + ' ✗</strong>';
+          html += '          </td>';
+          html += '          <td style="text-align:right; font-size:.7rem;">';
+          html += '            <span style="color:#a7f3d0; background:rgba(16,185,129,.1); border:1px solid rgba(16,185,129,.2); padding:.15rem .35rem; border-radius:.3rem; font-weight:700;">' + stats.diffs.easy + ' F</span> ';
+          html += '            <span style="color:#fde68a; background:rgba(245,158,11,.1); border:1px solid rgba(245,158,11,.2); padding:.15rem .35rem; border-radius:.3rem; font-weight:700;">' + stats.diffs.medium + ' M</span> ';
+          html += '            <span style="color:#fca5a5; background:rgba(239,68,68,.1); border:1px solid rgba(239,68,68,.2); padding:.15rem .35rem; border-radius:.3rem; font-weight:700;">' + stats.diffs.hard + ' D</span>';
+          html += '          </td>';
+          html += '        </tr>';
+        });
+        
+        html += '      </tbody>';
+        html += '    </table>';
+        html += '  </div>';
+        html += '</div>';
+        
+        container.innerHTML = html;
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = '<p style="text-align:center;color:var(--err);padding:4rem">Erreur lors du calcul des statistiques : ' + err.message + '</p>';
+      }
+    }
+
+    init();
+  </script>
+  <div class="random-container">
+    <select id="random-mode-sel" onchange="changeRandomMode()" title="Mode du dé aléatoire">
+      <option value="current">Verbe courant 🎲</option>
+      <option value="all">Super Random 🌟</option>
+    </select>
+    <button class="random-fab" onclick="playRandomCard()" title="Conjuguer au hasard">🎲</button>
+  </div>
+</body>
+</html>
