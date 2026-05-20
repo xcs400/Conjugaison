@@ -134,6 +134,34 @@
       transform: scale(0.95);
     }
     
+    .btn-flag-phrase {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      color: #fca5a5;
+      padding: .4rem .6rem;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      transition: .15s;
+      outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .btn-flag-phrase:hover {
+      background: rgba(239, 68, 68, 0.4);
+      border-color: rgba(239, 68, 68, 0.8);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+    }
+    .btn-flag-phrase:active {
+      transform: scale(0.9);
+    }
+    
     #user-sel { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); color: #ddd6fe; font-weight: 700; border-radius: .5rem; padding: .4rem .6rem; outline: none; cursor: pointer; transition: .15s; font-size: .8rem; }
     #user-sel:hover { background: rgba(139, 92, 246, 0.25); border-color: rgba(139, 92, 246, 0.5); }
     #user-sel option { background: #1e293b; color: #fff; }
@@ -175,6 +203,10 @@
     .kpi-title { font-size: .75rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: .05em; }
     .kpi-value { font-size: 1.8rem; font-weight: 800; color: #fff; background: linear-gradient(to right, #fff, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .kpi-sub { font-size: .72rem; color: #64748b; font-weight: 600; }
+    
+    .btn-reset-series { background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.25); color: #fca5a5; padding: .35rem .6rem; font-size: .75rem; font-weight: 700; border-radius: 1rem; cursor: pointer; transition: .15s; outline: none; display: inline-flex; align-items: center; gap: .25rem; margin-top: .5rem; }
+    .btn-reset-series:hover { background: rgba(239, 68, 68, 0.22); border-color: rgba(239, 68, 68, 0.5); color: #fff; }
+    .btn-reset-series:active { transform: scale(0.95); }
     
     .stats-card { background: rgba(30,41,59,.4); border: 1px solid rgba(255,255,255,.05); border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.5rem; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
     .stats-card-title { font-size: 1rem; font-weight: 800; color: #e2e8f0; margin-bottom: 1.2rem; display: flex; align-items: center; gap: .5rem; border-bottom: 1px solid rgba(255,255,255,.04); padding-bottom: .6rem; }
@@ -415,11 +447,13 @@
       }
       
       var url = api.data + (api.data.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser) + '&_t=' + Date.now();
-      var [d, flags] = await Promise.all([
+      var [d, flags, flaggedList] = await Promise.all([
         fetch(url).then(function(r){return r.json();}),
-        window.flagData ? Promise.resolve(window.flagData) : fetch('flag_1.json').then(function(r){return r.json();}).catch(function(){ return []; })
+        window.flagData ? Promise.resolve(window.flagData) : fetch('flag_1.json').then(function(r){return r.json();}).catch(function(){ return []; }),
+        fetch('flagged_phrases.json').then(function(r){return r.json();}).catch(function(){ return []; })
       ]);
       window.flagData = flags;
+      window.flaggedPhrases = flaggedList || [];
       progress=d.progress||{};
       var sel=document.getElementById('sel');
       d.verbs.sort().forEach(function(v){
@@ -623,9 +657,14 @@
         var matches = window.flagData.filter(function(f) {
             return f.verb === currentVerb && f.conj_es === targetWord;
         });
-        if (matches.length > 0) {
-            var randIndex = Math.floor(Math.random() * matches.length);
-            var ex = matches[randIndex];
+        // Filter out flagged phrases
+        var filteredMatches = matches.filter(function(m) {
+            return !window.flaggedPhrases || window.flaggedPhrases.indexOf(m.id) === -1;
+        });
+        if (filteredMatches.length > 0) {
+            var randIndex = Math.floor(Math.random() * filteredMatches.length);
+            var ex = filteredMatches[randIndex];
+            cardEl.setAttribute('data-ex-id', ex.id);
             cardEl.setAttribute('data-ex-es', ex.es_text);
             cardEl.setAttribute('data-ex-fr', ex.fr_text);
             cardEl.setAttribute('data-ex-audio', ex.audio_url || '');
@@ -640,6 +679,13 @@
                     btnAudio.setAttribute('onclick', "");
                 }
             }
+        } else {
+            // No available examples after filtering
+            cardEl.setAttribute('data-ex-es', '');
+            cardEl.setAttribute('data-ex-fr', '');
+            cardEl.setAttribute('data-ex-audio', '');
+            var btnAudio = cardEl.querySelector('.btn-audio-action');
+            if (btnAudio) btnAudio.style.display = 'none';
         }
     }
 
@@ -663,10 +709,18 @@
        if (!panel) return;
        if (es && fr) {
            var audioHtml = audio ? '<span style="font-size:1.2rem;margin-left:8px;vertical-align:middle;">🔊</span>' : '';
-           panel.innerHTML = '<div style="font-weight: 500; color: #f8fafc; margin-bottom: 3px; font-size: 1.1em;">' + es + audioHtml + '</div><div style="font-style: italic; color: #93c5fd; font-size: 0.9em;">' + fr + '</div>';
+           var flagId = cardEl.getAttribute('data-ex-id') || '';
+           var flagBtn = flagId ? '<button class="btn-flag-phrase" onclick="flagPhrase(event, \'' + flagId + '\', \'' + es.replace(/'/g, "\\'") + '\')" title="Ignorer cette phrase">✕</button>' : '';
+           panel.innerHTML = '<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;"><div><div style="font-weight: 500; color: #f8fafc; margin-bottom: 3px; font-size: 1.1em;">' + es + audioHtml + '</div><div style="font-style: italic; color: #93c5fd; font-size: 0.9em;">' + fr + '</div></div>' + flagBtn + '</div>';
            
            if (audio) {
-               panel.onclick = function(e) { playAudio(e, audio); };
+               var audioClickHandler = function(e) { 
+                   if (e.target && e.target.classList && e.target.classList.contains('btn-flag-phrase')) {
+                       return;
+                   }
+                   playAudio(e, audio); 
+               };
+               panel.onclick = audioClickHandler;
                panel.style.cursor = 'pointer';
            } else {
                panel.onclick = null;
@@ -924,6 +978,30 @@
       });
     }
 
+    function resetSeriesOfDay() {
+      if (!confirm("⚠️ Voulez-vous réinitialiser la série du jour ? Les succès d'aujourd'hui seront effacés.")) {
+        return;
+      }
+      
+      var url = isPhp ? 'apprentissage.php?action=reset_day_series' : '/api/reset_day_series';
+      url += (url.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser);
+      fetch(url, { method: 'POST' })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res.status === 'ok') {
+          // Recharger les stats
+          var statsBtn = document.getElementById('tab-stats');
+          if (statsBtn && statsBtn.classList.contains('active')) {
+            loadAndRenderStats();
+          }
+        }
+      })
+      .catch(function(err) {
+        console.error(err);
+        alert("Erreur lors de la réinitialisation de la série.");
+      });
+    }
+
     function setCookie(name, value, days) {
       var expires = "";
       if (days) {
@@ -945,8 +1023,42 @@
       return null;
     }
 
-    var USERS = ["Aline", "Pascal", "Test"];
+    var USERS = ["Aline", "Pascal", "Camil", "Test"];
     var currentUser = "";
+
+    window.flaggedPhrases = [];
+
+    function flagPhrase(event, phraseId, esText) {
+      if (event) event.stopPropagation();
+      if (!confirm("Supprimer cette phrase de la sélection aléatoire ?\n\n'" + esText + "'")) return;
+      
+      var url = isPhp ? 'apprentissage.php?action=flag' : '/api/flag';
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json; charset=utf-8' },
+        body: JSON.stringify({ id: phraseId, user: currentUser })
+      })
+      .then(function(r) { return r.json(); })
+      .then(function(res) {
+        if (res.status === 'ok') {
+          // Add to local array
+          if (window.flaggedPhrases.indexOf(phraseId) === -1) {
+            window.flaggedPhrases.push(phraseId);
+          }
+          // Hide panel and pick next example
+          hideFloatingExample();
+          var flippedCard = document.querySelector('.card.flipped');
+          if (flippedCard) {
+            pickRandomExample(flippedCard);
+            showFloatingExample(flippedCard);
+          }
+        }
+      })
+      .catch(function(err) {
+        console.error(err);
+        alert("Erreur lors de la suppression.");
+      });
+    }
 
     function initUsers() {
       var userSel = document.getElementById('user-sel');
@@ -1113,8 +1225,12 @@
         var diffCounts = { easy: 0, medium: 0, hard: 0, new: 0 };
         var verbStats = {}; 
         var dailyHistory = {}; 
-        var prioritaryCards = []; 
+        var prioritaryCards = [];
         
+        // Pour calculer la série du jour
+        var todayStr = new Date().toISOString().substring(0, 10);
+        var successesTodayBeforeFirstError = 0;
+
         verbNames.forEach(function(v) {
           verbStats[v] = { totalCards: 0, studied: 0, success: 0, error: 0, diffs: { easy: 0, medium: 0, hard: 0, new: 0 } };
         });
@@ -1142,8 +1258,11 @@
                   verbStats[verbName].success += p.success || 0;
                   verbStats[verbName].error += p.error || 0;
                   
-                  if ((p.streak || 0) > maxStreak) {
-                    maxStreak = p.streak;
+                  // Calculer la série du jour : succès consécutifs depuis le début du jour
+                  if (p.lastDate && p.lastDate.substring(0, 10) === todayStr) {
+                    if (p.lastResult === 'success') {
+                      successesTodayBeforeFirstError++;
+                    }
                   }
                   
                   var state = cardState(p);
@@ -1193,6 +1312,7 @@
           });
         });
         
+        maxStreak = successesTodayBeforeFirstError;
         var studiedPercent = totalCardsCount > 0 ? Math.round((studiedCardsCount / totalCardsCount) * 100) : 0;
         var successRate = (totalSuccess + totalError) > 0 ? Math.round((totalSuccess / (totalSuccess + totalError)) * 100) : 0;
         
@@ -1223,6 +1343,7 @@
         html += '  <span class="kpi-title">Série Maximale</span>';
         html += '  <span class="kpi-value">' + maxStreak + ' 🔥</span>';
         html += '  <span class="kpi-sub">Plus grand nombre de succès consécutifs</span>';
+        html += '  <button class="btn-reset-series" onclick="resetSeriesOfDay()" title="Réinitialiser la série du jour">↻ RAZ Série</button>';
         html += '</div>';
         
         html += '<div class="kpi-card">';

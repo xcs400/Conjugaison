@@ -15,22 +15,25 @@ if (file_exists(__DIR__ . $uri) && !is_dir(__DIR__ . $uri) && $uri !== '/apprent
 
 // Fichiers de données
 $verbs_data_file = __DIR__ . '/verbs_data.json';
+$flagged_file = __DIR__ . '/flagged_phrases.json';
+
+// Lire le body JSON une seule fois (php://input ne peut être lu qu'une fois)
+$body = null;
+if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'PUT') {
+    $body = json_decode(file_get_contents('php://input'), true);
+}
 
 // Résolution dynamique de l'utilisateur actif par paramètre GET/POST ou Cookie (Aline, Pascal, Test)
 $active_user = 'Aline';
 if (isset($_GET['user'])) {
     $active_user = $_GET['user'];
-} else {
-    // Si c'est une requête POST, on lit le corps JSON si présent
-    $body = json_decode(file_get_contents('php://input'), true);
-    if (isset($body['user'])) {
-        $active_user = $body['user'];
-    } elseif (isset($_COOKIE['active_user'])) {
-        $active_user = $_COOKIE['active_user'];
-    }
+} elseif (isset($body['user'])) {
+    $active_user = $body['user'];
+} elseif (isset($_COOKIE['active_user'])) {
+    $active_user = $_COOKIE['active_user'];
 }
 $safe_user = preg_replace('/[^a-zA-Z0-9]/', '', strtolower($active_user));
-if (!in_array($safe_user, ['aline', 'pascal', 'test'])) {
+if (!in_array($safe_user, ['aline', 'pascal', 'camil', 'test'])) {
     $safe_user = 'aline';
 }
 $stats_file = __DIR__ . '/stats_apprentissage_' . $safe_user . '.json';
@@ -152,6 +155,23 @@ function build_cards($verb_db, $hints, $verb_name) {
     return $result;
 }
 
+// Load list of flagged phrase IDs to ignore
+function load_flagged_phrases($flagged_file) {
+    if (file_exists($flagged_file)) {
+        $raw = file_get_contents($flagged_file);
+        $data = json_decode($raw, true);
+        if (is_array($data)) {
+            return $data;
+        }
+    }
+    return [];
+}
+
+// Save list of flagged phrase IDs
+function save_flagged_phrases($flagged_file, $flagged_list) {
+    file_put_contents($flagged_file, json_encode($flagged_list, JSON_UNESCAPED_UNICODE));
+}
+
 // Charger la base de données de verbes commune
 if (!file_exists($verbs_data_file)) {
     header('HTTP/1.1 500 Internal Server Error');
@@ -198,7 +218,6 @@ if ($action === 'verb' || strpos($uri, '/api/verb/') === 0) {
 
 // 3. API: Enregistrer un vote (POST)
 if ($action === 'vote' || ($uri === '/api/vote' && $_SERVER['REQUEST_METHOD'] === 'POST')) {
-    $body = json_decode(file_get_contents('php://input'), true);
     if (!isset($body['id']) || !isset($body['vote'])) {
         header('HTTP/1.1 400 Bad Request');
         echo json_encode(["status" => "error", "message" => "Champs requis manquants."]);
@@ -253,7 +272,50 @@ if ($action === 'reset_all' || ($uri === '/api/reset' && $_SERVER['REQUEST_METHO
     exit;
 }
 
-// 4. Accueil (Servir index.html)
+// 4b. API: Reset series of day (POST)
+if ($action === 'reset_day_series' || ($uri === '/api/reset_day_series' && $_SERVER['REQUEST_METHOD'] === 'POST')) {
+    $progress = load_progress($stats_file);
+    $today_str = gmdate('Y-m-d');
+    
+    // Remove all entries from today
+    foreach ($progress as $k => $v) {
+        if (isset($v["lastDate"]) && substr($v["lastDate"], 0, 10) === $today_str) {
+            unset($progress[$k]);
+        }
+    }
+    
+    file_put_contents($stats_file, json_encode($progress, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(["status" => "ok"], JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+// 5. API: Get flagged phrases list (GET)
+if ($uri === '/flagged_phrases.json' || strpos($uri, '/flagged_phrases.json') === 0) {
+    $flagged_list = load_flagged_phrases($flagged_file);
+    header('Content-Type: application/json; charset=utf-8');
+    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+    header('Pragma: no-cache');
+    echo json_encode($flagged_list, JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+// 6. API: Flag a phrase (POST)
+if ($action === 'flag' || ($uri === '/api/flag' && $_SERVER['REQUEST_METHOD'] === 'POST')) {
+    $phrase_id = isset($body['id']) ? $body['id'] : null;
+    if ($phrase_id) {
+        $flagged_list = load_flagged_phrases($flagged_file);
+        if (!in_array($phrase_id, $flagged_list)) {
+            $flagged_list[] = $phrase_id;
+            save_flagged_phrases($flagged_file, $flagged_list);
+        }
+    }
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(["status" => "ok"], JSON_UNESCAPED_UNICODE);
+    exit;
+}
+
+// 7. Accueil (Servir index.html)
 if ($uri === '/' || $uri === '/index.php' || $uri === '/index.html' || strpos($uri, '/apprentissage.php') === 0) {
     header('Content-Type: text/html; charset=utf-8');
     readfile(__DIR__ . '/index.html');

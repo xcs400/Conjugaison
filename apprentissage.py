@@ -5,6 +5,7 @@ from verbs_data import VERBS_DB, get_hint
 
 PORT = 8000
 HTML_FILE = os.path.join(os.path.dirname(__file__), "index.html")
+FLAGGED_FILE = os.path.join(os.path.dirname(__file__), "flagged_phrases.json")
 
 def get_stats_file(headers, path="", body=None):
     cookie_header = headers.get("Cookie", "")
@@ -28,7 +29,48 @@ def get_stats_file(headers, path="", body=None):
         except Exception:
             pass
     safe_user = "".join([c for c in active_user if c.isalnum()]).lower()
-    if safe_user not in ["aline", "pascal", "test"]:
+    if safe_user not in ["aline", "pascal", "camil", "test"]:
+        safe_user = "aline"
+    return os.path.join(os.path.dirname(__file__), f"stats_apprentissage_{safe_user}.json")
+
+def load_flagged_phrases():
+    """Load list of flagged phrase IDs to ignore."""
+    if os.path.exists(FLAGGED_FILE):
+        try:
+            with open(FLAGGED_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return []
+    return []
+
+def save_flagged_phrases(flagged_list):
+    """Save list of flagged phrase IDs."""
+    with open(FLAGGED_FILE, "w", encoding="utf-8") as f:
+        json.dump(flagged_list, f, ensure_ascii=False)
+
+def get_stats_file(headers, path="", body=None):
+    cookie_header = headers.get("Cookie", "")
+    active_user = "Aline"
+    if body and isinstance(body, dict) and "user" in body:
+        active_user = body["user"]
+    elif "?" in path:
+        query_part = path.split("?", 1)[1]
+        for pair in query_part.split("&"):
+            if "=" in pair:
+                k, v = pair.split("=", 1)
+                if k == "user":
+                    active_user = v
+                    break
+    elif cookie_header:
+        try:
+            cookie = http.cookies.SimpleCookie()
+            cookie.load(cookie_header)
+            if "active_user" in cookie:
+                active_user = cookie["active_user"].value
+        except Exception:
+            pass
+    safe_user = "".join([c for c in active_user if c.isalnum()]).lower()
+    if safe_user not in ["aline", "pascal", "camil", "test"]:
         safe_user = "aline"
     return os.path.join(os.path.dirname(__file__), f"stats_apprentissage_{safe_user}.json")
 
@@ -151,6 +193,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(data)
             else:
                 self.send_response(404); self.end_headers()
+        elif self.path == "/flagged_phrases.json" or self.path.startswith("/flagged_phrases.json"):
+            flagged_list = load_flagged_phrases()
+            self._json(flagged_list)
         else:
             self.send_response(404); self.end_headers()
 
@@ -175,11 +220,33 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             progress[key] = entry
             save_progress(progress, file_path)
             self._json(entry)
+        elif self.path.startswith("/api/flag"):
+            body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
+            phrase_id = body.get("id")
+            if phrase_id:
+                flagged_list = load_flagged_phrases()
+                if phrase_id not in flagged_list:
+                    flagged_list.append(phrase_id)
+                    save_flagged_phrases(flagged_list)
+            self._json({"status": "ok"})
         elif self.path.startswith("/api/reset"):
             # read user from optional query parameters
             file_path = get_stats_file(self.headers, self.path)
             with open(file_path, "w", encoding="utf-8") as f:
                 json.dump({}, f)
+            self._json({"status": "ok"})
+        elif self.path.startswith("/api/reset_day_series"):
+            # Reset progress entries for today only
+            file_path = get_stats_file(self.headers, self.path)
+            progress = load_progress(file_path)
+            today_str = datetime.now(timezone.utc).isoformat()[:10]
+            
+            # Remove all entries from today
+            keys_to_remove = [k for k, v in progress.items() if v.get("lastDate", "")[:10] == today_str]
+            for k in keys_to_remove:
+                del progress[k]
+            
+            save_progress(progress, file_path)
             self._json({"status": "ok"})
 
     def _json(self, obj):
