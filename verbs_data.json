@@ -89,10 +89,7 @@
     "Impératif": {
       "Affirmatif": [
         "a / e",
-        "e / a",
-        "emos / amos",
-        "ad / ed·id",
-        "en / an"
+        "ad / ed·id"
       ]
     }
   },
@@ -399,25 +396,10 @@
             "fr": "mange !",
             "es": "come"
           },
-          {
-            "pronoun": "usted",
-            "fr": "mangez (pol.) !",
-            "es": "coma"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "mangeons !",
-            "es": "comamos"
-          },
-          {
+           {
             "pronoun": "vosotros",
             "fr": "mangez !",
             "es": "comed"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "mangez (pol.pl.)!",
-            "es": "coman"
           }
         ]
       }
@@ -750,29 +732,12 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "usted",
-            "fr": "soyez (pol.) !",
-            "es": "sea",
-            "hint1": "irrég."
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "soyons !",
-            "es": "seamos",
-            "hint1": "irrég."
-          },
-          {
             "pronoun": "vosotros",
             "fr": "soyez !",
             "es": "sed",
             "hint1": "irrég."
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "soyez (pol.pl.)!",
-            "es": "sean",
-            "hint1": "irrég."
           }
+       
         ]
       }
     },
@@ -1110,27 +1075,9 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "usted",
-            "fr": "allez (pol.) !",
-            "es": "vaya",
-            "hint1": "irrég."
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "allons !",
-            "es": "vayamos",
-            "hint1": "irrég."
-          },
-          {
             "pronoun": "vosotros",
             "fr": "allez !",
             "es": "id",
-            "hint1": "irrég."
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "allez (pol.pl.)!",
-            "es": "vayan",
             "hint1": "irrég."
           }
         ]
@@ -1474,27 +1421,10 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "usted",
-            "fr": "ayez (pol.) !",
-            "es": "tenga",
-            "hint1": "irrég."
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "ayons !",
-            "es": "tengamos",
-            "hint1": "irrég."
-          },
-          {
             "pronoun": "vosotros",
             "fr": "ayez !",
             "es": "tened",
             "hint1": "régulier en -d"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "ayez (pol.pl.)!",
-            "es": "tengan"
           }
         ]
       }
@@ -1802,24 +1732,9 @@
             "es": "habla"
           },
           {
-            "pronoun": "usted",
-            "fr": "parlez (pol.) !",
-            "es": "hable"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "parlons !",
-            "es": "hablemos"
-          },
-          {
             "pronoun": "vosotros",
             "fr": "parlez !",
             "es": "hablad"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "parlez (pol.pl.)!",
-            "es": "hablen"
           }
         ]
       }
@@ -2148,27 +2063,10 @@
             "hint1": "accent sur le á"
           },
           {
-            "pronoun": "usted",
-            "fr": "soyez (pol.) !",
-            "es": "esté",
-            "hint1": "accent sur le é"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "soyons !",
-            "es": "estemos"
-          },
-          {
             "pronoun": "vosotros",
             "fr": "soyez !",
             "es": "estad",
             "hint1": "régulier en -d"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "soyez (pol.pl.)!",
-            "es": "estén",
-            "hint1": "accent sur le é"
           }
         ]
       }
@@ -2517,24 +2415,9 @@
             "hint1": "très irrégulier : haz"
           },
           {
-            "pronoun": "usted",
-            "fr": "faites (pol.) !",
-            "es": "haga"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "faisons !",
-            "es": "hagamos"
-          },
-          {
             "pronoun": "vosotros",
             "fr": "faites !",
             "es": "haced"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "faites (pol.pl.) !",
-            "es": "hagan"
           }
         ]
       }
@@ -2607,39 +2490,7 @@
             "es": "habían"
           }
         ],
-        "Passé composé": [
-          {
-            "pronoun": "yo",
-            "fr": "j'ai eu",
-            "es": "he habido",
-            "hint1": "participe passé : habido"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu as eu",
-            "es": "has habido"
-          },
-          {
-            "pronoun": "él",
-            "fr": "il a eu",
-            "es": "ha habido"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous avons eu",
-            "es": "hemos habido"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous avez eu",
-            "es": "habéis habido"
-          },
-          {
-            "pronoun": "ellos",
-            "fr": "ils ont eu",
-            "es": "han habido"
-          }
-        ],
+
         "Prétérit": [
           {
             "pronoun": "yo",
@@ -2705,71 +2556,9 @@
             "fr": "ils auront",
             "es": "habrán"
           }
-        ],
-        "Futur antérieur": [
-          {
-            "pronoun": "yo",
-            "fr": "j'aurai eu",
-            "es": "habré habido"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu auras eu",
-            "es": "habrás habido"
-          },
-          {
-            "pronoun": "él",
-            "fr": "il aura eu",
-            "es": "habrá habido"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous aurons eu",
-            "es": "habremos habido"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous aurez eu",
-            "es": "habréis habido"
-          },
-          {
-            "pronoun": "ellos",
-            "fr": "ils auront eu",
-            "es": "habrán habido"
-          }
-        ],
-        "Plus-que-parfait": [
-          {
-            "pronoun": "yo",
-            "fr": "j'avais eu",
-            "es": "había habido"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu avais eu",
-            "es": "habías habido"
-          },
-          {
-            "pronoun": "él",
-            "fr": "il avait eu",
-            "es": "había habido"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous avions eu",
-            "es": "habíamos habido"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous aviez eu",
-            "es": "habíais habido"
-          },
-          {
-            "pronoun": "ellos",
-            "fr": "ils avaient eu",
-            "es": "habían habido"
-          }
         ]
+
+
       },
       "Conditionnel": {
         "Présent": [
@@ -2883,24 +2672,9 @@
             "hint1": "rare : he"
           },
           {
-            "pronoun": "usted",
-            "fr": "ayez (pol.) !",
-            "es": "haya"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "ayons !",
-            "es": "hayamos"
-          },
-          {
             "pronoun": "vosotros",
             "fr": "ayez !",
             "es": "habed"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "ayez (pol.pl.) !",
-            "es": "hayan"
           }
         ]
       }
@@ -3248,24 +3022,9 @@
             "hint1": "irrégulier court : pon"
           },
           {
-            "pronoun": "usted",
-            "fr": "mettez (pol.) !",
-            "es": "ponga"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "mettons !",
-            "es": "pongamos"
-          },
-          {
             "pronoun": "vosotros",
             "fr": "mettez !",
             "es": "poned"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "mettez (pol.pl.) !",
-            "es": "pongan"
           }
         ]
       }
@@ -3614,24 +3373,9 @@
             "hint1": "très court : di"
           },
           {
-            "pronoun": "usted",
-            "fr": "dites (pol.) !",
-            "es": "diga"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "disons !",
-            "es": "digamos"
-          },
-          {
             "pronoun": "vosotros",
             "fr": "dites !",
             "es": "decid"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "dites (pol.pl.) !",
-            "es": "digan"
           }
         ]
       }
@@ -3978,25 +3722,10 @@
             "es": "ven",
             "hint1": "très court : ven"
           },
-          {
-            "pronoun": "usted",
-            "fr": "venez (pol.) !",
-            "es": "venga"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "venons !",
-            "es": "vengamos"
-          },
-          {
+           {
             "pronoun": "vosotros",
             "fr": "venez !",
             "es": "venid"
-          },
-          {
-            "pronoun": "ustedes",
-            "fr": "venez (pol.pl.) !",
-            "es": "vengan"
           }
         ]
       }

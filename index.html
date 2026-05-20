@@ -40,12 +40,12 @@
     .card.flipped { transform: rotateY(180deg); }
     
     .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: .75rem; padding: .8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--surf); border: 1px solid rgba(255,255,255,.05); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
-    .back { transform: rotateY(180deg); background: #1e293b; border-color: rgba(59,130,246,.2); }
+    .back { transform: rotateY(180deg); background: #172554; border-color: rgba(59,130,246,.3); }
     
     /* Card interior elements */
     .pronoun { position: absolute; top: .35rem; left: .4rem; font-size: .8rem; font-weight: 800; background: rgba(59,130,246,.2); border: 1px solid rgba(59,130,246,.3); padding: .15rem .45rem; border-radius: 1rem; color: #93c5fd; }
-    .phrase-fr { font-size: .9rem; font-weight: 600; text-align: center; color: #e2e8f0; margin-bottom: .4rem; line-height: 1.2; }
-    .stats { display: flex; gap: .6rem; font-size: .78rem; font-weight: 800; }
+    .phrase-fr { font-size: 1.15rem; font-weight: 700; text-align: center; color: #e2e8f0; line-height: 1.25; padding: 0 1rem; }
+    .stats { display: flex; gap: .6rem; font-size: .85rem; font-weight: 800; }
     .ok { color: var(--ok); }
     .er { color: var(--err); }
     
@@ -54,15 +54,16 @@
     .card-header .pronoun { position: static; }
     .infinitive-badge { font-size: .72rem; font-weight: 800; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3); padding: .15rem .45rem; border-radius: 1rem; color: #fde68a; text-transform: uppercase; }
     .tense-badge { font-size: .72rem; font-weight: 800; background: rgba(139,92,246,.15); border: 1px solid rgba(139,92,246,.3); padding: .15rem .45rem; border-radius: 1rem; color: #ddd6fe; text-transform: uppercase; }
-    .hint { font-size: .88rem; color: #cbd5e1; margin-bottom: .25rem; font-style: italic; text-align: center; font-weight: 600; }
+    .hint { font-size: .85rem; font-weight: 700; color: #94a3b8; font-style: italic; }
     .phrase-es { font-size: 1.1rem; font-weight: 800; color: #fff; text-align: center; margin-bottom: .6rem; }
-    .actions { display: flex; gap: .75rem; }
+    .actions { display: flex; width: 100%; padding: 0 1rem; justify-content: space-evenly; align-items: center; margin-top: .4rem; }
     
     /* Target vote buttons inside card back specifically to avoid global conflicts */
-    .actions button { border: none; border-radius: 50%; width: 34px; height: 34px; font-size: 1rem; cursor: pointer; transition: .1s; }
+    .actions button { border: none; border-radius: 50%; width: 38px; height: 38px; font-size: 1.1rem; cursor: pointer; transition: .1s; display: flex; align-items: center; justify-content: center; }
     .actions button:active { transform: scale(.88); }
     .btn-err { background: rgba(239, 68, 68, .2); color: var(--err); }
     .btn-ok { background: rgba(16, 185, 129, .2); color: var(--ok); }
+    .btn-audio-action { background: rgba(59, 130, 246, 0.2); color: #93c5fd; padding-left: 2px; }
     
     /* Spaced repetition borders */
     .state-new .front { border: 2px solid #334155; }
@@ -89,7 +90,8 @@
     .filter-btn.active { background: var(--acc); border-color: var(--acc); color: #fff; box-shadow: 0 0 10px rgba(59,130,246,.4); font-weight: 800; }
     
     /* Difficulty Badges on Card Front */
-    .card-footer { position: absolute; bottom: .35rem; right: .4rem; display: flex; align-items: center; gap: .35rem; }
+    .card-footer { position: absolute; bottom: .35rem; left: .4rem; right: .4rem; display: flex; align-items: center; justify-content: space-between; }
+    .card-footer-right { display: flex; align-items: center; gap: .35rem; }
     .card-footer .diff-tag { position: static; }
     .diff-tag { font-size: .68rem; font-weight: 800; padding: .15rem .45rem; border-radius: 1rem; }
     .diff-easy { background: rgba(16,185,129,.15); border: 1px solid rgba(16,185,129,.3); color: #a7f3d0; }
@@ -103,7 +105,34 @@
     
     .btn-reset-all { background: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.25); color: #fca5a5; padding: .4rem .7rem; font-size: .8rem; font-weight: 700; border-radius: 2rem; cursor: pointer; transition: .15s; outline: none; display: inline-flex; align-items: center; gap: .25rem; border-style: solid; }
     .btn-reset-all:hover { background: rgba(239, 68, 68, 0.22); border-color: rgba(239, 68, 68, 0.5); color: #fff; box-shadow: 0 0 10px rgba(239, 68, 68, 0.2); }
-     .btn-reset-all:active { transform: scale(0.95); }
+    .btn-reset-all:active { transform: scale(0.95); }
+
+    .btn-help-link {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      color: #93c5fd;
+      padding: .4rem .7rem;
+      font-size: .8rem;
+      font-weight: 700;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: .15s;
+      outline: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .25rem;
+      border-style: solid;
+      text-decoration: none;
+    }
+    .btn-help-link:hover {
+      background: rgba(59, 130, 246, 0.22);
+      border-color: rgba(59, 130, 246, 0.5);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+    }
+    .btn-help-link:active {
+      transform: scale(0.95);
+    }
     
     #user-sel { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); color: #ddd6fe; font-weight: 700; border-radius: .5rem; padding: .4rem .6rem; outline: none; cursor: pointer; transition: .15s; font-size: .8rem; }
     #user-sel:hover { background: rgba(139, 92, 246, 0.25); border-color: rgba(139, 92, 246, 0.5); }
@@ -184,6 +213,77 @@
     .mini-progress-bar { flex: 1; height: 6px; background: #1e293b; border-radius: 3px; overflow: hidden; border: 1px solid rgba(255,255,255,.03); }
     .mini-progress-fill { height: 100%; background: linear-gradient(to right, #3b82f6, #60a5fa); border-radius: 3px; }
     .mini-progress-text { font-size: .75rem; font-weight: 700; color: #94a3b8; min-width: 35px; text-align: right; }
+
+    /* Navigation arrows on cards */
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(30, 41, 59, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 15;
+      font-size: 0.95rem;
+      font-weight: bold;
+      outline: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+    }
+    .nav-arrow:hover {
+      background: rgba(59, 130, 246, 0.35);
+      border-color: var(--acc);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+      transform: translateY(-50%) scale(1.12);
+    }
+    .nav-arrow:active {
+      transform: translateY(-50%) scale(0.9);
+    }
+    .nav-prev {
+      left: 0.5rem;
+    }
+    .nav-next {
+      right: 0.5rem;
+    }
+    #floating-example-panel {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-120px);
+      opacity: 0;
+      background: rgba(30, 58, 138, 0.95); /* Deep rich blue */
+      border: 1px solid rgba(147, 197, 253, 0.3);
+      border-radius: 12px;
+      padding: 15px 25px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      z-index: 9999;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    #floating-example-panel.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .phrase-fr, .phrase-es, .hint {
+      padding-left: 1.8rem;
+      padding-right: 1.8rem;
+    }
   </style>
 </head>
 <body>
@@ -192,6 +292,7 @@
     <div style="display: flex; gap: .5rem; align-items: center;">
       <select id="user-sel" onchange="changeUser()"></select>
       <select id="sel" onchange="changeVerb()"></select>
+      <a href="conjugaisons.jpg" target="_blank" class="btn-help-link" title="Ouvrir l'aide-mémoire dans un nouvel onglet">💡 Aide</a>
       <button class="btn-reset-all" title="Réinitialiser TOUTE la progression" onclick="resetAllProgress()">&#8634; RAZ</button>
     </div>
   </div>
@@ -199,6 +300,7 @@
   <div class="tabs-container">
     <button class="tab-btn active" id="tab-study" onclick="switchTab('study')">📖 Entraînement</button>
     <button class="tab-btn" id="tab-stats" onclick="switchTab('stats')">📊 Statistiques</button>
+    <button class="tab-btn" id="tab-help" onclick="switchTab('help')">💡 Aide-mémoire</button>
   </div>
 
   <div id="study-view-container">
@@ -236,6 +338,12 @@
   </div>
 
   <div id="stats-view-container" style="display:none;"></div>
+
+  <div id="help-view-container" style="display:none; text-align:center; padding:0 1rem 2rem 1rem;">
+    <img src="conjugaisons.jpg" alt="Aide-mémoire de conjugaison" style="max-width:100%; border-radius:0.8rem; border:1px solid rgba(255,255,255,0.1); box-shadow:0 10px 30px rgba(0,0,0,0.5);">
+  </div>
+
+  <div id="floating-example-panel"></div>
 
   <script>
     let progress = {}, currentVerb = null, currentFilter = 'all', currentVerbData = null;
@@ -307,7 +415,11 @@
       }
       
       var url = api.data + (api.data.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser) + '&_t=' + Date.now();
-      var d=await fetch(url).then(function(r){return r.json();});
+      var [d, flags] = await Promise.all([
+        fetch(url).then(function(r){return r.json();}),
+        window.flagData ? Promise.resolve(window.flagData) : fetch('flag_1.json').then(function(r){return r.json();}).catch(function(){ return []; })
+      ]);
+      window.flagData = flags;
       progress=d.progress||{};
       var sel=document.getElementById('sel');
       d.verbs.sort().forEach(function(v){
@@ -394,8 +506,30 @@
                 hintText = card.hint1 + ' (' + card.hint + ')';
               }
             }
-            var hintHtml = hintText ? '<div class="hint">(' + hintText + ')</div>' : '';
+            var hintHtml = hintText ? '<span class="hint">(' + hintText + ')</span>' : '';
             var st=cardState(p);
+            
+            var targetWord = card.es.replace(/^\(.*?\)\s*/, '').trim();
+            var exampleDataAttrs = '';
+            var speakerBtnHtml = '';
+            if (window.flagData && window.flagData.length > 0) {
+              var matches = window.flagData.filter(function(f) {
+                return f.verb === currentVerb && f.conj_es === targetWord;
+              });
+              if (matches.length > 0) {
+                var randIndex = Math.floor(Math.random() * matches.length);
+                var ex = matches[randIndex];
+                var esSafe = ex.es_text.replace(/"/g, '&quot;');
+                var frSafe = ex.fr_text.replace(/"/g, '&quot;');
+                var audioUrl = ex.audio_url || '';
+                exampleDataAttrs = ' data-ex-es="' + esSafe + '" data-ex-fr="' + frSafe + '" data-ex-audio="' + audioUrl + '"';
+                var hasAudioMatch = matches.some(function(m){ return m.audio_url; });
+                if (hasAudioMatch) {
+                  var displayStyle = audioUrl ? 'flex' : 'none';
+                  speakerBtnHtml = '<button class="btn-audio-action" style="display:'+displayStyle+';" onclick="playAudio(event, \'' + audioUrl + '\')" title="Écouter la prononciation">🔊</button>';
+                }
+              }
+            }
             
             var tenseBadgeHtml = '';
             if (tense === 'Imparfait' || tense === 'Prétérit') {
@@ -407,32 +541,40 @@
             }
             
             tenseHtml+='<div class="scene">'
-              +'<div class="card '+st+'" id="c-'+safeId+'" data-raw="'+rawId+'" onclick="flip(this)">'
+              +'<div class="card '+st+'" id="c-'+safeId+'" data-raw="'+rawId+'"'+exampleDataAttrs+' onclick="flip(this)">'
               +'<div class="face front">'
+              +'<button class="nav-arrow nav-prev" title="Temps précédent" onclick="navigateTense(event,this,-1)">&#8592;</button>'
+              +'<button class="nav-arrow nav-next" title="Temps suivant" onclick="navigateTense(event,this,1)">&#8594;</button>'
               +'<div class="card-header">'
               +'<span class="pronoun">'+card.pronoun+'</span>'
               +'<span class="infinitive-badge">'+currentVerb.toUpperCase()+'</span>'
               +tenseBadgeHtml
               +'</div>'
               +'<div class="card-footer">'
-              +'<span class="diff-tag diff-'+diff+'">'+diffLabel+'</span>'
-              +'<button class="btn-reset-card" title="Réinitialiser cette carte" onclick="resetCard(event,this,\''+rawId+'\',\''+safeId+'\')">&#8634;</button>'
-              +'</div>'
-              +'<div class="phrase-fr">'+card.fr+'</div>'
               +'<div class="stats">'
               +'<span class="ok" id="ok-'+safeId+'">&#10003; '+p.success+'</span>'
               +'<span class="er" id="er-'+safeId+'">&#10007; '+p.error+'</span>'
-              +'</div></div>'
+              +'</div>'
+              +'<div class="card-footer-right">'
+              +'<span class="diff-tag diff-'+diff+'">'+diffLabel+'</span>'
+              +'<button class="btn-reset-card" title="Réinitialiser cette carte" onclick="resetCard(event,this,\''+rawId+'\',\''+safeId+'\')">&#8634;</button>'
+              +'</div>'
+              +'</div>'
+              +'<div class="phrase-fr">'+card.fr+'</div>'
+              +'</div>'
               +'<div class="face back">'
+              +'<button class="nav-arrow nav-prev" title="Temps précédent" onclick="navigateTense(event,this,-1)">&#8592;</button>'
+              +'<button class="nav-arrow nav-next" title="Temps suivant" onclick="navigateTense(event,this,1)">&#8594;</button>'
               +'<div class="card-header">'
               +'<span class="pronoun">'+card.pronoun+'</span>'
               +'<span class="infinitive-badge">'+currentVerb.toUpperCase()+'</span>'
-              +'</div>'
               +hintHtml
+              +'</div>'
               +'<div class="phrase-es">'+card.es+'</div>'
               +'<div class="actions">'
-              +'<button class="btn-err" onclick="vote(event,this)">&#10007;</button>'
               +'<button class="btn-ok" onclick="vote(event,this)">&#10003;</button>'
+              +'<button class="btn-err" onclick="vote(event,this)">&#10007;</button>'
+              +speakerBtnHtml
               +'</div></div></div></div>';
           });
           
@@ -462,9 +604,157 @@
       document.getElementById('app').innerHTML=html;
     }
 
+    window.currentAudio = null;
+    function playAudio(event, url) {
+        if (event) event.stopPropagation();
+        if (window.currentAudio) {
+            window.currentAudio.pause();
+            window.currentAudio.currentTime = 0;
+        }
+        window.currentAudio = new Audio(url);
+        window.currentAudio.play().catch(function(err){ console.log("Audio play failed:", err); });
+    }
+
+    function pickRandomExample(cardEl) {
+        if (!window.flagData || window.flagData.length === 0) return;
+        var esEl = cardEl.querySelector('.phrase-es');
+        if (!esEl) return;
+        var targetWord = esEl.textContent.replace(/^\(.*?\)\s*/, '').trim();
+        var matches = window.flagData.filter(function(f) {
+            return f.verb === currentVerb && f.conj_es === targetWord;
+        });
+        if (matches.length > 0) {
+            var randIndex = Math.floor(Math.random() * matches.length);
+            var ex = matches[randIndex];
+            cardEl.setAttribute('data-ex-es', ex.es_text);
+            cardEl.setAttribute('data-ex-fr', ex.fr_text);
+            cardEl.setAttribute('data-ex-audio', ex.audio_url || '');
+            
+            var btnAudio = cardEl.querySelector('.btn-audio-action');
+            if (btnAudio) {
+                if (ex.audio_url) {
+                    btnAudio.style.display = 'flex';
+                    btnAudio.setAttribute('onclick', "playAudio(event, '" + ex.audio_url + "')");
+                } else {
+                    btnAudio.style.display = 'none';
+                    btnAudio.setAttribute('onclick', "");
+                }
+            }
+        }
+    }
+
     function flip(cardEl){
       document.querySelectorAll('.card.flipped').forEach(function(c){if(c!==cardEl)c.classList.remove('flipped');});
       cardEl.classList.toggle('flipped');
+      if (!cardEl.classList.contains('flipped')) {
+          if (window.currentAudio) window.currentAudio.pause();
+          hideFloatingExample();
+      } else {
+          pickRandomExample(cardEl);
+          showFloatingExample(cardEl);
+      }
+    }
+
+    function showFloatingExample(cardEl) {
+       var es = cardEl.getAttribute('data-ex-es');
+       var fr = cardEl.getAttribute('data-ex-fr');
+       var audio = cardEl.getAttribute('data-ex-audio');
+       var panel = document.getElementById('floating-example-panel');
+       if (!panel) return;
+       if (es && fr) {
+           var audioHtml = audio ? '<span style="font-size:1.2rem;margin-left:8px;vertical-align:middle;">🔊</span>' : '';
+           panel.innerHTML = '<div style="font-weight: 500; color: #f8fafc; margin-bottom: 3px; font-size: 1.1em;">' + es + audioHtml + '</div><div style="font-style: italic; color: #93c5fd; font-size: 0.9em;">' + fr + '</div>';
+           
+           if (audio) {
+               panel.onclick = function(e) { playAudio(e, audio); };
+               panel.style.cursor = 'pointer';
+           } else {
+               panel.onclick = null;
+               panel.style.cursor = 'default';
+           }
+           
+           panel.classList.add('show');
+       } else {
+           hideFloatingExample();
+       }
+    }
+
+    function hideFloatingExample() {
+       var panel = document.getElementById('floating-example-panel');
+       if (panel) {
+           panel.classList.remove('show');
+       }
+    }
+
+    function navigateTense(event, btnEl, direction) {
+      if (event) event.stopPropagation();
+      var currentCard = btnEl.closest('.card');
+      if (!currentCard) return;
+      
+      var currentRawId = currentCard.getAttribute('data-raw');
+      if (!currentRawId) return;
+      
+      var currentParts = currentRawId.split('__');
+      if (currentParts.length < 4) return;
+      var currentPronoun = currentParts[3];
+      
+      var allCards = Array.from(document.querySelectorAll('.card'));
+      var pronounCards = allCards.filter(function(card) {
+        var rawId = card.getAttribute('data-raw');
+        if (!rawId) return false;
+        var parts = rawId.split('__');
+        return parts.length >= 4 && parts[3] === currentPronoun;
+      });
+      
+      if (pronounCards.length <= 1) return;
+      
+      var currentIndex = pronounCards.indexOf(currentCard);
+      if (currentIndex === -1) return;
+      
+      var targetIndex = currentIndex + direction;
+      if (targetIndex < 0) {
+        targetIndex = pronounCards.length - 1;
+      } else if (targetIndex >= pronounCards.length) {
+        targetIndex = 0;
+      }
+      
+      var targetCard = pronounCards[targetIndex];
+      var wasFlipped = currentCard.classList.contains('flipped');
+      
+      // Clean up focus pulse and flipped states
+      allCards.forEach(function(c) {
+        c.classList.remove('focus-pulse');
+      });
+      
+      // Remove flipped state from everything else first
+      document.querySelectorAll('.card.flipped').forEach(function(c) {
+        if (c !== currentCard && c !== targetCard) {
+          c.classList.remove('flipped');
+        }
+      });
+      
+      // Apply the same flipped state to targetCard, and reset currentCard if different
+      if (wasFlipped) {
+        targetCard.classList.add('flipped');
+        if (currentCard !== targetCard) {
+          currentCard.classList.remove('flipped');
+        }
+        showFloatingExample(targetCard);
+      } else {
+        targetCard.classList.remove('flipped');
+        if (currentCard !== targetCard) {
+          currentCard.classList.remove('flipped');
+        }
+        hideFloatingExample();
+      }
+      
+      // Scroll to target card
+      targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Flash target card
+      setTimeout(function() {
+        targetCard.classList.add('focus-pulse');
+      }, 150);
     }
 
     // Play random card from the active (currently filtered) visible cards
@@ -717,32 +1007,38 @@
       await Promise.all(promises);
     }
 
-    // Switch between Study and Stats views
+    // Switch between Study, Stats and Help views
     function switchTab(tabId) {
       var studyBtn = document.getElementById('tab-study');
       var statsBtn = document.getElementById('tab-stats');
+      var helpBtn = document.getElementById('tab-help');
+      
       var studyContainer = document.getElementById('study-view-container');
       var statsContainer = document.getElementById('stats-view-container');
+      var helpContainer = document.getElementById('help-view-container');
+      
+      studyBtn.classList.remove('active');
+      statsBtn.classList.remove('active');
+      if (helpBtn) helpBtn.classList.remove('active');
+      
+      studyContainer.style.display = 'none';
+      statsContainer.style.display = 'none';
+      if (helpContainer) helpContainer.style.display = 'none';
+      
+      // Hide random floating button in non-study views
+      var randContainer = document.querySelector('.random-container');
+      if (randContainer) randContainer.style.display = 'none';
       
       if (tabId === 'stats') {
-        studyBtn.classList.remove('active');
         statsBtn.classList.add('active');
-        studyContainer.style.display = 'none';
         statsContainer.style.display = 'block';
-        
-        // Hide random floating button in stats view to avoid distraction
-        var randContainer = document.querySelector('.random-container');
-        if (randContainer) randContainer.style.display = 'none';
-        
         loadAndRenderStats();
+      } else if (tabId === 'help') {
+        if (helpBtn) helpBtn.classList.add('active');
+        if (helpContainer) helpContainer.style.display = 'block';
       } else {
         studyBtn.classList.add('active');
-        statsBtn.classList.remove('active');
         studyContainer.style.display = 'block';
-        statsContainer.style.display = 'none';
-        
-        // Show random floating button in study view
-        var randContainer = document.querySelector('.random-container');
         if (randContainer) randContainer.style.display = 'flex';
       }
     }

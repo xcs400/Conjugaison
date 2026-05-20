@@ -23,7 +23,8 @@ def box(x, y, w, h, fc, ec='none', lw=0, r=0.005, z=2, alpha=1):
     p = FancyBboxPatch((x, y), w, h,
         boxstyle=f'round,pad=0,rounding_size={r}',
         facecolor=fc, edgecolor=ec, linewidth=lw,
-        alpha=alpha, zorder=z, transform=ax.transAxes)
+        alpha=alpha, zorder=z, transform=ax.transAxes,
+        clip_on=False)
     ax.add_patch(p)
 
 def tx(x, y, s, fs=9, c='#111111', bold=False, ha='center', va='center', it=False, z=5):
@@ -35,11 +36,11 @@ def tx(x, y, s, fs=9, c='#111111', bold=False, ha='center', va='center', it=Fals
 
 def hline(x0, x1, y, lw=0.5, color=None):
     ax.plot([x0, x1], [y, y], color=color or C['border'],
-            lw=lw, transform=ax.transAxes, zorder=6)
+            lw=lw, transform=ax.transAxes, zorder=6, clip_on=False)
 
 def vline(x, y0, y1, lw=0.5, color=None):
     ax.plot([x, x], [y0, y1], color=color or C['border'],
-            lw=lw, transform=ax.transAxes, zorder=6)
+            lw=lw, transform=ax.transAxes, zorder=6, clip_on=False)
 
 # ── Section banner ─────────────────────────────────────────────
 def sec_banner(x, y, w, h, label, color, fs=11):

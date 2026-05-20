@@ -129,6 +129,28 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             if "?" in verb:
                 verb = verb.split("?")[0]
             self._json(build_cards(verb))
+        elif self.path == "/conjugaisons.jpg" or self.path.startswith("/conjugaisons.jpg"):
+            jpg_file = os.path.join(os.path.dirname(__file__), "conjugaisons.jpg")
+            if os.path.exists(jpg_file):
+                with open(jpg_file, "rb") as f:
+                    data = f.read()
+                self.send_response(200)
+                self.send_header("Content-type", "image/jpeg")
+                self.end_headers()
+                self.wfile.write(data)
+            else:
+                self.send_response(404); self.end_headers()
+        elif self.path == "/flag_1.json" or self.path.startswith("/flag_1.json"):
+            json_file = os.path.join(os.path.dirname(__file__), "flag_1.json")
+            if os.path.exists(json_file):
+                with open(json_file, "rb") as f:
+                    data = f.read()
+                self.send_response(200)
+                self.send_header("Content-type", "application/json; charset=utf-8")
+                self.end_headers()
+                self.wfile.write(data)
+            else:
+                self.send_response(404); self.end_headers()
         else:
             self.send_response(404); self.end_headers()
 
