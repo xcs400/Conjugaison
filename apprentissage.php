@@ -155,21 +155,30 @@ function build_cards($verb_db, $hints, $verb_name) {
     return $result;
 }
 
-// Load list of flagged phrase IDs to ignore
+// Load flagged phrases as object keyed by context (verb__mode__tense__pronoun)
+// Auto-migrates old flat array format to new object format
 function load_flagged_phrases($flagged_file) {
     if (file_exists($flagged_file)) {
         $raw = file_get_contents($flagged_file);
         $data = json_decode($raw, true);
         if (is_array($data)) {
+            // Migrate old flat array format: ["id1", "id2"] -> {"_global": ["id1", "id2"]}
+            if (count($data) > 0 && isset($data[0])) {
+                // It's a sequential array (old format)
+                $migrated = ['_global' => $data];
+                save_flagged_phrases($flagged_file, $migrated);
+                return $migrated;
+            }
+            // Already new format (associative array = object)
             return $data;
         }
     }
     return [];
 }
 
-// Save list of flagged phrase IDs
-function save_flagged_phrases($flagged_file, $flagged_list) {
-    file_put_contents($flagged_file, json_encode($flagged_list, JSON_UNESCAPED_UNICODE));
+// Save flagged phrases object
+function save_flagged_phrases($flagged_file, $flagged_data) {
+    file_put_contents($flagged_file, json_encode($flagged_data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
 }
 
 // Charger la base de données de verbes commune
@@ -300,14 +309,19 @@ if ($uri === '/flagged_phrases.json' || strpos($uri, '/flagged_phrases.json') ==
     exit;
 }
 
-// 6. API: Flag a phrase (POST)
+// 6. API: Flag a phrase (POST) - scoped by conjugation context
 if ($action === 'flag' || ($uri === '/api/flag' && $_SERVER['REQUEST_METHOD'] === 'POST')) {
     $phrase_id = isset($body['id']) ? $body['id'] : null;
+    $context = isset($body['context']) ? $body['context'] : '_global';
+    if (empty($context)) $context = '_global';
     if ($phrase_id) {
-        $flagged_list = load_flagged_phrases($flagged_file);
-        if (!in_array($phrase_id, $flagged_list)) {
-            $flagged_list[] = $phrase_id;
-            save_flagged_phrases($flagged_file, $flagged_list);
+        $flagged_data = load_flagged_phrases($flagged_file);
+        if (!isset($flagged_data[$context])) {
+            $flagged_data[$context] = [];
+        }
+        if (!in_array($phrase_id, $flagged_data[$context])) {
+            $flagged_data[$context][] = $phrase_id;
+            save_flagged_phrases($flagged_file, $flagged_data);
         }
     }
     header('Content-Type: application/json; charset=utf-8');

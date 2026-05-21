@@ -487,13 +487,38 @@
       }
       
       var url = api.data + (api.data.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser) + '&_t=' + Date.now();
-      var [d, flags, flaggedList] = await Promise.all([
-        fetch(url).then(function(r){return r.json();}),
-        window.flagData ? Promise.resolve(window.flagData) : fetch('flag_1.json').then(function(r){return r.json();}).catch(function(){ return []; }),
-        fetch('flagged_phrases.json').then(function(r){return r.json();}).catch(function(){ return []; })
-      ]);
+   //   var [d, flags, flaggedList] = await Promise.all([
+  //      fetch(url).then(function(r){return r.json();}),
+  //      window.flagData ? Promise.resolve(window.flagData) : fetch('flag_2.json').then(function(r){return r.json();}).catch(function(){ return []; }),
+  //      fetch('flagged_phrases.json').then(function(r){return r.json();}).catch(function(){ return {}; })
+  //    ]);
+	
+var [d, flags, flaggedList] = await Promise.all([
+  fetch(url).then(function(r){ return r.json(); }),
+
+  window.flagData
+    ? Promise.resolve(window.flagData)
+    : fetch('flag_2.json')
+        .then(function(r){ return r.text(); })
+        .then(function(text){
+          return text
+            .split('\n')
+            .filter(function(line){ return line.trim() !== ''; })
+            .map(function(line){ return JSON.parse(line); });
+        })
+        .catch(function(e){ console.error("Erreur flag_2.json :", e); return []; }),
+              		
+		
+
+  fetch('flagged_phrases.json').then(function(r){ return r.json(); }).catch(function(){ return {}; })
+]);
+
+	
+	  
+	  
+	  
       window.flagData = flags;
-      window.flaggedPhrases = flaggedList || [];
+      window.flaggedPhrases = (flaggedList && typeof flaggedList === 'object' && !Array.isArray(flaggedList)) ? flaggedList : {};
       progress=d.progress||{};
       var sel=document.getElementById('sel');
       d.verbs.sort().forEach(function(v){
@@ -703,45 +728,76 @@
         window.currentAudio.play().catch(function(err){ console.log("Audio play failed:", err); });
     }
 
-    function pickRandomExample(cardEl) {
-        if (!window.flagData || window.flagData.length === 0) return;
-        var esEl = cardEl.querySelector('.phrase-es');
-        if (!esEl) return;
-        var targetWord = esEl.textContent.replace(/^\(.*?\)\s*/, '').trim();
-        var matches = window.flagData.filter(function(f) {
-            return f.verb === currentVerb && f.conj_es === targetWord;
+function pickRandomExample(cardEl) {
+    if (!window.flagData || window.flagData.length === 0) return;
+
+    var esEl = cardEl.querySelector('.phrase-es');
+    if (!esEl) return;
+
+    var targetWord = esEl.textContent
+        .replace(/^\(.*?\)\s*/, '')
+        .trim();
+
+    var matches = window.flagData.filter(function(f) {
+        return f.verb === currentVerb &&
+               f.conj_es === targetWord;
+    });
+
+    var cardContext = (cardEl.getAttribute('data-raw') || '').trim();
+
+    var contextFlagged =
+        (window.flaggedPhrases &&
+         window.flaggedPhrases[cardContext])
+        ? window.flaggedPhrases[cardContext]
+        : [];
+
+    console.log("cardContext:", cardContext);
+    console.log("contextFlagged:", contextFlagged);
+    console.log("matches:", matches);
+
+    var filteredMatches = matches.filter(function(m) {
+        return !contextFlagged.some(function(id) {
+            return String(id) === String(m.id);
         });
-        // Filter out flagged phrases
-        var filteredMatches = matches.filter(function(m) {
-            return !window.flaggedPhrases || window.flaggedPhrases.indexOf(m.id) === -1;
-        });
-        if (filteredMatches.length > 0) {
-            var randIndex = Math.floor(Math.random() * filteredMatches.length);
-            var ex = filteredMatches[randIndex];
-            cardEl.setAttribute('data-ex-id', ex.id);
-            cardEl.setAttribute('data-ex-es', ex.es_text);
-            cardEl.setAttribute('data-ex-fr', ex.fr_text);
-            cardEl.setAttribute('data-ex-audio', ex.audio_url || '');
-            
-            var btnAudio = cardEl.querySelector('.btn-audio-action');
-            if (btnAudio) {
-                if (ex.audio_url) {
-                    btnAudio.style.display = 'flex';
-                    btnAudio.setAttribute('onclick', "playAudio(event, '" + ex.audio_url + "')");
-                } else {
-                    btnAudio.style.display = 'none';
-                    btnAudio.setAttribute('onclick', "");
-                }
+    });
+
+    console.log("filteredMatches:", filteredMatches);
+
+    if (filteredMatches.length > 0) {
+        var randIndex = Math.floor(Math.random() * filteredMatches.length);
+        var ex = filteredMatches[randIndex];
+
+        cardEl.setAttribute('data-ex-id', ex.id);
+        cardEl.setAttribute('data-ex-es', ex.es_text);
+        cardEl.setAttribute('data-ex-fr', ex.fr_text);
+        cardEl.setAttribute('data-ex-audio', ex.audio_url || '');
+
+        var btnAudio = cardEl.querySelector('.btn-audio-action');
+
+        if (btnAudio) {
+            if (ex.audio_url) {
+                btnAudio.style.display = 'flex';
+                btnAudio.setAttribute(
+                    'onclick',
+                    "playAudio(event, '" + ex.audio_url + "')"
+                );
+            } else {
+                btnAudio.style.display = 'none';
+                btnAudio.setAttribute('onclick', "");
             }
-        } else {
-            // No available examples after filtering
-            cardEl.setAttribute('data-ex-es', '');
-            cardEl.setAttribute('data-ex-fr', '');
-            cardEl.setAttribute('data-ex-audio', '');
-            var btnAudio = cardEl.querySelector('.btn-audio-action');
-            if (btnAudio) btnAudio.style.display = 'none';
+        }
+    } else {
+        cardEl.setAttribute('data-ex-es', '');
+        cardEl.setAttribute('data-ex-fr', '');
+        cardEl.setAttribute('data-ex-audio', '');
+
+        var btnAudio = cardEl.querySelector('.btn-audio-action');
+
+        if (btnAudio) {
+            btnAudio.style.display = 'none';
         }
     }
+}
 
     function flip(cardEl){
       document.querySelectorAll('.card.flipped').forEach(function(c){if(c!==cardEl)c.classList.remove('flipped');});
@@ -763,8 +819,9 @@
        if (!panel) return;
        if (es && fr) {
            var audioHtml = audio ? '<span style="font-size:1.2rem;margin-left:8px;vertical-align:middle;">🔊</span>' : '';
-           var flagId = cardEl.getAttribute('data-ex-id') || '';
-           var flagBtn = flagId ? '<button class="btn-flag-phrase" onclick="flagPhrase(event, \'' + flagId + '\', \'' + es.replace(/'/g, "\\'") + '\')" title="Ignorer cette phrase">✕</button>' : '';
+            var flagId = cardEl.getAttribute('data-ex-id') || '';
+            var flagContext = cardEl.getAttribute('data-raw') || '';
+            var flagBtn = flagId ? '<button class="btn-flag-phrase" onclick="flagPhrase(event, \'' + flagId + '\', \'' + es.replace(/'/g, "\\'") + '\', \'' + flagContext.replace(/'/g, "\\'") + '\')" title="Ignorer cette phrase pour cette conjugaison">✕</button>' : '';
            panel.innerHTML = '<div style="display: flex; justify-content: space-between; align-items: center; gap: 10px;"><div><div style="font-weight: 500; color: #f8fafc; margin-bottom: 3px; font-size: 1.1em;">' + es + audioHtml + '</div><div style="font-style: italic; color: #93c5fd; font-size: 0.9em;">' + fr + '</div></div>' + flagBtn + '</div>';
            
            if (audio) {
@@ -1081,37 +1138,49 @@
     var USERS = ["Aline", "Pascal", "Camil", "Test"];
     var currentUser = "";
 
-    window.flaggedPhrases = [];
+    window.flaggedPhrases = {};
 
-    function flagPhrase(event, phraseId, esText) {
+    function flagPhrase(event, phraseId, esText, context) {
       if (event) event.stopPropagation();
-      if (!confirm("Supprimer cette phrase de la sélection aléatoire ?\n\n'" + esText + "'")) return;
+      if (!confirm("Ignorer cette phrase pour cette conjugaison ?\n\n'" + esText + "'")) return;
       
+      // Immediately update local data (no reload needed)
+      if (!window.flaggedPhrases) window.flaggedPhrases = {};
+      if (!context) {
+        var flippedCard = document.querySelector('.card.flipped');
+        context = flippedCard ? (flippedCard.getAttribute('data-raw') || '') : '';
+      }
+      if (context) {
+        if (!window.flaggedPhrases[context]) window.flaggedPhrases[context] = [];
+        if (window.flaggedPhrases[context].indexOf(phraseId) === -1) {
+          window.flaggedPhrases[context].push(phraseId);
+		
+        }
+      }
+      
+      // Hide panel and pick next example immediately
+      hideFloatingExample();
+      var flippedCard = document.querySelector('.card.flipped');
+      if (flippedCard) {
+        pickRandomExample(flippedCard);
+        showFloatingExample(flippedCard);
+      }
+      
+      // Persist to server in background
       var url = isPhp ? 'apprentissage.php?action=flag' : '/api/flag';
       fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json; charset=utf-8' },
-        body: JSON.stringify({ id: phraseId, user: currentUser })
+        body: JSON.stringify({ id: phraseId, context: context, user: currentUser })
       })
       .then(function(r) { return r.json(); })
       .then(function(res) {
-        if (res.status === 'ok') {
-          // Add to local array
-          if (window.flaggedPhrases.indexOf(phraseId) === -1) {
-            window.flaggedPhrases.push(phraseId);
-          }
-          // Hide panel and pick next example
-          hideFloatingExample();
-          var flippedCard = document.querySelector('.card.flipped');
-          if (flippedCard) {
-            pickRandomExample(flippedCard);
-            showFloatingExample(flippedCard);
-          }
+        if (res.status !== 'ok') {
+          console.error('Flag save failed', res);
         }
       })
       .catch(function(err) {
-        console.error(err);
-        alert("Erreur lors de la suppression.");
+        console.error('Flag save error:', err);
       });
     }
 

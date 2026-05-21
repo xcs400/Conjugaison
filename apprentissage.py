@@ -34,19 +34,27 @@ def get_stats_file(headers, path="", body=None):
     return os.path.join(os.path.dirname(__file__), f"stats_apprentissage_{safe_user}.json")
 
 def load_flagged_phrases():
-    """Load list of flagged phrase IDs to ignore."""
+    """Load flagged phrases as dict keyed by context (verb__mode__tense__pronoun).
+    Auto-migrates old flat list format to new object format."""
     if os.path.exists(FLAGGED_FILE):
         try:
             with open(FLAGGED_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
+                data = json.load(f)
+            if isinstance(data, list):
+                # Migrate old flat array format
+                migrated = {"_global": data} if data else {}
+                save_flagged_phrases(migrated)
+                return migrated
+            if isinstance(data, dict):
+                return data
         except Exception:
-            return []
-    return []
+            return {}
+    return {}
 
-def save_flagged_phrases(flagged_list):
-    """Save list of flagged phrase IDs."""
+def save_flagged_phrases(flagged_data):
+    """Save flagged phrases object."""
     with open(FLAGGED_FILE, "w", encoding="utf-8") as f:
-        json.dump(flagged_list, f, ensure_ascii=False)
+        json.dump(flagged_data, f, ensure_ascii=False, indent=4)
 
 def get_stats_file(headers, path="", body=None):
     cookie_header = headers.get("Cookie", "")
@@ -182,8 +190,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(data)
             else:
                 self.send_response(404); self.end_headers()
-        elif self.path == "/flag_1.json" or self.path.startswith("/flag_1.json"):
-            json_file = os.path.join(os.path.dirname(__file__), "flag_1.json")
+        elif self.path == "/flag_2.json" or self.path.startswith("/flag_2.json"):
+            json_file = os.path.join(os.path.dirname(__file__), "flag_2.json")
             if os.path.exists(json_file):
                 with open(json_file, "rb") as f:
                     data = f.read()
@@ -223,11 +231,14 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         elif self.path.startswith("/api/flag"):
             body = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
             phrase_id = body.get("id")
+            context = body.get("context", "_global") or "_global"
             if phrase_id:
-                flagged_list = load_flagged_phrases()
-                if phrase_id not in flagged_list:
-                    flagged_list.append(phrase_id)
-                    save_flagged_phrases(flagged_list)
+                flagged_data = load_flagged_phrases()
+                if context not in flagged_data:
+                    flagged_data[context] = []
+                if phrase_id not in flagged_data[context]:
+                    flagged_data[context].append(phrase_id)
+                    save_flagged_phrases(flagged_data)
             self._json({"status": "ok"})
         elif self.path.startswith("/api/reset"):
             # read user from optional query parameters

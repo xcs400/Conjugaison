@@ -108,7 +108,7 @@
             "es": "comes"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mange",
             "es": "come"
           },
@@ -123,7 +123,7 @@
             "es": "coméis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mangent",
             "es": "comen"
           }
@@ -140,7 +140,7 @@
             "es": "comías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mangeait",
             "es": "comía"
           },
@@ -155,7 +155,7 @@
             "es": "comíais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mangeaient",
             "es": "comían"
           }
@@ -172,7 +172,7 @@
             "es": "has comido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a mangé",
             "es": "ha comido"
           },
@@ -187,7 +187,7 @@
             "es": "habéis comido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont mangé",
             "es": "han comido"
           }
@@ -204,7 +204,7 @@
             "es": "comiste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mangea",
             "es": "comió"
           },
@@ -219,7 +219,7 @@
             "es": "comisteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mangèrent",
             "es": "comieron"
           }
@@ -236,7 +236,7 @@
             "es": "comerás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mangera",
             "es": "comerá"
           },
@@ -251,7 +251,7 @@
             "es": "comeréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mangeront",
             "es": "comerán"
           }
@@ -268,7 +268,7 @@
             "es": "habías comido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait mangé",
             "es": "había comido"
           },
@@ -283,7 +283,7 @@
             "es": "habíais comido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient mangé",
             "es": "habían comido"
           }
@@ -302,7 +302,7 @@
             "es": "comerías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mangerait",
             "es": "comería"
           },
@@ -317,7 +317,7 @@
             "es": "comeríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mangeraient",
             "es": "comerían"
           }
@@ -336,7 +336,7 @@
             "es": "comas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il mange",
             "es": "coma"
           },
@@ -351,7 +351,7 @@
             "es": "comáis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils mangent",
             "es": "coman"
           }
@@ -368,7 +368,7 @@
             "es": "comieras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mangeait",
             "es": "comiera"
           },
@@ -383,7 +383,7 @@
             "es": "comierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mangeaient",
             "es": "comieran"
           }
@@ -420,7 +420,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il est",
             "es": "es",
             "hint1": "irrég."
@@ -438,7 +438,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils sont",
             "es": "son",
             "hint1": "irrég."
@@ -456,7 +456,7 @@
             "es": "eras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il était",
             "es": "era"
           },
@@ -471,7 +471,7 @@
             "es": "erais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils étaient",
             "es": "eran"
           }
@@ -488,7 +488,7 @@
             "es": "has sido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a été",
             "es": "ha sido"
           },
@@ -503,7 +503,7 @@
             "es": "habéis sido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont été",
             "es": "han sido"
           }
@@ -522,7 +522,7 @@
             "hint1": "irrégulier de aste / iste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il fut",
             "es": "fue",
             "hint1": "irrégulier de ó / ió"
@@ -540,7 +540,7 @@
             "hint1": "irrégulier de asteis / isteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils furent",
             "es": "fueron",
             "hint1": "irrégulier de aron / ieron"
@@ -558,7 +558,7 @@
             "es": "serás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il sera",
             "es": "será"
           },
@@ -573,7 +573,7 @@
             "es": "seréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils seront",
             "es": "serán"
           }
@@ -590,7 +590,7 @@
             "es": "habías sido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait été",
             "es": "había sido"
           },
@@ -605,7 +605,7 @@
             "es": "habíais sido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient été",
             "es": "habían sido"
           }
@@ -624,7 +624,7 @@
             "es": "serías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il serait",
             "es": "sería"
           },
@@ -639,7 +639,7 @@
             "es": "seríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils seraient",
             "es": "serían"
           }
@@ -660,7 +660,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il soit",
             "es": "sea",
             "hint1": "irrég."
@@ -678,7 +678,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils soient",
             "es": "sean",
             "hint1": "irrég."
@@ -698,7 +698,7 @@
             "hint1": "irrégulier de aras / ieras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il fût",
             "es": "fuera",
             "hint1": "irrégulier de ara / iera"
@@ -716,7 +716,7 @@
             "hint1": "irrégulier de arais / ierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils fussent",
             "es": "fueran",
             "hint1": "irrégulier de aran / ieran"
@@ -757,7 +757,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il va",
             "es": "va",
             "hint1": "irrég."
@@ -775,7 +775,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils vont",
             "es": "van",
             "hint1": "irrég."
@@ -795,7 +795,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il allait",
             "es": "iba",
             "hint1": "irrég."
@@ -813,7 +813,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils allaient",
             "es": "iban",
             "hint1": "irrég."
@@ -831,7 +831,7 @@
             "es": "has ido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il est allé",
             "es": "ha ido"
           },
@@ -846,7 +846,7 @@
             "es": "habéis ido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils sont allés",
             "es": "han ido"
           }
@@ -865,7 +865,7 @@
             "hint1": "irrégulier de aste / iste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il alla",
             "es": "fue",
             "hint1": "irrégulier de ó / ió"
@@ -883,7 +883,7 @@
             "hint1": "irrégulier de asteis / isteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils allèrent",
             "es": "fueron",
             "hint1": "irrégulier de aron / ieron"
@@ -901,7 +901,7 @@
             "es": "irás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il ira",
             "es": "irá"
           },
@@ -916,7 +916,7 @@
             "es": "iréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils iront",
             "es": "irán"
           }
@@ -933,7 +933,7 @@
             "es": "habías ido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il était allé",
             "es": "había ido"
           },
@@ -948,7 +948,7 @@
             "es": "habíais ido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils étaient allés",
             "es": "habían ido"
           }
@@ -967,7 +967,7 @@
             "es": "irías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il irait",
             "es": "iría"
           },
@@ -982,7 +982,7 @@
             "es": "iríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils iraient",
             "es": "irían"
           }
@@ -1003,7 +1003,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il aille",
             "es": "vaya",
             "hint1": "irrég."
@@ -1021,7 +1021,7 @@
             "hint1": "irrég."
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils aillent",
             "es": "vayan",
             "hint1": "irrég."
@@ -1041,7 +1041,7 @@
             "hint1": "irrégulier de aras / ieras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il allât",
             "es": "fuera",
             "hint1": "irrégulier de ara / iera"
@@ -1059,7 +1059,7 @@
             "hint1": "irrégulier de arais / ierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils allassent",
             "es": "fueran",
             "hint1": "irrégulier de aran / ieran"
@@ -1099,7 +1099,7 @@
             "hint1": "e→ie irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a",
             "es": "tiene",
             "hint1": "e→ie irrég."
@@ -1115,7 +1115,7 @@
             "es": "tenéis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont",
             "es": "tienen",
             "hint1": "e→ie irrég."
@@ -1133,7 +1133,7 @@
             "es": "tenías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait",
             "es": "tenía"
           },
@@ -1148,7 +1148,7 @@
             "es": "teníais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient",
             "es": "tenían"
           }
@@ -1165,7 +1165,7 @@
             "es": "has tenido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a eu",
             "es": "ha tenido"
           },
@@ -1180,7 +1180,7 @@
             "es": "habéis tenido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont eu",
             "es": "han tenido"
           }
@@ -1199,7 +1199,7 @@
             "hint1": "tuv- irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il eut",
             "es": "tuvo",
             "hint1": "tuv- irrég."
@@ -1217,7 +1217,7 @@
             "hint1": "tuv- irrég."
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils eurent",
             "es": "tuvieron",
             "hint1": "tuv- irrég."
@@ -1237,7 +1237,7 @@
             "hint1": "tendr- + rás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il aura",
             "es": "tendrá",
             "hint1": "tendr- + rá"
@@ -1255,7 +1255,7 @@
             "hint1": "tendr- + réis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils auront",
             "es": "tendrán",
             "hint1": "tendr- + rán"
@@ -1273,7 +1273,7 @@
             "es": "habías tenido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait eu",
             "es": "había tenido"
           },
@@ -1288,7 +1288,7 @@
             "es": "habíais tenido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient eu",
             "es": "habían tenido"
           }
@@ -1309,7 +1309,7 @@
             "hint1": "tendr- + rías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il aurait",
             "es": "tendría",
             "hint1": "tendr- + ría"
@@ -1327,7 +1327,7 @@
             "hint1": "tendr- + ríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils auraient",
             "es": "tendrían",
             "hint1": "tendr- + rían"
@@ -1349,7 +1349,7 @@
             "hint1": "teng-as irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il ait",
             "es": "tenga",
             "hint1": "teng-a irrég."
@@ -1367,7 +1367,7 @@
             "hint1": "teng-áis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils aient",
             "es": "tengan",
             "hint1": "teng-an irrég."
@@ -1387,7 +1387,7 @@
             "hint1": "tuv-ieras irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il eût",
             "es": "tuviera",
             "hint1": "tuv-iera irrég."
@@ -1405,7 +1405,7 @@
             "hint1": "tuv-ierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils eussent",
             "es": "tuvieran",
             "hint1": "tuv-ieran irrég."
@@ -1443,7 +1443,7 @@
             "es": "hablas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il parle",
             "es": "habla"
           },
@@ -1458,7 +1458,7 @@
             "es": "habláis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils parlent",
             "es": "hablan"
           }
@@ -1475,7 +1475,7 @@
             "es": "hablabas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il parlait",
             "es": "hablaba"
           },
@@ -1490,7 +1490,7 @@
             "es": "hablabais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils parlaient",
             "es": "hablaban"
           }
@@ -1507,7 +1507,7 @@
             "es": "has hablado"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a parlé",
             "es": "ha hablado"
           },
@@ -1522,7 +1522,7 @@
             "es": "habéis hablado"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont parlé",
             "es": "han hablado"
           }
@@ -1539,7 +1539,7 @@
             "es": "hablaste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il parla",
             "es": "habló"
           },
@@ -1554,7 +1554,7 @@
             "es": "hablasteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils parlèrent",
             "es": "hablaron"
           }
@@ -1571,7 +1571,7 @@
             "es": "hablarás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il parlera",
             "es": "hablará"
           },
@@ -1586,7 +1586,7 @@
             "es": "hablaréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils parleront",
             "es": "hablarán"
           }
@@ -1603,7 +1603,7 @@
             "es": "habías hablado"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait parlé",
             "es": "había hablado"
           },
@@ -1618,7 +1618,7 @@
             "es": "habíais hablado"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient parlé",
             "es": "habían hablado"
           }
@@ -1637,7 +1637,7 @@
             "es": "hablarías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il parlerait",
             "es": "hablaría"
           },
@@ -1652,7 +1652,7 @@
             "es": "hablaríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils parleraient",
             "es": "hablarían"
           }
@@ -1671,7 +1671,7 @@
             "es": "hables"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il parle",
             "es": "hable"
           },
@@ -1686,7 +1686,7 @@
             "es": "habléis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils parlent",
             "es": "hablen"
           }
@@ -1703,7 +1703,7 @@
             "es": "hablaras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il parlât",
             "es": "hablara"
           },
@@ -1718,7 +1718,7 @@
             "es": "hablarais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils parlassent",
             "es": "hablaran"
           }
@@ -1755,7 +1755,7 @@
             "hint1": "accent sur le á"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il est",
             "es": "está",
             "hint1": "accent sur le á"
@@ -1772,7 +1772,7 @@
             "hint1": "accent sur le á"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils sont",
             "es": "están",
             "hint1": "accent sur le á"
@@ -1790,7 +1790,7 @@
             "es": "estabas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il était",
             "es": "estaba"
           },
@@ -1805,7 +1805,7 @@
             "es": "estabais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils étaient",
             "es": "estaban"
           }
@@ -1822,7 +1822,7 @@
             "es": "has estado"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a été",
             "es": "ha estado"
           },
@@ -1837,7 +1837,7 @@
             "es": "habéis estado"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont été",
             "es": "han estado"
           }
@@ -1856,7 +1856,7 @@
             "hint1": "estuv- irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il fut",
             "es": "estuvo",
             "hint1": "estuv- irrég."
@@ -1874,7 +1874,7 @@
             "hint1": "estuv- irrég."
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils furent",
             "es": "estuvieron",
             "hint1": "estuv- irrég."
@@ -1892,7 +1892,7 @@
             "es": "estarás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il sera",
             "es": "estará"
           },
@@ -1907,7 +1907,7 @@
             "es": "estaréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils seront",
             "es": "estarán"
           }
@@ -1924,7 +1924,7 @@
             "es": "habías estado"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait été",
             "es": "había estado"
           },
@@ -1939,7 +1939,7 @@
             "es": "habíais estado"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient été",
             "es": "habían estado"
           }
@@ -1958,7 +1958,7 @@
             "es": "estarías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il serait",
             "es": "estaría"
           },
@@ -1973,7 +1973,7 @@
             "es": "estaríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils seraient",
             "es": "estarían"
           }
@@ -1994,7 +1994,7 @@
             "hint1": "accent sur le é"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il soit",
             "es": "esté",
             "hint1": "accent sur le é"
@@ -2011,7 +2011,7 @@
             "hint1": "accent sur le é"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils soient",
             "es": "estén",
             "hint1": "accent sur le é"
@@ -2031,7 +2031,7 @@
             "hint1": "estuv-ieras irrég."
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il fût",
             "es": "estuviera",
             "hint1": "estuv-iera irrég."
@@ -2047,7 +2047,7 @@
             "es": "estuvierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils fussent",
             "es": "estuvieran",
             "hint1": "estuv-ieran irrég."
@@ -2086,7 +2086,7 @@
             "es": "haces"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il fait",
             "es": "hace"
           },
@@ -2101,7 +2101,7 @@
             "es": "hacéis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils font",
             "es": "hacen"
           }
@@ -2118,7 +2118,7 @@
             "es": "hacías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il faisait",
             "es": "hacía"
           },
@@ -2133,7 +2133,7 @@
             "es": "hacíais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils faisaient",
             "es": "hacían"
           }
@@ -2151,7 +2151,7 @@
             "es": "has hecho"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a fait",
             "es": "ha hecho"
           },
@@ -2166,7 +2166,7 @@
             "es": "habéis hecho"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont fait",
             "es": "han hecho"
           }
@@ -2184,7 +2184,7 @@
             "es": "hiciste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il fit",
             "es": "hizo",
             "hint1": "z devant o : hizo"
@@ -2200,7 +2200,7 @@
             "es": "hicisteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils firent",
             "es": "hicieron"
           }
@@ -2218,7 +2218,7 @@
             "es": "harás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il fera",
             "es": "hará"
           },
@@ -2233,7 +2233,7 @@
             "es": "haréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils feront",
             "es": "harán"
           }
@@ -2250,7 +2250,7 @@
             "es": "habrás hecho"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il aura fait",
             "es": "habrá hecho"
           },
@@ -2265,7 +2265,7 @@
             "es": "habréis hecho"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils auront fait",
             "es": "habrán hecho"
           }
@@ -2282,7 +2282,7 @@
             "es": "habías hecho"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait fait",
             "es": "había hecho"
           },
@@ -2297,7 +2297,7 @@
             "es": "habíais hecho"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient fait",
             "es": "habían hecho"
           }
@@ -2317,7 +2317,7 @@
             "es": "harías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il ferait",
             "es": "haría"
           },
@@ -2332,7 +2332,7 @@
             "es": "haríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils feraient",
             "es": "harían"
           }
@@ -2352,7 +2352,7 @@
             "es": "hagas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il fasse",
             "es": "haga"
           },
@@ -2367,7 +2367,7 @@
             "es": "hagáis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils fassent",
             "es": "hagan"
           }
@@ -2385,7 +2385,7 @@
             "es": "hicieras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il fît",
             "es": "hiciera"
           },
@@ -2400,7 +2400,7 @@
             "es": "hicierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils fissent",
             "es": "hicieran"
           }
@@ -2437,7 +2437,7 @@
             "es": "has"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a (aux.)",
             "es": "ha",
             "hint1": "attention : ha (différent de hay)"
@@ -2453,7 +2453,7 @@
             "es": "habéis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont (aux.)",
             "es": "han"
           }
@@ -2470,7 +2470,7 @@
             "es": "habías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait",
             "es": "había"
           },
@@ -2485,7 +2485,7 @@
             "es": "habíais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient",
             "es": "habían"
           }
@@ -2504,7 +2504,7 @@
             "es": "hubiste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il eut",
             "es": "hubo"
           },
@@ -2519,7 +2519,7 @@
             "es": "hubisteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils eurent",
             "es": "hubieron"
           }
@@ -2537,7 +2537,7 @@
             "es": "habrás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il aura",
             "es": "habrá"
           },
@@ -2552,7 +2552,7 @@
             "es": "habréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils auront",
             "es": "habrán"
           }
@@ -2574,7 +2574,7 @@
             "es": "habrías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il aurait",
             "es": "habría"
           },
@@ -2589,7 +2589,7 @@
             "es": "habríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils auraient",
             "es": "habrían"
           }
@@ -2609,7 +2609,7 @@
             "es": "hayas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il ait",
             "es": "haya"
           },
@@ -2624,7 +2624,7 @@
             "es": "hayáis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils aient",
             "es": "hayan"
           }
@@ -2642,7 +2642,7 @@
             "es": "hubieras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il eût",
             "es": "hubiera"
           },
@@ -2657,7 +2657,7 @@
             "es": "hubierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils eussent",
             "es": "hubieran"
           }
@@ -2694,7 +2694,7 @@
             "es": "pones"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il met",
             "es": "pone"
           },
@@ -2709,7 +2709,7 @@
             "es": "ponéis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mettent",
             "es": "ponen"
           }
@@ -2726,7 +2726,7 @@
             "es": "ponías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mettait",
             "es": "ponía"
           },
@@ -2741,7 +2741,7 @@
             "es": "poníais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mettaient",
             "es": "ponían"
           }
@@ -2759,7 +2759,7 @@
             "es": "has puesto"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a mis",
             "es": "ha puesto"
           },
@@ -2774,7 +2774,7 @@
             "es": "habéis puesto"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont mis",
             "es": "han puesto"
           }
@@ -2792,7 +2792,7 @@
             "es": "pusiste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mit",
             "es": "puso"
           },
@@ -2807,7 +2807,7 @@
             "es": "pusisteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mirent",
             "es": "pusieron"
           }
@@ -2825,7 +2825,7 @@
             "es": "pondrás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mettra",
             "es": "pondrá"
           },
@@ -2840,7 +2840,7 @@
             "es": "pondréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mettront",
             "es": "pondrán"
           }
@@ -2857,7 +2857,7 @@
             "es": "habrás puesto"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il aura mis",
             "es": "habrá puesto"
           },
@@ -2872,7 +2872,7 @@
             "es": "habréis puesto"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils auront mis",
             "es": "habrán puesto"
           }
@@ -2889,7 +2889,7 @@
             "es": "habías puesto"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait mis",
             "es": "había puesto"
           },
@@ -2904,7 +2904,7 @@
             "es": "habíais puesto"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient mis",
             "es": "habían puesto"
           }
@@ -2924,7 +2924,7 @@
             "es": "pondrías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il mettrait",
             "es": "pondría"
           },
@@ -2939,7 +2939,7 @@
             "es": "pondríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils mettraient",
             "es": "pondrían"
           }
@@ -2959,7 +2959,7 @@
             "es": "pongas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il mette",
             "es": "ponga"
           },
@@ -2974,7 +2974,7 @@
             "es": "pongáis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils mettent",
             "es": "pongan"
           }
@@ -2992,7 +2992,7 @@
             "es": "pusieras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il mît",
             "es": "pusiera"
           },
@@ -3007,7 +3007,7 @@
             "es": "pusierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils missent",
             "es": "pusieran"
           }
@@ -3044,7 +3044,7 @@
             "es": "dices"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il dit",
             "es": "dice"
           },
@@ -3059,7 +3059,7 @@
             "es": "decís"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils disent",
             "es": "dicen"
           }
@@ -3076,7 +3076,7 @@
             "es": "decías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il disait",
             "es": "decía"
           },
@@ -3091,7 +3091,7 @@
             "es": "decíais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils disaient",
             "es": "decían"
           }
@@ -3109,7 +3109,7 @@
             "es": "has dicho"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il a dit",
             "es": "ha dicho"
           },
@@ -3124,7 +3124,7 @@
             "es": "habéis dicho"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils ont dit",
             "es": "han dicho"
           }
@@ -3142,7 +3142,7 @@
             "es": "dijiste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il dit",
             "es": "dijo"
           },
@@ -3157,7 +3157,7 @@
             "es": "dijisteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils dirent",
             "es": "dijeron",
             "hint1": "pas de 'i' : dijeron"
@@ -3176,7 +3176,7 @@
             "es": "dirás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il dira",
             "es": "dirá"
           },
@@ -3191,7 +3191,7 @@
             "es": "diréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils diront",
             "es": "dirán"
           }
@@ -3208,7 +3208,7 @@
             "es": "habrás dicho"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il aura dit",
             "es": "habrá dicho"
           },
@@ -3223,7 +3223,7 @@
             "es": "habréis dicho"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils auront dit",
             "es": "habrán dicho"
           }
@@ -3240,7 +3240,7 @@
             "es": "habías dicho"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il avait dit",
             "es": "había dicho"
           },
@@ -3255,7 +3255,7 @@
             "es": "habíais dicho"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils avaient dit",
             "es": "habían dicho"
           }
@@ -3275,7 +3275,7 @@
             "es": "dirías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il dirait",
             "es": "diría"
           },
@@ -3290,7 +3290,7 @@
             "es": "diríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils diraient",
             "es": "dirían"
           }
@@ -3310,7 +3310,7 @@
             "es": "digas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il dise",
             "es": "diga"
           },
@@ -3325,7 +3325,7 @@
             "es": "digáis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils disent",
             "es": "digan"
           }
@@ -3343,7 +3343,7 @@
             "es": "dijeras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il dît",
             "es": "dijera"
           },
@@ -3358,7 +3358,7 @@
             "es": "dijerais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils dissent",
             "es": "dijeran"
           }
@@ -3395,7 +3395,7 @@
             "es": "vienes"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il vient",
             "es": "viene"
           },
@@ -3410,7 +3410,7 @@
             "es": "venís"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils viennent",
             "es": "vienen"
           }
@@ -3427,7 +3427,7 @@
             "es": "venías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il venait",
             "es": "venía"
           },
@@ -3442,7 +3442,7 @@
             "es": "veníais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils venaient",
             "es": "venían"
           }
@@ -3460,7 +3460,7 @@
             "es": "has venido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il est venu",
             "es": "ha venido"
           },
@@ -3475,7 +3475,7 @@
             "es": "habéis venido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils sont venus",
             "es": "han venido"
           }
@@ -3493,7 +3493,7 @@
             "es": "viniste"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il vint",
             "es": "vino"
           },
@@ -3508,7 +3508,7 @@
             "es": "vinisteis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils vinrent",
             "es": "vinieron"
           }
@@ -3526,7 +3526,7 @@
             "es": "vendrás"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il viendra",
             "es": "vendrá"
           },
@@ -3541,7 +3541,7 @@
             "es": "vendréis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils viendront",
             "es": "vendrán"
           }
@@ -3558,7 +3558,7 @@
             "es": "habrás venido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il sera venu",
             "es": "habrá venido"
           },
@@ -3573,7 +3573,7 @@
             "es": "habréis venido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils seront venus",
             "es": "habrán venido"
           }
@@ -3590,7 +3590,7 @@
             "es": "habías venido"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il était venu",
             "es": "había venido"
           },
@@ -3605,7 +3605,7 @@
             "es": "habíais venido"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils étaient venus",
             "es": "habían venido"
           }
@@ -3625,7 +3625,7 @@
             "es": "vendrías"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "il viendrait",
             "es": "vendría"
           },
@@ -3640,7 +3640,7 @@
             "es": "vendríais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "ils viendraient",
             "es": "vendrían"
           }
@@ -3660,7 +3660,7 @@
             "es": "vengas"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il vienne",
             "es": "venga"
           },
@@ -3675,7 +3675,7 @@
             "es": "vengáis"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils viennent",
             "es": "vengan"
           }
@@ -3693,7 +3693,7 @@
             "es": "vinieras"
           },
           {
-            "pronoun": "él",
+            "pronoun": "3SI",
             "fr": "qu'il vînt",
             "es": "viniera"
           },
@@ -3708,7 +3708,7 @@
             "es": "vinierais"
           },
           {
-            "pronoun": "ellos",
+            "pronoun": "3PL",
             "fr": "qu'ils vinssent",
             "es": "vinieran"
           }
