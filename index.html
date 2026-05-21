@@ -890,6 +890,7 @@
         
         var updated = progress[safeId];
         cardEl.classList.remove('flipped');
+        hideFloatingExample();
         setTimeout(function(){
           // Update stats
           document.getElementById('ok-'+safeId).textContent='\u2713 '+(updated.success||0);
