@@ -40,7 +40,29 @@
     .card.flipped { transform: rotateY(180deg); }
     
     .face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: .75rem; padding: .8rem; display: flex; flex-direction: column; justify-content: center; align-items: center; background: var(--surf); border: 1px solid rgba(255,255,255,.05); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
-    .back { transform: rotateY(180deg); background: #172554; border-color: rgba(59,130,246,.3); }
+    .back { transform: rotateY(180deg); background: linear-gradient(135deg, #fdfbf7 0%, #f1f5f9 100%); border-color: rgba(0,0,0,0.1); box-shadow: inset 0 0 20px rgba(0,0,0,0.02); }
+    
+    /* Textures légères pour chaque temps conjugué - côté question (front) */
+    .card.tense-present .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(16, 185, 129, 0.68) 100%); }
+    .card.tense-imparfait .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(14, 165, 233, 0.68) 100%); }
+    .card.tense-passe-compose .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(168, 85, 247, 0.68) 100%); }
+    
+    .card.tense-preterit .face.front,
+    .card.tense-passe-simple .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(225, 29, 72, 0.68) 100%); }
+    
+    .card.tense-futur .face.front,
+    .card.tense-futur-simple .face.front,
+    .card.tense-futur-proche .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(249, 115, 22, 0.68) 100%); }
+   
+    .card.tense-futur-anterieur .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(245, 158, 11, 0.68) 100%); }
+      
+    .card.tense-plus-que-parfait .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(217, 70, 239, 0.68) 100%); }
+    .card.tense-conditionnel .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(20, 184, 166, 0.68) 100%); }
+  
+    .card.tense-present-subjonctif .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(99, 102, 241, 0.68) 100%); }
+    .card.tense-imparfait-subjonctif .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(244, 63, 94, 0.68) 100%); }
+    /* Temps manquants ajoutés */
+    .card.tense-imperatif .face.front { background: linear-gradient(135deg, var(--surf) 0%, rgba(132, 204, 22, 0.68) 100%); }
     
     /* Card interior elements */
     .pronoun { position: absolute; top: .35rem; left: .4rem; font-size: .8rem; font-weight: 800; background: rgba(59,130,246,.2); border: 1px solid rgba(59,130,246,.3); padding: .15rem .45rem; border-radius: 1rem; color: #93c5fd; }
@@ -55,7 +77,14 @@
     .infinitive-badge { font-size: .72rem; font-weight: 800; background: rgba(245,158,11,.15); border: 1px solid rgba(245,158,11,.3); padding: .15rem .45rem; border-radius: 1rem; color: #fde68a; text-transform: uppercase; }
     .tense-badge { font-size: .72rem; font-weight: 800; background: rgba(139,92,246,.15); border: 1px solid rgba(139,92,246,.3); padding: .15rem .45rem; border-radius: 1rem; color: #ddd6fe; text-transform: uppercase; }
     .hint { font-size: .85rem; font-weight: 700; color: #94a3b8; font-style: italic; }
+    .back .hint { color: #64748b; }
     .phrase-es { font-size: 1.1rem; font-weight: 800; color: #fff; text-align: center; margin-bottom: .6rem; }
+    .back .phrase-es { color: #0f172a; }
+    .back .pronoun { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); color: #1d4ed8; }
+    .back .infinitive-badge { background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.3); color: #b45309; }
+    .back .nav-arrow { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); color: #475569; }
+    .back .nav-arrow:hover { background: rgba(59,130,246,.15); color: #1d4ed8; border-color: rgba(59,130,246,.4); }
+    
     .actions { display: flex; width: 100%; padding: 0 1rem; justify-content: space-evenly; align-items: center; margin-top: .4rem; }
     
     /* Target vote buttons inside card back specifically to avoid global conflicts */
@@ -64,6 +93,7 @@
     .btn-err { background: rgba(239, 68, 68, .2); color: var(--err); }
     .btn-ok { background: rgba(16, 185, 129, .2); color: var(--ok); }
     .btn-audio-action { background: rgba(59, 130, 246, 0.2); color: #93c5fd; padding-left: 2px; }
+    .back .btn-audio-action { background: rgba(59, 130, 246, 0.15); color: #2563eb; }
     
     /* Spaced repetition borders */
     .state-new .front { border: 2px solid #334155; }
@@ -248,14 +278,18 @@
 
     /* Navigation arrows on cards */
     .nav-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(30, 41, 59, 0.55);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30, 41, 59, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  width: 30px;
+   
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: var(--muted);
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -263,7 +297,7 @@
       cursor: pointer;
       transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
       z-index: 15;
-      font-size: 0.95rem;
+      font-size: 1.6rem;
       font-weight: bold;
       outline: none;
       box-shadow: 0 2px 5px rgba(0,0,0,0.25);
@@ -290,7 +324,7 @@
       left: 50%;
       transform: translateX(-50%) translateY(-120px);
       opacity: 0;
-      background: rgba(30, 58, 138, 0.95); /* Deep rich blue */
+      background: rgba(130, 58, 138, 0.95); /* Deep rich blue */
       border: 1px solid rgba(147, 197, 253, 0.3);
       border-radius: 12px;
       padding: 15px 25px;
@@ -392,6 +426,12 @@
     // Sanitize ID: remove accents, replace spaces with dashes
     function sid(raw){
       return raw.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-').replace(/[^a-zA-Z0-9_\-]/g,'');
+    }
+
+    // Convert tense name to CSS class (e.g. "Présent" → "tense-present")
+    function getTenseClass(tense) {
+      var normalized = tense.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,'-').replace(/[^a-z0-9_\-]/g,'');
+      return 'tense-' + normalized;
     }
 
     // Default progress entry
@@ -565,17 +605,31 @@
               }
             }
             
-            var tenseBadgeHtml = '';
-            if (tense === 'Imparfait' || tense === 'Prétérit') {
-              var displayTense = tense;
-              if (mode === 'Subjonctif' && tense === 'Imparfait') {
-                displayTense = 'Subj. Imparfait';
-              }
-              tenseBadgeHtml = '<span class="tense-badge">' + displayTense.toUpperCase() + '</span>';
+      
+            var displayTense = tense;
+            var cssTense = tense;
+
+            if (mode === 'Subjonctif' && tense === 'Imparfait') {
+                displayTense = 'Sub. Imparfait';             
+                cssTense = 'Imparfait Subjonctif';
             }
+            if (mode === 'Subjonctif' && (tense === 'Present' || tense === 'Présent')) {
+                displayTense = 'Sub. Present';             
+                cssTense = 'Present Subjonctif';
+            }
+            if (mode === 'Conditionnel' && (tense === 'Present' || tense === 'Présent')) {
+                displayTense = 'Cond. Present';
+                cssTense = 'Conditionnel';
+            }
+            if ((mode === 'Imperatif' || mode === 'Impératif') && tense === 'Affirmatif') {
+                cssTense = 'Imperatif';
+            }
+                
+            var tenseBadgeHtml = '<span class="tense-badge">' + displayTense.toUpperCase() + '</span>';
+            
             
             tenseHtml+='<div class="scene">'
-              +'<div class="card '+st+'" id="c-'+safeId+'" data-raw="'+rawId+'"'+exampleDataAttrs+' onclick="flip(this)">'
+              +'<div class="card '+st+' '+getTenseClass(cssTense)+'" id="c-'+safeId+'" data-raw="'+rawId+'"'+exampleDataAttrs+' onclick="flip(this)">'
               +'<div class="face front">'
               +'<button class="nav-arrow nav-prev" title="Temps précédent" onclick="navigateTense(event,this,-1)">&#8592;</button>'
               +'<button class="nav-arrow nav-next" title="Temps suivant" onclick="navigateTense(event,this,1)">&#8594;</button>'
