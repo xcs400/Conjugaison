@@ -177,7 +177,7 @@ def call_ollama(record: dict):
         "format": "json",
         "options": {
             "temperature": 0,
-            "num_predict": 500,
+            "num_predict": 1000,
         }
     }
 
