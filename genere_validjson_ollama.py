@@ -7,6 +7,7 @@ import argparse
 import logging
 
 from pathlib import Path
+from collections import Counter
 
 import requests
 from tqdm import tqdm
@@ -75,13 +76,15 @@ tense :
 - Futur antérieur
 - Affirmatif
 
+
 pronoun :
 - yo
 - tú
-- 3SI
+- 3SI      <- (use this for él/ella/usted)
 - nosotros
-- vosotros
-- 3PL
+- vosotros <- (use this for vosotros/vosotras)
+- 3PL      <- (use this for ellos/ellas/ustedes)
+
 
 Realpronoun :
 - yo
@@ -141,18 +144,15 @@ ID :
 """
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# STRIP MARKDOWN FENCES  ← FIX #1
-# Le modèle enveloppe parfois la réponse dans ```json ... ```
-# même avec format=json. On nettoie avant de parser.
+# STRIP MARKDOWN FENCES
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def strip_markdown_fences(text: str) -> str:
-    """Retire les fences markdown ```json / ``` autour du JSON."""
     text = text.strip()
-    # Retire ```json ou ``` en début
+
     text = re.sub(r'^```(?:json)?\s*', '', text)
-    # Retire ``` en fin
     text = re.sub(r'\s*```\s*$', '', text)
+
     return text.strip()
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -177,7 +177,7 @@ def call_ollama(record: dict):
         "format": "json",
         "options": {
             "temperature": 0,
-            "num_predict": 1000,
+            "num_predict": 1500,
         }
     }
 
@@ -213,6 +213,7 @@ def call_ollama(record: dict):
     if response.status_code != 200:
         if DEBUG:
             print(response.text)
+
         raise Exception(f"{response.status_code} - {response.text}")
 
     data = response.json()
@@ -224,7 +225,6 @@ def call_ollama(record: dict):
 
     content = data["message"]["content"]
 
-    # ── FIX #1 : nettoyer les fences markdown avant de parser ──
     content_clean = strip_markdown_fences(content)
 
     if DEBUG:
@@ -236,8 +236,6 @@ def call_ollama(record: dict):
 
     if not isinstance(parsed, list):
         raise Exception("Le modèle doit retourner une LISTE JSON")
-
-    # ── validation stricte ──────────────────────────────────────
 
     allowed_moods = {
         "Indicatif",
@@ -348,25 +346,26 @@ def load_done_ids(output_path: Path):
 
             try:
                 obj = json.loads(line)
+
                 if "id" in obj:
                     done.add(obj["id"])
+
             except Exception:
                 pass
 
     return done
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# WRITE RESULTS  ← FIX #2
-# On ouvre/ferme le fichier à chaque phrase pour garantir
-# que chaque résultat est persisté immédiatement sur disque.
+# WRITE RESULTS
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def write_results(output_path: Path, results: list):
-    """Append les résultats dans le fichier JSONL, un objet par ligne."""
+
     with output_path.open("a", encoding="utf-8") as f:
+
         for result in results:
             f.write(json.dumps(result, ensure_ascii=False) + "\n")
-        # fsync garantit l'écriture physique sur disque
+
         f.flush()
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -379,65 +378,120 @@ def run(input_path: Path, output_path: Path):
         records = json.load(f)
 
     done = load_done_ids(output_path)
+
     log.info("%d phrases déjà traitées", len(done))
 
     todo = [r for r in records if r.get("id") not in done]
+
     log.info("%d phrases restantes", len(todo))
+
+    SER_ESTAR_FORMS = {
+        # ser
+        "soy","eres","estaban" 
+
+    }
+
+    verb_counter = Counter(SER_ESTAR_FORMS)
+
+    def rebuild_pattern():
+        return re.compile(
+            r"\b(" + "|".join(map(re.escape, verb_counter.keys())) + r")\b",
+            re.IGNORECASE
+        )
+
+    pattern = rebuild_pattern()
 
     for record in tqdm(todo, desc="Traitement", unit="phrase"):
 
+        es_text = record.get("es_text", "")
+
+        if pattern.search(es_text):
+            print("skip", es_text)
+            continue
+
         results = ask_llm(record)
 
+        # ─────────────────────────────────────────────────────────────
+        # ajoute automatiquement les verbes fréquents au pattern
+        # ─────────────────────────────────────────────────────────────
+
+        for item in results:
+
+            conj = item.get("conj_es", "").strip().lower()
+
+            if not conj:
+                continue
+
+            words = re.findall(
+                r"\b[\wáéíóúüñ]+\b",
+                conj,
+                flags=re.IGNORECASE
+            )
+
+            for word in words:
+
+                verb_counter[word] += 1
+
+                if verb_counter[word] > 10:
+
+                    print(f"[AUTO-ADD] {word}")
+
+                    pattern = rebuild_pattern()
+
         if results:
-            # ── FIX #2 : écriture immédiate après chaque phrase ──
             write_results(output_path, results)
 
         time.sleep(SLEEP_BETWEEN)
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# CLEAN DUPLICATES
+# ═══════════════════════════════════════════════════════════════════════════════
+
+def clean_duplicates():
+
+    input_path = Path("flag_2.json")
+    output_path = Path("flag_2_clean.json")
+
+    seen = set()
+    cleaned = []
+
+    for line in input_path.read_text(encoding="utf-8").splitlines():
+
+        line = line.strip()
+
+        if not line:
+            continue
+
+        try:
+            obj = json.loads(line)
+
+            key = (obj.get("id"), obj.get("verb"))
+
+            if key not in seen:
+                seen.add(key)
+                cleaned.append(obj)
+
+        except Exception as e:
+            print(f"Ligne invalide ignorée : {e}")
+
+    with output_path.open("w", encoding="utf-8") as f:
+
+        for obj in cleaned:
+            f.write(json.dumps(obj, ensure_ascii=False) + "\n")
+
+    print(f"{len(cleaned)} entrées écrites.")
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # ENTRYPOINT
 # ═══════════════════════════════════════════════════════════════════════════════
 
-import json
-from pathlib import Path
-
-input_path = Path("flag_2.json")
-output_path = Path("flag_2_clean.json")
-
-seen = set()
-cleaned = []
-
-for line in input_path.read_text(encoding="utf-8").splitlines():
-    line = line.strip()
-    if not line:
-        continue
-    try:
-        obj = json.loads(line)
-        # clé unique = id + verb pour gérer les phrases multi-verbes
-        key = (obj.get("id"), obj.get("verb"))
-        if key not in seen:
-            seen.add(key)
-            cleaned.append(obj)
-    except Exception as e:
-        print(f"Ligne invalide ignorée : {e}")
-
-with output_path.open("w", encoding="utf-8") as f:
-    for obj in cleaned:
-        f.write(json.dumps(obj, ensure_ascii=False) + "\n")
-
-print(f"{len(cleaned)} entrées écrites.")
-
-
-
-
 if __name__ == "__main__":
 
-
-
-
     parser = argparse.ArgumentParser()
+
     parser.add_argument("--input", default=DEFAULT_INPUT)
     parser.add_argument("--output", default=DEFAULT_OUTPUT)
+
     args = parser.parse_args()
 
     run(Path(args.input), Path(args.output))

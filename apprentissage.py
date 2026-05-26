@@ -190,8 +190,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
                 self.wfile.write(data)
             else:
                 self.send_response(404); self.end_headers()
-        elif self.path == "/flag_2.json" or self.path.startswith("/flag_2.json"):
-            json_file = os.path.join(os.path.dirname(__file__), "flag_2.json")
+        elif self.path == "/flag_2_batch_1.json" or self.path.startswith("/flag_2_batch_1.json"):
+            json_file = os.path.join(os.path.dirname(__file__), "flag_2_batch_1.json")
             if os.path.exists(json_file):
                 with open(json_file, "rb") as f:
                     data = f.read()

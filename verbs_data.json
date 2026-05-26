@@ -2423,261 +2423,291 @@
       }
     },
     "haber": {
-      "Indicatif": {
-        "Présent": [
-          {
-            "pronoun": "yo",
-            "fr": "j'ai (aux.)",
-            "es": "he",
-            "hint1": "très irrégulier : he"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu as (aux.)",
-            "es": "has"
-          },
-          {
-            "pronoun": "3SI",
-            "fr": "il a (aux.)",
-            "es": "ha",
-            "hint1": "attention : ha (différent de hay)"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous avons (aux.)",
-            "es": "hemos"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous avez (aux.)",
-            "es": "habéis"
-          },
-          {
-            "pronoun": "3PL",
-            "fr": "ils ont (aux.)",
-            "es": "han"
-          }
-        ],
-        "Imparfait": [
-          {
-            "pronoun": "yo",
-            "fr": "j'avais",
-            "es": "había"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu avais",
-            "es": "habías"
-          },
-          {
-            "pronoun": "3SI",
-            "fr": "il avait",
-            "es": "había"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous avions",
-            "es": "habíamos"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous aviez",
-            "es": "habíais"
-          },
-          {
-            "pronoun": "3PL",
-            "fr": "ils avaient",
-            "es": "habían"
-          }
-        ],
+ 
+		 
+		  "Indicatif": {
+			"Présent": [
+			  {
+				"pronoun": "yo",
+				"fr": "j'ai (aux. seul)",
+				"es": "he",
+				"hint1": "très irrégulier ; utilisé surtout comme auxiliaire"
+			  },
+			  {
+				"pronoun": "tú",
+				"fr": "tu as (aux. seul)",
+				"es": "has",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  },
+			  {
+				"pronoun": "3SI",
+				"fr": "il a (aux. ; ≠ hay)",
+				"es": "ha",
+				"hint1": "attention : ha ≠ hay ; surtout auxiliaire"
+			  },
+			  {
+				"pronoun": "nosotros",
+				"fr": "nous avons (aux. seul)",
+				"es": "hemos",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  },
+			  {
+				"pronoun": "vosotros",
+				"fr": "vous avez (aux. seul)",
+				"es": "habéis",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  },
+			  {
+				"pronoun": "3PL",
+				"fr": "ils ont (aux. seul)",
+				"es": "han",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  }
+			],
 
-        "Prétérit": [
-          {
-            "pronoun": "yo",
-            "fr": "j'eus",
-            "es": "hube",
-            "hint1": "radical irrégulier hub-"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu eus",
-            "es": "hubiste"
-          },
-          {
-            "pronoun": "3SI",
-            "fr": "il eut",
-            "es": "hubo"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous eûmes",
-            "es": "hubimos"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous eûtes",
-            "es": "hubisteis"
-          },
-          {
-            "pronoun": "3PL",
-            "fr": "ils eurent",
-            "es": "hubieron"
-          }
-        ],
-        "Futur simple": [
-          {
-            "pronoun": "yo",
-            "fr": "j'aurai",
-            "es": "habré",
-            "hint1": "radical irrégulier habr-"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu auras",
-            "es": "habrás"
-          },
-          {
-            "pronoun": "3SI",
-            "fr": "il aura",
-            "es": "habrá"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous aurons",
-            "es": "habremos"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous aurez",
-            "es": "habréis"
-          },
-          {
-            "pronoun": "3PL",
-            "fr": "ils auront",
-            "es": "habrán"
-          }
-        ]
+			"Imparfait": [
+			  {
+				"pronoun": "yo",
+				"fr": "j'avais (impers. fréquent)",
+				"es": "había",
+				"hint1": "très fréquent aussi en impersonnel : había = il y avait"
+			  },
+			  {
+				"pronoun": "tú",
+				"fr": "tu avais (rare seul)",
+				"es": "habías",
+				"hint1": "rare utilisé seul ; surtout auxiliaire"
+			  },
+			  {
+				"pronoun": "3SI",
+				"fr": "il y avait (très fréquent)",
+				"es": "había",
+				"hint1": "forme impersonnelle extrêmement fréquente"
+			  },
+			  {
+				"pronoun": "nosotros",
+				"fr": "nous avions (rare seul)",
+				"es": "habíamos",
+				"hint1": "rare utilisé seul ; surtout auxiliaire"
+			  },
+			  {
+				"pronoun": "vosotros",
+				"fr": "vous aviez (rare seul)",
+				"es": "habíais",
+				"hint1": "rare utilisé seul ; surtout auxiliaire"
+			  },
+			  {
+				"pronoun": "3PL",
+				"fr": "ils avaient (rare seul)",
+				"es": "habían",
+				"hint1": "rare utilisé seul ; surtout auxiliaire"
+			  }
+			],
+
+			"Prétérit": [
+			  {
+				"pronoun": "yo",
+				"fr": "j'eus (littéraire)",
+				"es": "hube",
+				"hint1": "très rare seul ; surtout littéraire"
+			  },
+			  {
+				"pronoun": "tú",
+				"fr": "tu eus (quasi jamais seul)",
+				"es": "hubiste",
+				"hint1": "quasiment jamais utilisé seul"
+			  },
+			  {
+				"pronoun": "3SI",
+				"fr": "il y eut (fréquent impers.)",
+				"es": "hubo",
+				"hint1": "important : hubo = il y eut ; fréquent en impersonnel"
+			  },
+			  {
+				"pronoun": "nosotros",
+				"fr": "nous eûmes (très rare)",
+				"es": "hubimos",
+				"hint1": "très rare utilisé seul"
+			  },
+			  {
+				"pronoun": "vosotros",
+				"fr": "vous eûtes (archaïque)",
+				"es": "hubisteis",
+				"hint1": "très rare ; archaïque dans l'usage moderne"
+			  },
+			  {
+				"pronoun": "3PL",
+				"fr": "ils eurent (littéraire)",
+				"es": "hubieron",
+				"hint1": "presque uniquement dans le pretérito anterior littéraire"
+			  }
+			],
+
+			"Futur simple": [
+			  {
+				"pronoun": "yo",
+				"fr": "j'aurai (rare seul)",
+				"es": "habré",
+				"hint1": "rare utilisé seul ; radical irrégulier habr-"
+			  },
+			  {
+				"pronoun": "tú",
+				"fr": "tu auras (rare seul)",
+				"es": "habrás",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "3SI",
+				"fr": "il y aura (très fréquent)",
+				"es": "habrá",
+				"hint1": "très fréquent en impersonnel : habrá = il y aura"
+			  },
+			  {
+				"pronoun": "nosotros",
+				"fr": "nous aurons (rare seul)",
+				"es": "habremos",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "vosotros",
+				"fr": "vous aurez (rare seul)",
+				"es": "habréis",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "3PL",
+				"fr": "ils auront (rare seul)",
+				"es": "habrán",
+				"hint1": "rare utilisé seul ; surtout auxiliaire"
+			  }
+			]
+		  },
+
+		  "Conditionnel": {
+			"Présent": [
+			  {
+				"pronoun": "yo",
+				"fr": "j'aurais (rare seul)",
+				"es": "habría",
+				"hint1": "rare utilisé seul ; radical irrégulier habr-"
+			  },
+			  {
+				"pronoun": "tú",
+				"fr": "tu aurais (rare seul)",
+				"es": "habrías",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "3SI",
+				"fr": "il y aurait (fréquent)",
+				"es": "habría",
+				"hint1": "utile en impersonnel : habría = il y aurait"
+			  },
+			  {
+				"pronoun": "nosotros",
+				"fr": "nous aurions (rare seul)",
+				"es": "habríamos",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "vosotros",
+				"fr": "vous auriez (rare seul)",
+				"es": "habríais",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "3PL",
+				"fr": "ils auraient (rare seul)",
+				"es": "habrían",
+				"hint1": "rare utilisé seul ; surtout auxiliaire"
+			  }
+			]
+		  },
+
+		  "Subjonctif": {
+			"Présent": [
+			  {
+				"pronoun": "yo",
+				"fr": "que j'aie (aux. fréquent)",
+				"es": "haya",
+				"hint1": "très fréquent comme auxiliaire et en impersonnel"
+			  },
+			  {
+				"pronoun": "tú",
+				"fr": "que tu aies (aux. surtout)",
+				"es": "hayas",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  },
+			  {
+				"pronoun": "3SI",
+				"fr": "qu'il y ait (fréquent)",
+				"es": "haya",
+				"hint1": "peut être impersonnel : que haya = qu'il y ait"
+			  },
+			  {
+				"pronoun": "nosotros",
+				"fr": "que nous ayons (aux.)",
+				"es": "hayamos",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  },
+			  {
+				"pronoun": "vosotros",
+				"fr": "que vous ayez (aux.)",
+				"es": "hayáis",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  },
+			  {
+				"pronoun": "3PL",
+				"fr": "qu'ils aient (aux.)",
+				"es": "hayan",
+				"hint1": "principalement utilisé comme auxiliaire"
+			  }
+			],
+
+			"Imparfait": [
+			  {
+				"pronoun": "yo",
+				"fr": "que j'eusse (littéraire)",
+				"es": "hubiera",
+				"hint1": "souvent auxiliaire ; seul = soutenu ou littéraire"
+			  },
+			  {
+				"pronoun": "tú",
+				"fr": "que tu eusses (très rare)",
+				"es": "hubieras",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "3SI",
+				"fr": "qu'il y eût (soutenu)",
+				"es": "hubiera",
+				"hint1": "peut être impersonnel mais reste soutenu"
+			  },
+			  {
+				"pronoun": "nosotros",
+				"fr": "que nous eussions (rare)",
+				"es": "hubiéramos",
+				"hint1": "rare utilisé seul"
+			  },
+			  {
+				"pronoun": "vosotros",
+				"fr": "que vous eussiez (très rare)",
+				"es": "hubierais",
+				"hint1": "très rare dans l'usage moderne"
+			  },
+			  {
+				"pronoun": "3PL",
+				"fr": "qu'ils eussent (rare)",
+				"es": "hubieran",
+				"hint1": "rare utilisé seul ; surtout auxiliaire"
+			  }
+			]
+		  }
 
 
-      },
-      "Conditionnel": {
-        "Présent": [
-          {
-            "pronoun": "yo",
-            "fr": "j'aurais",
-            "es": "habría",
-            "hint1": "radical irrégulier habr-"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "tu aurais",
-            "es": "habrías"
-          },
-          {
-            "pronoun": "3SI",
-            "fr": "il aurait",
-            "es": "habría"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "nous aurions",
-            "es": "habríamos"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "vous auriez",
-            "es": "habríais"
-          },
-          {
-            "pronoun": "3PL",
-            "fr": "ils auraient",
-            "es": "habrían"
-          }
-        ]
-      },
-      "Subjonctif": {
-        "Présent": [
-          {
-            "pronoun": "yo",
-            "fr": "que j'aie",
-            "es": "haya",
-            "hint1": "radical hay-"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "que tu aies",
-            "es": "hayas"
-          },
-          {
-            "pronoun": "3SI",
-            "fr": "qu'il ait",
-            "es": "haya"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "que nous ayons",
-            "es": "hayamos"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "que vous ayez",
-            "es": "hayáis"
-          },
-          {
-            "pronoun": "3PL",
-            "fr": "qu'ils aient",
-            "es": "hayan"
-          }
-        ],
-        "Imparfait": [
-          {
-            "pronoun": "yo",
-            "fr": "que j'eusse",
-            "es": "hubiera",
-            "hint1": "radical hubier-"
-          },
-          {
-            "pronoun": "tú",
-            "fr": "que tu eusses",
-            "es": "hubieras"
-          },
-          {
-            "pronoun": "3SI",
-            "fr": "qu'il eût",
-            "es": "hubiera"
-          },
-          {
-            "pronoun": "nosotros",
-            "fr": "que nous eussions",
-            "es": "hubiéramos"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "que vous eussiez",
-            "es": "hubierais"
-          },
-          {
-            "pronoun": "3PL",
-            "fr": "qu'ils eussent",
-            "es": "hubieran"
-          }
-        ]
-      },
-      "Impératif": {
-        "Affirmatif": [
-          {
-            "pronoun": "tú",
-            "fr": "aie !",
-            "es": "he",
-            "hint1": "rare : he"
-          },
-          {
-            "pronoun": "vosotros",
-            "fr": "ayez !",
-            "es": "habed"
-          }
-        ]
-      }
+
+
+ 
     },
     "poner": {
       "Indicatif": {

@@ -489,7 +489,7 @@
       var url = api.data + (api.data.indexOf('?') !== -1 ? '&' : '?') + 'user=' + encodeURIComponent(currentUser) + '&_t=' + Date.now();
    //   var [d, flags, flaggedList] = await Promise.all([
   //      fetch(url).then(function(r){return r.json();}),
-  //      window.flagData ? Promise.resolve(window.flagData) : fetch('flag_2.json').then(function(r){return r.json();}).catch(function(){ return []; }),
+  //      window.flagData ? Promise.resolve(window.flagData) : fetch('flag_2_batch_1.json').then(function(r){return r.json();}).catch(function(){ return []; }),
   //      fetch('flagged_phrases.json').then(function(r){return r.json();}).catch(function(){ return {}; })
   //    ]);
 	
@@ -498,7 +498,7 @@ var [d, flags, flaggedList] = await Promise.all([
 
   window.flagData
     ? Promise.resolve(window.flagData)
-    : fetch('flag_2.json')
+    : fetch('flag_2_batch_1.json')
         .then(function(r){ return r.text(); })
         .then(function(text){
           return text
@@ -506,7 +506,7 @@ var [d, flags, flaggedList] = await Promise.all([
             .filter(function(line){ return line.trim() !== ''; })
             .map(function(line){ return JSON.parse(line); });
         })
-        .catch(function(e){ console.error("Erreur flag_2.json :", e); return []; }),
+        .catch(function(e){ console.error("Erreur flag_2_batch_1.json :", e); return []; }),
               		
 		
 
@@ -700,16 +700,33 @@ var [d, flags, flaggedList] = await Promise.all([
               +'</div></div></div></div>';
           });
           
-          if (tenseHasCards) {
-            modeHasCards = true;
-            var displayName = tense;
-            if (mode === 'Subjonctif') {
-              displayName = 'Subjonctif ' + tense;
-            }
-            modeHtml+='<div class="tense-block"><div class="tense-title">'+displayName+'</div><div class="cards-grid">'
-              +tenseHtml
-              +'</div></div>';
-          }
+
+if (tenseHasCards) {
+  modeHasCards = true;
+  var displayName = tense;
+  var noteHtml = '';
+
+  if (mode === 'Subjonctif') {
+    displayName = 'Subjonctif ' + tense;
+
+    if (tense == 'Imparfait') {
+      noteHtml =
+        '<div class="tense-note">' +
+          'Attention : souvent traduit par un imparfait en français<br><br>' +
+         '</div>';
+    }
+  }
+
+  modeHtml += '<div class="tense-block">'
+    + '<div class="tense-title">' + displayName + '</div>'
+    + noteHtml
+    + '<div class="cards-grid">'
+    + tenseHtml
+    + '</div></div>';
+}
+
+
+
         });
         
         if (modeHasCards) {
